@@ -3,10 +3,10 @@ import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 import Image from "@material-tailwind/react/Image";
 import Progress from "@material-tailwind/react/Progress";
-// import Team1 from "public/img/team-1-800x800.jpg";
-// import Team2 from "public/img/team-2-800x800.jpg";
-// import Team3 from "public/img/team-3-800x800.jpg";
-// import Team4 from "public/img/team-4-470x470.png";
+import Team1 from "../../../../public/img/team-1-800x800.jpg";
+import Team2 from "../../../../public/img/team-2-800x800.jpg";
+import Team3 from "../../../../public/img/team-3-800x800.jpg";
+import Team4 from "../../../../public/img/team-4-470x470.png";
 
 export default function CardTable() {
     return (
@@ -51,32 +51,32 @@ export default function CardTable() {
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     <div className="flex">
                                         <div className="w-10 h-10 rounded-full border-2 border-white">
-                                            {/* <Image
+                                            <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team2}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team3}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team4}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                     </div>
                                 </th>
@@ -98,32 +98,32 @@ export default function CardTable() {
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     <div className="flex">
                                         <div className="w-10 h-10 rounded-full border-2 border-white">
-                                            {/* <Image
+                                            <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team2}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team3}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team4}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                     </div>
                                 </th>
@@ -145,32 +145,32 @@ export default function CardTable() {
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     <div className="flex">
                                         <div className="w-10 h-10 rounded-full border-2 border-white">
-                                            {/* <Image
+                                            <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team2}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team3}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team4}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                     </div>
                                 </th>
@@ -192,32 +192,32 @@ export default function CardTable() {
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     <div className="flex">
                                         <div className="w-10 h-10 rounded-full border-2 border-white">
-                                            {/* <Image
+                                            <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team2}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team3}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                         <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            {/* <Image
+                                            <Image
                                                 src={Team4}
                                                 rounded
                                                 alt="..."
-                                            /> */}
+                                            />
                                         </div>
                                     </div>
                                 </th>

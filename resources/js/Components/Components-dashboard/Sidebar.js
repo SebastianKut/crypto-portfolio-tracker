@@ -32,8 +32,10 @@ export default function Sidebar() {
                                 <Link
                                     href={route("dashboard")}
                                     exact
-                                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
+                                        route().current("dashboard") &&
+                                        "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    }`}
                                 >
                                     <Icon name="dashboard" size="2xl" />
                                     Dashboard
@@ -42,8 +44,10 @@ export default function Sidebar() {
                             <li className="rounded-lg mb-2">
                                 <Link
                                     href={route("settings")}
-                                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
+                                        route().current("settings") &&
+                                        "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    }`}
                                 >
                                     <Icon name="settings" size="2xl" />
                                     Settings
@@ -52,8 +56,10 @@ export default function Sidebar() {
                             <li className="rounded-lg mb-2 ">
                                 <Link
                                     href={route("tables")}
-                                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
+                                        route().current("tables") &&
+                                        "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                                    }`}
                                 >
                                     <Icon name="toc" size="2xl" />
                                     Tables

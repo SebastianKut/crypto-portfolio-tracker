@@ -6,14 +6,14 @@ import H5 from "@material-tailwind/react/Heading5";
 import Icon from "@material-tailwind/react/Icon";
 import LeadText from "@material-tailwind/react/LeadText";
 import Button from "@material-tailwind/react/Button";
-// import ProfilePicture from "public/img/team-1-800x800.jpg";
+import ProfilePicture from "../../../../public/img/team-1-800x800.jpg";
 
 export default function ProfileCard() {
     return (
         <Card>
             <div className="flex flex-wrap justify-center">
                 <div className="w-48 px-4 -mt-24">
-                    {/* <Image src={ProfilePicture} rounded raised /> */}
+                    <Image src={ProfilePicture} rounded raised />
                 </div>
                 <div className="w-full flex justify-center py-4 lg:pt-4 pt-8">
                     <div className="p-4 text-center">
