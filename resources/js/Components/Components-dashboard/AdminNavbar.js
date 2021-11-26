@@ -5,6 +5,7 @@ import NavbarInput from "@material-tailwind/react/NavbarInput";
 import Image from "@material-tailwind/react/Image";
 import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
+import { Link } from "@inertiajs/inertia-react";
 import ProfilePicture from "../../../../public/img/team-1-800x800.jpg";
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
@@ -67,13 +68,14 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                                 }}
                             >
                                 <DropdownItem color="lightBlue">
-                                    Action
-                                </DropdownItem>
-                                <DropdownItem color="lightBlue">
-                                    Another Action
-                                </DropdownItem>
-                                <DropdownItem color="lightBlue">
-                                    Something Else
+                                    <Link
+                                        href={route("logout")}
+                                        method="post"
+                                        as="button"
+                                        type="button"
+                                    >
+                                        Logout
+                                    </Link>
                                 </DropdownItem>
                             </Dropdown>
                         </div>

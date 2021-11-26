@@ -27,9 +27,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
-    Route::inertia('/settings', 'Pages-dashboard/Settings')->name('settings');
-    Route::inertia('/tables', 'Pages-dashboard/Tables')->name('tables');
+    Route::get('/overview', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::inertia('/transaction/create', 'Pages-dashboard/TransactionCreate')->name('add transaction');
+    Route::inertia('/summary', 'Pages-dashboard/Summary')->name('summary');
 });
 
 require __DIR__ . '/auth.php';

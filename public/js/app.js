@@ -9177,9 +9177,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
 /* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
 /* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
-/* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 // import { useLocation } from "react-router-dom";
+
 
 
 
@@ -9193,13 +9195,13 @@ function AdminNavbar(_ref) {
   var showSidebar = _ref.showSidebar,
       setShowSidebar = _ref.setShowSidebar;
   var location = route().current();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("nav", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("nav", {
     className: "bg-light-blue-500 md:ml-64 py-6 px-3",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "md:hidden",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
           color: "transparent",
           buttonType: "link",
           size: "lg",
@@ -9209,14 +9211,14 @@ function AdminNavbar(_ref) {
           onClick: function onClick() {
             return setShowSidebar("left-0");
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
             name: "menu",
             size: "2xl",
             color: "white"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "absolute top-2 md:hidden ".concat(showSidebar === "left-0" ? "left-64" : "-left-64", " z-50 transition-all duration-300"),
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
             color: "transparent",
             buttonType: "link",
             size: "lg",
@@ -9226,30 +9228,30 @@ function AdminNavbar(_ref) {
             onClick: function onClick() {
               return setShowSidebar("-left-64");
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
               name: "close",
               size: "2xl",
               color: "white"
             })
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "flex justify-between items-center w-full",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
           className: "uppercase text-white text-sm tracking-wider mt-1",
           children: location.toUpperCase().replace("/", "")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "flex",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_NavbarInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_NavbarInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
             placeholder: "Search"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "-mr-4 ml-6",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__["default"], {
               color: "transparent",
-              buttonText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              buttonText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 className: "w-12",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                  src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
                   rounded: true
                 })
               }),
@@ -9258,16 +9260,16 @@ function AdminNavbar(_ref) {
                 padding: 0,
                 color: "transparent"
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 color: "lightBlue",
-                children: "Action"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                color: "lightBlue",
-                children: "Another Action"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                color: "lightBlue",
-                children: "Something Else"
-              })]
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                  href: route("logout"),
+                  method: "post",
+                  as: "button",
+                  type: "button",
+                  children: "Logout"
+                })
+              })
             })
           })]
         })]
@@ -9306,21 +9308,23 @@ __webpack_require__.r(__webpack_exports__);
 function ChartBar() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var config = {
-      type: 'bar',
+      type: "bar",
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
-          label: new Date().getFullYear(),
-          backgroundColor: '#03a9f4',
-          borderColor: '#03a9f4',
+          // label: new Date().getFullYear(),
+          label: "Total Value",
+          backgroundColor: "#03a9f4",
+          borderColor: "#03a9f4",
           data: [30, 78, 56, 34, 100, 45, 13],
           fill: false,
           barThickness: 8
         }, {
-          label: new Date().getFullYear() - 1,
+          // label: new Date().getFullYear() - 1,
+          label: "Cost",
           fill: false,
-          backgroundColor: '#f44336',
-          borderColor: '#f44336',
+          backgroundColor: "#f44336",
+          borderColor: "#f44336",
           data: [27, 68, 86, 74, 10, 4, 87],
           barThickness: 8
         }]
@@ -9330,35 +9334,35 @@ function ChartBar() {
         responsive: true,
         title: {
           display: false,
-          text: 'Orders Chart'
+          text: "Orders Chart"
         },
         tooltips: {
-          mode: 'index',
+          mode: "index",
           intersect: false
         },
         hover: {
-          mode: 'nearest',
+          mode: "nearest",
           intersect: true
         },
         legend: {
           labels: {
-            fontColor: 'rgba(17,17,17,.7)'
+            fontColor: "rgba(17,17,17,.7)"
           },
-          align: 'end',
-          position: 'bottom'
+          align: "end",
+          position: "bottom"
         },
         scales: {
           xAxes: [{
             display: false,
             scaleLabel: {
               display: true,
-              labelString: 'Month'
+              labelString: "Month"
             },
             gridLines: {
               borderDash: [2],
               borderDashOffset: [2],
-              color: 'rgba(33, 37, 41, 0.3)',
-              zeroLineColor: 'rgba(33, 37, 41, 0.3)',
+              color: "rgba(33, 37, 41, 0.3)",
+              zeroLineColor: "rgba(33, 37, 41, 0.3)",
               zeroLineBorderDash: [2],
               zeroLineBorderDashOffset: [2]
             }
@@ -9367,14 +9371,14 @@ function ChartBar() {
             display: true,
             scaleLabel: {
               display: false,
-              labelString: 'Value'
+              labelString: "Value"
             },
             gridLines: {
               borderDash: [2],
               drawBorder: false,
               borderDashOffset: [2],
-              color: 'rgba(33, 37, 41, 0.2)',
-              zeroLineColor: 'rgba(33, 37, 41, 0.15)',
+              color: "rgba(33, 37, 41, 0.2)",
+              zeroLineColor: "rgba(33, 37, 41, 0.15)",
               zeroLineBorderDash: [2],
               zeroLineBorderDashOffset: [2]
             }
@@ -9382,7 +9386,7 @@ function ChartBar() {
         }
       }
     };
-    var ctx = document.getElementById('bar-chart').getContext('2d');
+    var ctx = document.getElementById("bar-chart").getContext("2d");
     window.myBar = new (chart_js__WEBPACK_IMPORTED_MODULE_1___default())(ctx, config);
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -9394,7 +9398,7 @@ function ChartBar() {
         children: "Overview"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
         className: "text-white text-2xl",
-        children: "Sales value"
+        children: "Portfolio value"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -9437,20 +9441,22 @@ __webpack_require__.r(__webpack_exports__);
 function ChartLine() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var config = {
-      type: 'line',
+      type: "line",
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
-          label: new Date().getFullYear(),
-          backgroundColor: '#03a9f4',
-          borderColor: '#03a9f4',
+          // label: new Date().getFullYear(),
+          label: "Total Value",
+          backgroundColor: "#03a9f4",
+          borderColor: "#03a9f4",
           data: [65, 78, 66, 44, 56, 67, 75],
           fill: false
         }, {
-          label: new Date().getFullYear() - 1,
+          // label: new Date().getFullYear() - 1,
+          label: "Cost",
           fill: false,
-          backgroundColor: '#ff9800',
-          borderColor: '#ff9800',
+          backgroundColor: "#ff9800",
+          borderColor: "#ff9800",
           data: [40, 68, 86, 74, 56, 60, 87]
         }]
       },
@@ -9459,61 +9465,61 @@ function ChartLine() {
         responsive: true,
         title: {
           display: false,
-          text: 'Sales Charts',
-          fontColor: 'white'
+          text: "Sales Charts",
+          fontColor: "white"
         },
         legend: {
           labels: {
-            fontColor: 'black'
+            fontColor: "black"
           },
-          align: 'end',
-          position: 'bottom'
+          align: "end",
+          position: "bottom"
         },
         tooltips: {
-          mode: 'index',
+          mode: "index",
           intersect: false
         },
         hover: {
-          mode: 'nearest',
+          mode: "nearest",
           intersect: true
         },
         scales: {
           xAxes: [{
             ticks: {
-              fontColor: 'rgba(17,17,17,.7)'
+              fontColor: "rgba(17,17,17,.7)"
             },
             display: true,
             scaleLabel: {
               display: false,
-              labelString: 'Month',
-              fontColor: 'white'
+              labelString: "Month",
+              fontColor: "white"
             },
             gridLines: {
               display: false,
               borderDash: [2],
               borderDashOffset: [2],
-              color: 'rgba(33, 37, 41, 0.3)',
-              zeroLineColor: 'rgba(0, 0, 0, 0)',
+              color: "rgba(33, 37, 41, 0.3)",
+              zeroLineColor: "rgba(0, 0, 0, 0)",
               zeroLineBorderDash: [2],
               zeroLineBorderDashOffset: [2]
             }
           }],
           yAxes: [{
             ticks: {
-              fontColor: 'rgba(17,17,17,.7)'
+              fontColor: "rgba(17,17,17,.7)"
             },
             display: true,
             scaleLabel: {
               display: false,
-              labelString: 'Value',
-              fontColor: 'white'
+              labelString: "Value",
+              fontColor: "white"
             },
             gridLines: {
               borderDash: [3],
               borderDashOffset: [3],
               drawBorder: false,
-              color: 'rgba(17, 17, 17, 0.15)',
-              zeroLineColor: 'rgba(33, 37, 41, 0)',
+              color: "rgba(17, 17, 17, 0.15)",
+              zeroLineColor: "rgba(33, 37, 41, 0)",
               zeroLineBorderDash: [2],
               zeroLineBorderDashOffset: [2]
             }
@@ -9521,7 +9527,7 @@ function ChartLine() {
         }
       }
     };
-    var ctx = document.getElementById('line-chart').getContext('2d');
+    var ctx = document.getElementById("line-chart").getContext("2d");
     window.myLine = new (chart_js__WEBPACK_IMPORTED_MODULE_1___default())(ctx, config);
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -9533,7 +9539,7 @@ function ChartLine() {
         children: "Overview"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
         className: "text-white text-2xl",
-        children: "Sales value"
+        children: "Portfolio value"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -9633,7 +9639,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
 /* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
 /* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
+/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
@@ -9641,102 +9653,110 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function PageVisitsCard() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var _jsxs2;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
       color: "blue",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
           className: "text-white text-2xl",
-          children: "Page Visits"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: "Market Data"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__["default"], (_jsxs2 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
-          style: {
-            padding: 0
-          },
-          children: "See More"
-        })]
+          placement: "bottom-start",
+          buttonText: "USD"
+        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          color: "lightBlue",
+          ripple: "light",
+          children: "GBP"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          color: "lightBlue",
+          ripple: "light",
+          children: "PLN"
+        })]), _jsxs2))]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "ID"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                children: "#"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Name"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                children: "Cryptocurrency"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Salary"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                children: "Price"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Country"
+                children: "Market Cap"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tbody", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tbody", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: "1"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Dakota Rice"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "Bitcoin BTC"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$36,738"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "$55,237.67"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Niger"
+                children: "$1.0T"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: "2"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Minerva Hooper"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "Etherium ETC"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$23,789"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "$4,091.67"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Cura\xE7ao"
+                children: "$486.2B"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: "3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Sage Rodriguez"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "Solana SOL"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$56,142"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "$191.67"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Netherlands"
+                children: "$58.2B"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: "4"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Philip Chaney"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "Cardano ADA"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$38,735"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                children: "$1.55"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Korea, South"
+                children: "$50.7B"
               })]
             })]
           })]
@@ -9894,7 +9914,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
 /* harmony import */ var _material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Input */ "./node_modules/@material-tailwind/react/Input.js");
 /* harmony import */ var _material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Textarea */ "./node_modules/@material-tailwind/react/Textarea.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -9904,103 +9926,126 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function SettingsForm() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
           className: "text-white text-2xl",
-          children: "My Account"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          color: "transparent",
-          buttonType: "link",
-          size: "lg",
-          style: {
-            padding: 0
-          },
-          children: "Settings"
-        })]
+          children: "Add Transaction"
+        })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
           className: "text-purple-500 text-sm mt-3 mb-6 font-light uppercase",
-          children: "User Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          children: "Transaction Information"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              type: "date",
+              color: "purple",
+              placeholder: "Transaction Date"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
               type: "text",
               color: "purple",
-              placeholder: "Username"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              type: "email",
-              color: "purple",
-              placeholder: "Email Address"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              type: "text",
-              color: "purple",
-              placeholder: "First Name"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              type: "email",
-              color: "purple",
-              placeholder: "Last Name"
+              placeholder: "Exchange name"
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
-          children: "Contact Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          children: "Cryptocurrency details"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-12/12 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
               type: "text",
               color: "purple",
-              placeholder: "Address"
+              placeholder: "Token symbol"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              type: "text",
+              color: "purple",
+              placeholder: "Amount"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+          className: "text-purple-500 text-sm my-6 font-light uppercase",
+          children: "Payment details"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "flex flex-wrap mt-10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "w-full lg:w-4/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
               type: "text",
               color: "purple",
-              placeholder: "City"
+              placeholder: "Currency symbol" // success="Total price: 20,45"
+
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-4/12 px-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-4/12  mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
               type: "text",
               color: "purple",
-              placeholder: "Country"
+              placeholder: "Price paid"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "w-full lg:w-4/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-4/12  pl-4 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
               type: "text",
               color: "purple",
-              placeholder: "Postal Code"
+              placeholder: "Fee paid"
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
-          children: "About Me"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "flex flex-wrap mt-10 font-light",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            color: "purple",
-            placeholder: "About Me"
+          children: "Additional Information"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "flex flex-wrap mt-10",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-12/12 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              type: "text",
+              color: "purple",
+              placeholder: "Storage Information"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "w-full lg:w-12/12 pr-4 mb-10 font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              color: "purple",
+              placeholder: "Notes"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "flex justify-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "font-light",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              color: "purple",
+              buttonType: "filled",
+              size: "lg",
+              rounded: false,
+              block: false,
+              iconOnly: false,
+              ripple: "light",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                href: "#",
+                method: "post",
+                as: "button",
+                type: "submit",
+                children: "Submit transaction"
+              })
+            })
           })
         })]
       })
@@ -10090,22 +10135,22 @@ function Sidebar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "rounded-lg mb-2",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("settings"),
-                className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("settings") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
+                href: route("add transaction"),
+                className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("add transaction") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
                   name: "settings",
                   size: "2xl"
-                }), "Settings"]
+                }), "Add transaction"]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "rounded-lg mb-2 ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("tables"),
-                className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("tables") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
+                href: route("summary"),
+                className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("summary") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
                   name: "toc",
                   size: "2xl"
-                }), "Tables"]
+                }), "Summary"]
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
@@ -10247,7 +10292,7 @@ function CardTable() {
       contentPosition: "left",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
         className: "text-white text-2xl",
-        children: "Card Table"
+        children: "Portfolio Details"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
@@ -10258,233 +10303,199 @@ function CardTable() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Project"
+                children: "Cryptocurrency"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Budget"
+                children: "Token Amount"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Status"
+                children: "Total Cost"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Users"
+                children: "Unit Cost"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Completion"
+                children: "Total Value"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
+                children: "Gain/Loss"
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tbody", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Argon Design System"
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "flex items-stretch",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
+                      rounded: true,
+                      alt: "..."
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    className: "self-center",
+                    children: "Bitcoin BTC"
+                  })]
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2,500 USD"
+                children: "16.34"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                   className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "pending"]
+                }), " ", "$350.45"]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_2_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_3_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_4_470x470_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  })]
-                })
+                children: "$20.12"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                  color: "red",
-                  value: "60"
-                })
+                children: "$2.3M"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.21M"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Black Dashboard Sketch"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$1,800 USD"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-blue-gray-900 mr-2"
-                }), " ", "completed"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex",
+                  className: "flex items-stretch",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white",
+                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
                       src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
                       rounded: true,
                       alt: "..."
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_2_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_3_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_4_470x470_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
+                    className: "self-center",
+                    children: "Bitcoin BTC"
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                  color: "green",
-                  value: "100"
-                })
+                children: "16.34"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
+                }), " ", "$350.45"]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$20.12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.3M"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.21M"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "React Material Dashboard"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$4,400 USD"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-teal-500 mr-2"
-                }), " ", "on schedule"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex",
+                  className: "flex items-stretch",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white",
+                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
                       src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
                       rounded: true,
                       alt: "..."
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_2_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_3_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_4_470x470_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
+                    className: "self-center",
+                    children: "Bitcoin BTC"
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                  color: "teal",
-                  value: "90"
-                })
+                children: "16.34"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
+                }), " ", "$350.45"]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$20.12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.3M"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.21M"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "React Material Dashboard"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2,200 USD"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-blue-gray-900 mr-2"
-                }), " ", "completed"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex",
+                  className: "flex items-stretch",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white",
+                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
                       src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
                       rounded: true,
                       alt: "..."
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_2_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_3_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white -ml-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_4_470x470_png__WEBPACK_IMPORTED_MODULE_8__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
+                    className: "self-center",
+                    children: "Bitcoin BTC"
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                  color: "green",
-                  value: "100"
+                children: "16.34"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
+                }), " ", "$350.45"]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$20.12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.3M"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.21M"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "flex items-stretch",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
+                      rounded: true,
+                      alt: "..."
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    className: "self-center",
+                    children: "Bitcoin BTC"
+                  })]
                 })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "16.34"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
+                }), " ", "$350.45"]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$20.12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.3M"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                children: "$2.21M"
               })]
             })]
           })]
@@ -11951,41 +11962,41 @@ function Dashboard() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 mb-4",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "pink",
+            color: "orange",
             icon: "trending_up",
-            title: "Traffic",
+            title: "Total Value",
             amount: "350,897",
-            percentage: "3.48",
+            percentage: "3.48%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
-            date: "Since last month"
+            date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "orange",
-            icon: "groups",
-            title: "New Users",
+            color: "pink",
+            icon: "payment",
+            title: "Cost",
             amount: "2,356",
-            percentage: "3.48",
+            percentage: "3.48%",
             percentageIcon: "arrow_downward",
             percentageColor: "red",
             date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
             color: "purple",
             icon: "paid",
-            title: "Sales",
+            title: "Gain/Loss",
             amount: "924",
-            percentage: "1.10",
+            percentage: "1.10%",
             percentageIcon: "arrow_downward",
             percentageColor: "orange",
-            date: "Since yesterday"
+            date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
             color: "blue",
             icon: "poll",
-            title: "Performance",
+            title: "ROI",
             amount: "49,65%",
-            percentage: "12",
+            percentage: "12%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
-            date: "Since last month"
+            date: "Since last week"
           })]
         })
       })
@@ -11993,15 +12004,12 @@ function Dashboard() {
       className: "px-3 md:px-8 h-auto",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "container mx-auto max-w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "grid grid-cols-1 xl:grid-cols-5",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "xl:col-start-1 xl:col-end-4 px-4 mb-14",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "xl:col-start-1 xl:col-end-8 px-4 mb-14",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            className: "xl:col-start-4 xl:col-end-6 px-4 mb-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_TrafficCard__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-          })]
+          })
         })
       })
     })]
@@ -12010,10 +12018,96 @@ function Dashboard() {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Pages-dashboard/Settings.js":
-/*!********************************************************!*\
-  !*** ./resources/js/Pages/Pages-dashboard/Settings.js ***!
-  \********************************************************/
+/***/ "./resources/js/Pages/Pages-dashboard/Summary.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/Pages/Pages-dashboard/Summary.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */ });
+/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
+/* harmony import */ var _Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/TableCard */ "./resources/js/Components/Components-dashboard/TableCard.js");
+/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function Dashboard() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
+      title: "Dashboard"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "container mx-auto max-w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            color: "orange",
+            icon: "trending_up",
+            title: "Total Value",
+            amount: "350,897",
+            percentage: "3.48%",
+            percentageIcon: "arrow_upward",
+            percentageColor: "green",
+            date: "Since last week"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            color: "pink",
+            icon: "payment",
+            title: "Cost",
+            amount: "2,356",
+            percentage: "3.48%",
+            percentageIcon: "arrow_downward",
+            percentageColor: "red",
+            date: "Since last week"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            color: "purple",
+            icon: "paid",
+            title: "Gain/Loss",
+            amount: "924",
+            percentage: "1.10%",
+            percentageIcon: "arrow_downward",
+            percentageColor: "orange",
+            date: "Since last week"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            color: "blue",
+            icon: "poll",
+            title: "ROI",
+            amount: "49,65%",
+            percentage: "12%",
+            percentageIcon: "arrow_upward",
+            percentageColor: "green",
+            date: "Since last week"
+          })]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "px-3 md:px-8 h-auto -mt-24",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "container mx-auto max-w-full",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "grid grid-cols-1 px-4 mb-16",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Pages-dashboard/TransactionCreate.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Pages/Pages-dashboard/TransactionCreate.js ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12045,41 +12139,41 @@ function Settings() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "pink",
+            color: "orange",
             icon: "trending_up",
-            title: "Traffic",
+            title: "Total Value",
             amount: "350,897",
-            percentage: "3.48",
+            percentage: "3.48%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
-            date: "Since last month"
+            date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "orange",
-            icon: "groups",
-            title: "New Users",
+            color: "pink",
+            icon: "payment",
+            title: "Cost",
             amount: "2,356",
-            percentage: "3.48",
+            percentage: "3.48%",
             percentageIcon: "arrow_downward",
             percentageColor: "red",
             date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
             color: "purple",
             icon: "paid",
-            title: "Sales",
+            title: "Gain/Loss",
             amount: "924",
-            percentage: "1.10",
+            percentage: "1.10%",
             percentageIcon: "arrow_downward",
             percentageColor: "orange",
-            date: "Since yesterday"
+            date: "Since last week"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
             color: "blue",
             icon: "poll",
-            title: "Performance",
+            title: "ROI",
             amount: "49,65%",
-            percentage: "12",
+            percentage: "12%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
-            date: "Since last month"
+            date: "Since last week"
           })]
         })
       })
@@ -12096,92 +12190,6 @@ function Settings() {
             className: "xl:col-start-5 xl:col-end-7 px-4 mb-16 mt-14",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_ProfileCard__WEBPACK_IMPORTED_MODULE_2__["default"], {})
           })]
-        })
-      })
-    })]
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Pages-dashboard/Tables.js":
-/*!******************************************************!*\
-  !*** ./resources/js/Pages/Pages-dashboard/Tables.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Dashboard)
-/* harmony export */ });
-/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
-/* harmony import */ var _Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/TableCard */ "./resources/js/Components/Components-dashboard/TableCard.js");
-/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-function Dashboard() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
-      title: "Dashboard"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "container mx-auto max-w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "pink",
-            icon: "trending_up",
-            title: "Traffic",
-            amount: "350,897",
-            percentage: "3.48",
-            percentageIcon: "arrow_upward",
-            percentageColor: "green",
-            date: "Since last month"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "orange",
-            icon: "groups",
-            title: "New Users",
-            amount: "2,356",
-            percentage: "3.48",
-            percentageIcon: "arrow_downward",
-            percentageColor: "red",
-            date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "purple",
-            icon: "paid",
-            title: "Sales",
-            amount: "924",
-            percentage: "1.10",
-            percentageIcon: "arrow_downward",
-            percentageColor: "orange",
-            date: "Since yesterday"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-            color: "blue",
-            icon: "poll",
-            title: "Performance",
-            amount: "49,65%",
-            percentage: "12",
-            percentageIcon: "arrow_upward",
-            percentageColor: "green",
-            date: "Since last month"
-          })]
-        })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "px-3 md:px-8 h-auto -mt-24",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "container mx-auto max-w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "grid grid-cols-1 px-4 mb-16",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         })
       })
     })]
@@ -106895,10 +106903,10 @@ var map = {
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Pages-dashboard/Dashboard": "./resources/js/Pages/Pages-dashboard/Dashboard.js",
 	"./Pages-dashboard/Dashboard.js": "./resources/js/Pages/Pages-dashboard/Dashboard.js",
-	"./Pages-dashboard/Settings": "./resources/js/Pages/Pages-dashboard/Settings.js",
-	"./Pages-dashboard/Settings.js": "./resources/js/Pages/Pages-dashboard/Settings.js",
-	"./Pages-dashboard/Tables": "./resources/js/Pages/Pages-dashboard/Tables.js",
-	"./Pages-dashboard/Tables.js": "./resources/js/Pages/Pages-dashboard/Tables.js",
+	"./Pages-dashboard/Summary": "./resources/js/Pages/Pages-dashboard/Summary.js",
+	"./Pages-dashboard/Summary.js": "./resources/js/Pages/Pages-dashboard/Summary.js",
+	"./Pages-dashboard/TransactionCreate": "./resources/js/Pages/Pages-dashboard/TransactionCreate.js",
+	"./Pages-dashboard/TransactionCreate.js": "./resources/js/Pages/Pages-dashboard/TransactionCreate.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };

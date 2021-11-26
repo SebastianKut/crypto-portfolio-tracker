@@ -11,21 +11,21 @@ export default function Dashboard() {
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
                         <StatusCard
-                            color="pink"
+                            color="orange"
                             icon="trending_up"
-                            title="Traffic"
+                            title="Total Value"
                             amount="350,897"
-                            percentage="3.48"
+                            percentage="3.48%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"
-                            date="Since last month"
+                            date="Since last week"
                         />
                         <StatusCard
-                            color="orange"
-                            icon="groups"
-                            title="New Users"
+                            color="pink"
+                            icon="payment"
+                            title="Cost"
                             amount="2,356"
-                            percentage="3.48"
+                            percentage="3.48%"
                             percentageIcon="arrow_downward"
                             percentageColor="red"
                             date="Since last week"
@@ -33,22 +33,22 @@ export default function Dashboard() {
                         <StatusCard
                             color="purple"
                             icon="paid"
-                            title="Sales"
+                            title="Gain/Loss"
                             amount="924"
-                            percentage="1.10"
+                            percentage="1.10%"
                             percentageIcon="arrow_downward"
                             percentageColor="orange"
-                            date="Since yesterday"
+                            date="Since last week"
                         />
                         <StatusCard
                             color="blue"
                             icon="poll"
-                            title="Performance"
+                            title="ROI"
                             amount="49,65%"
-                            percentage="12"
+                            percentage="12%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"
-                            date="Since last month"
+                            date="Since last week"
                         />
                     </div>
                 </div>
