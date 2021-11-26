@@ -28,6 +28,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::inertia('/settings', 'Pages-dashboard/Settings')->name('settings');
+    Route::inertia('/tables', 'Pages-dashboard/Tables')->name('tables');
 });
 
 require __DIR__ . '/auth.php';
