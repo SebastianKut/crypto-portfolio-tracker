@@ -43,26 +43,26 @@ export default function Sidebar() {
                             </li>
                             <li className="rounded-lg mb-2">
                                 <Link
-                                    href={route("settings")}
+                                    href={route("add transaction")}
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
-                                        route().current("settings") &&
+                                        route().current("add transaction") &&
                                         "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                     }`}
                                 >
                                     <Icon name="settings" size="2xl" />
-                                    Settings
+                                    Add transaction
                                 </Link>
                             </li>
                             <li className="rounded-lg mb-2 ">
                                 <Link
-                                    href={route("tables")}
+                                    href={route("summary")}
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
-                                        route().current("tables") &&
+                                        route().current("summary") &&
                                         "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                                     }`}
                                 >
                                     <Icon name="toc" size="2xl" />
-                                    Tables
+                                    Summary
                                 </Link>
                             </li>
                         </ul>

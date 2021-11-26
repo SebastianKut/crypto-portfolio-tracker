@@ -12,7 +12,7 @@ export default function CardTable() {
     return (
         <Card>
             <CardHeader color="purple" contentPosition="left">
-                <h2 className="text-white text-2xl">Card Table</h2>
+                <h2 className="text-white text-2xl">Portfolio Details</h2>
             </CardHeader>
             <CardBody>
                 <div className="overflow-x-auto">
@@ -20,209 +20,184 @@ export default function CardTable() {
                         <thead>
                             <tr>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Project
+                                    Cryptocurrency
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Budget
+                                    Token Amount
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Status
+                                    Total Cost
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Users
+                                    Unit Cost
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Completion
+                                    Total Value
+                                </th>
+                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                    Gain/Loss
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Argon Design System
+                                    <div className="flex items-stretch">
+                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
+                                            <Image
+                                                src={Team1}
+                                                rounded
+                                                alt="..."
+                                            />
+                                        </div>
+                                        <div className="self-center">
+                                            Bitcoin BTC
+                                        </div>
+                                    </div>
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2,500 USD
+                                    16.34
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                     <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    pending
+                                    $350.45
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team2}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team3}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team4}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                    </div>
+                                    $20.12
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="red" value="60" />
+                                    $2.3M
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.21M
                                 </th>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Black Dashboard Sketch
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $1,800 USD
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-blue-gray-900 mr-2"></i>{" "}
-                                    completed
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white">
+                                    <div className="flex items-stretch">
+                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
                                             <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
                                             />
                                         </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team2}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team3}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team4}
-                                                rounded
-                                                alt="..."
-                                            />
+                                        <div className="self-center">
+                                            Bitcoin BTC
                                         </div>
                                     </div>
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="green" value="100" />
+                                    16.34
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
+                                    $350.45
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $20.12
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.3M
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.21M
                                 </th>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    React Material Dashboard
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $4,400 USD
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-teal-500 mr-2"></i>{" "}
-                                    on schedule
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white">
+                                    <div className="flex items-stretch">
+                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
                                             <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
                                             />
                                         </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team2}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team3}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team4}
-                                                rounded
-                                                alt="..."
-                                            />
+                                        <div className="self-center">
+                                            Bitcoin BTC
                                         </div>
                                     </div>
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="teal" value="90" />
+                                    16.34
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
+                                    $350.45
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $20.12
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.3M
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.21M
                                 </th>
                             </tr>
                             <tr>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    React Material Dashboard
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2,200 USD
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-blue-gray-900 mr-2"></i>{" "}
-                                    completed
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white">
+                                    <div className="flex items-stretch">
+                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
                                             <Image
                                                 src={Team1}
                                                 rounded
                                                 alt="..."
                                             />
                                         </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team2}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team3}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-white -ml-4">
-                                            <Image
-                                                src={Team4}
-                                                rounded
-                                                alt="..."
-                                            />
+                                        <div className="self-center">
+                                            Bitcoin BTC
                                         </div>
                                     </div>
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <Progress color="green" value="100" />
+                                    16.34
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
+                                    $350.45
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $20.12
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.3M
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.21M
+                                </th>
+                            </tr>
+                            <tr>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    <div className="flex items-stretch">
+                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
+                                            <Image
+                                                src={Team1}
+                                                rounded
+                                                alt="..."
+                                            />
+                                        </div>
+                                        <div className="self-center">
+                                            Bitcoin BTC
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    16.34
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
+                                    $350.45
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $20.12
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.3M
+                                </th>
+                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                    $2.21M
                                 </th>
                             </tr>
                         </tbody>
