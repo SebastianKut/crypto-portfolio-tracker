@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function dashboard()
     {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Pages-dashboard/Dashboard');
     }
 }
