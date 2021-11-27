@@ -10002,7 +10002,8 @@ function SettingsForm() {
               value: data.transaction_date,
               onChange: function onChange(e) {
                 return setData("transaction_date", e.target.value);
-              }
+              },
+              error: errors.transaction_date
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
@@ -10013,7 +10014,8 @@ function SettingsForm() {
               value: data.exchange,
               onChange: function onChange(e) {
                 return setData("exchange", e.target.value);
-              }
+              },
+              error: errors.exchange
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
@@ -10030,7 +10032,8 @@ function SettingsForm() {
               value: data.token_symbol,
               onChange: function onChange(e) {
                 return setData("token_symbol", e.target.value);
-              }
+              },
+              error: errors.token_symbol
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
@@ -10041,7 +10044,8 @@ function SettingsForm() {
               value: data.token_amount,
               onChange: function onChange(e) {
                 return setData("token_amount", e.target.value);
-              }
+              },
+              error: errors.token_amount
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
@@ -10059,7 +10063,8 @@ function SettingsForm() {
               onChange: function onChange(e) {
                 return setData("price_symbol", e.target.value);
               },
-              success: "Total price: ".concat(totalPrice)
+              success: "Total price: ".concat(totalPrice),
+              error: errors.price_symbol
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full lg:w-4/12  mb-10 font-light",
@@ -10071,10 +10076,8 @@ function SettingsForm() {
               value: data.value_price,
               onChange: function onChange(e) {
                 return updatePrices(e);
-              } // onChange={(e) =>
-              //     setData("value_price", e.target.value)
-              // }
-
+              },
+              error: errors.value_price
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full lg:w-4/12  pl-4 mb-10 font-light",
@@ -10086,10 +10089,8 @@ function SettingsForm() {
               value: data.fee_price,
               onChange: function onChange(e) {
                 return updatePrices(e);
-              } // onChange={(e) =>
-              //     setData("fee_price", e.target.value)
-              // }
-
+              },
+              error: errors.fee_price
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
@@ -10106,7 +10107,8 @@ function SettingsForm() {
               value: data.storage_info,
               onChange: function onChange(e) {
                 return setData("storage_info", e.target.value);
-              }
+              },
+              error: errors.storage_info
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
             className: "w-full lg:w-12/12 pr-4 mb-10 font-light",
@@ -10116,7 +10118,8 @@ function SettingsForm() {
               value: data.notes,
               onChange: function onChange(e) {
                 return setData("notes", e.target.value);
-              }
+              },
+              error: errors.notes
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {

@@ -64,6 +64,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("transaction_date", e.target.value)
                                 }
+                                error={errors.transaction_date}
                             />
                         </div>
                         <div className="w-full lg:w-6/12 pl-4 mb-10 font-light">
@@ -75,6 +76,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("exchange", e.target.value)
                                 }
+                                error={errors.exchange}
                             />
                         </div>
                     </div>
@@ -92,6 +94,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("token_symbol", e.target.value)
                                 }
+                                error={errors.token_symbol}
                             />
                         </div>
                         <div className="w-full lg:w-6/12 pl-4 mb-10 font-light">
@@ -103,6 +106,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("token_amount", e.target.value)
                                 }
+                                error={errors.token_amount}
                             />
                         </div>
                     </div>
@@ -121,6 +125,7 @@ export default function SettingsForm() {
                                     setData("price_symbol", e.target.value)
                                 }
                                 success={`Total price: ${totalPrice}`}
+                                error={errors.price_symbol}
                             />
                         </div>
                         <div className="w-full lg:w-4/12  mb-10 font-light">
@@ -131,9 +136,7 @@ export default function SettingsForm() {
                                 placeholder="Price paid"
                                 value={data.value_price}
                                 onChange={(e) => updatePrices(e)}
-                                // onChange={(e) =>
-                                //     setData("value_price", e.target.value)
-                                // }
+                                error={errors.value_price}
                             />
                         </div>
                         <div className="w-full lg:w-4/12  pl-4 mb-10 font-light">
@@ -144,9 +147,7 @@ export default function SettingsForm() {
                                 placeholder="Fee paid"
                                 value={data.fee_price}
                                 onChange={(e) => updatePrices(e)}
-                                // onChange={(e) =>
-                                //     setData("fee_price", e.target.value)
-                                // }
+                                error={errors.fee_price}
                             />
                         </div>
                     </div>
@@ -164,6 +165,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("storage_info", e.target.value)
                                 }
+                                error={errors.storage_info}
                             />
                         </div>
                         <div className="w-full lg:w-12/12 pr-4 mb-10 font-light">
@@ -174,6 +176,7 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("notes", e.target.value)
                                 }
+                                error={errors.notes}
                             />
                         </div>
                     </div>
