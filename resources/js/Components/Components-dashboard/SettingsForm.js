@@ -1,15 +1,15 @@
+import { useState } from "react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 import Button from "@material-tailwind/react/Button";
 import Input from "@material-tailwind/react/Input";
 import Textarea from "@material-tailwind/react/Textarea";
-import { Link } from "@inertiajs/inertia-react";
-import { useForm } from "@inertiajs/inertia-react";
-import { useState } from "react";
+import { useForm, usePage } from "@inertiajs/inertia-react";
+import MessageModal from "./MessageModal";
 
 export default function SettingsForm() {
-    const { data, setData, post, processing, errors } = useForm({
+    const { data, setData, post, processing, errors, reset } = useForm({
         transaction_date: "",
         exchange: "",
         token_symbol: "",
@@ -20,33 +20,25 @@ export default function SettingsForm() {
         storage_info: "",
         notes: "",
     });
+    const { flash } = usePage().props;
 
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [showModal, setShowModal] = useState(false);
 
-    function updatePrices(e) {
-        if (e.target.id === "valuePrice")
-            setData("value_price", e.target.value);
-        if (e.target.id === "feePaid") setData("fee_price", e.target.value);
-        setTotalPrice(+data.value_price + +data.fee_price);
-    }
-
-    function submit(e) {
+    const submit = (e) => {
         e.preventDefault();
-        post(route("transaction.store"));
-    }
+        post(route("transaction.store"), {
+            preserveScroll: true,
+            onSuccess: () => {
+                setShowModal(true);
+                reset();
+            },
+        });
+    };
     return (
         <Card>
             <CardHeader color="purple" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
                     <h2 className="text-white text-2xl">Add Transaction</h2>
-                    {/* <Button
-                        color="transparent"
-                        buttonType="link"
-                        size="lg"
-                        style={{ padding: 0 }}
-                    >
-                        Settings
-                    </Button> */}
                 </div>
             </CardHeader>
             <CardBody>
@@ -124,7 +116,12 @@ export default function SettingsForm() {
                                 onChange={(e) =>
                                     setData("price_symbol", e.target.value)
                                 }
-                                success={`Total price: ${totalPrice}`}
+                                success={
+                                    (data.value_price || data.fee_price) &&
+                                    `Total price paid: ${
+                                        +data.value_price + +data.fee_price
+                                    } ${data.price_symbol.toUpperCase()}`
+                                }
                                 error={errors.price_symbol}
                             />
                         </div>
@@ -133,9 +130,11 @@ export default function SettingsForm() {
                                 id="valuePrice"
                                 type="text"
                                 color="purple"
-                                placeholder="Price paid"
+                                placeholder="Value"
                                 value={data.value_price}
-                                onChange={(e) => updatePrices(e)}
+                                onChange={(e) =>
+                                    setData("value_price", e.target.value)
+                                }
                                 error={errors.value_price}
                             />
                         </div>
@@ -146,7 +145,9 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Fee paid"
                                 value={data.fee_price}
-                                onChange={(e) => updatePrices(e)}
+                                onChange={(e) =>
+                                    setData("fee_price", e.target.value)
+                                }
                                 error={errors.fee_price}
                             />
                         </div>
@@ -180,14 +181,6 @@ export default function SettingsForm() {
                             />
                         </div>
                     </div>
-                    {/* <div className="flex flex-wrap mt-10 font-light"></div>
-                    <div className="w-full lg:w-12/12 pl-4 mb-10 font-light">
-                        <Input
-                            type="text"
-                            color="purple"
-                            placeholder="Postal Code"
-                        />
-                    </div> */}
                     <div className="flex justify-center">
                         <div className="font-light">
                             <Button
@@ -198,16 +191,19 @@ export default function SettingsForm() {
                                 block={false}
                                 iconOnly={false}
                                 ripple="light"
+                                disabled={processing}
                             >
                                 Submit transaction
-                                {/* <Link href="#" as="button" type="submit">
-                                    Submit transaction
-                                </Link> */}
                             </Button>
                         </div>
                     </div>
                 </form>
             </CardBody>
+            <MessageModal
+                showModal={showModal}
+                setShowModal={setShowModal}
+                message={flash.message}
+            />
         </Card>
     );
 }

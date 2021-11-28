@@ -3032,6 +3032,176 @@ LeadText.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/@material-tailwind/react/Modal.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/Modal.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = Modal;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function Modal(_ref) {
+  var children = _ref.children,
+      size = _ref.size,
+      active = _ref.active,
+      toggler = _ref.toggler;
+  var modalSize;
+
+  if (size === 'sm') {
+    modalSize = 'max-w-sm';
+  } else if (size === 'lg') {
+    modalSize = 'max-w-6xl';
+  } else {
+    modalSize = 'max-w-3xl';
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "".concat(active ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none', " grid place-items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none transition-all duration-500"),
+    onClick: toggler
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "transform ".concat(active ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10', " w-auto my-6 mx-auto ").concat(modalSize, " transition-all duration-500")
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "border-0 p-6 ".concat(size === 'lg' ? 'rounded-xl shadow-xl' : 'rounded-lg shadow-lg', " flex flex-col w-full bg-white outline-none focus:outline-none"),
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    }
+  }, children))), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "".concat(active ? 'opacity-25 pointer-events-auto' : 'opacity-0 pointer-events-none', " fixed inset-0 z-40 bg-black transition-all duration-500")
+  }));
+}
+
+Modal.defaultProps = {
+  size: 'regular'
+};
+Modal.propTypes = {
+  children: _propTypes["default"].node.isRequired,
+  size: _propTypes["default"].string.isRequired,
+  active: _propTypes["default"].bool.isRequired,
+  toggler: _propTypes["default"].func.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/ModalBody.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/ModalBody.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = ModalBody;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ModalBody(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "relative flex-auto mb-6"
+  }, children);
+}
+
+ModalBody.propTypes = {
+  children: _propTypes["default"].node.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/ModalFooter.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/ModalFooter.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = ModalFooter;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ModalFooter(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "flex items-center justify-end gap-4"
+  }, children);
+}
+
+ModalFooter.propTypes = {
+  children: _propTypes["default"].node.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/ModalHeader.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/ModalHeader.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = ModalHeader;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ModalHeader(_ref) {
+  var children = _ref.children,
+      toggler = _ref.toggler;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "flex items-center justify-between mb-6"
+  }, /*#__PURE__*/_react["default"].createElement("h5", {
+    className: "text-gray-900 text-2xl font-bold mt-0 mb-0"
+  }, children), /*#__PURE__*/_react["default"].createElement("button", {
+    className: "p-1 bg-transparent absolute top-2 right-4 text-gray-900 text-3xl leading-none outline-none focus:outline-none",
+    onClick: toggler
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    className: "text-gray-900 text-3xl block"
+  }, "\xD7")));
+}
+
+ModalHeader.propTypes = {
+  children: _propTypes["default"].node.isRequired,
+  toggler: _propTypes["default"].func.isRequired
+};
+
+/***/ }),
+
 /***/ "./node_modules/@material-tailwind/react/NavbarInput.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/NavbarInput.js ***!
@@ -9180,7 +9350,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-// import { useLocation } from "react-router-dom";
 
 
 
@@ -9624,6 +9793,69 @@ function footer() {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Components-dashboard/MessageModal.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Components/Components-dashboard/MessageModal.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MessageModal)
+/* harmony export */ });
+/* harmony import */ var _material_tailwind_react_Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-tailwind/react/Modal */ "./node_modules/@material-tailwind/react/Modal.js");
+/* harmony import */ var _material_tailwind_react_ModalHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/ModalHeader */ "./node_modules/@material-tailwind/react/ModalHeader.js");
+/* harmony import */ var _material_tailwind_react_ModalBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/ModalBody */ "./node_modules/@material-tailwind/react/ModalBody.js");
+/* harmony import */ var _material_tailwind_react_ModalFooter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/ModalFooter */ "./node_modules/@material-tailwind/react/ModalFooter.js");
+/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+function MessageModal(_ref) {
+  var showModal = _ref.showModal,
+      setShowModal = _ref.setShowModal,
+      message = _ref.message;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_tailwind_react_Modal__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      size: "sm",
+      active: showModal,
+      toggler: function toggler() {
+        return setShowModal(false);
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_ModalHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        toggler: function toggler() {
+          return setShowModal(false);
+        },
+        children: "Message"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_ModalBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+          className: "text-base leading-relaxed text-gray-600 font-normal",
+          children: message
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_ModalFooter__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          color: "purple",
+          buttonType: "link",
+          onClick: function onClick(e) {
+            return setShowModal(false);
+          },
+          ripple: "dark",
+          children: "Close"
+        })
+      })]
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Components-dashboard/PageVisitsCard.js":
 /*!************************************************************************!*\
   !*** ./resources/js/Components/Components-dashboard/PageVisitsCard.js ***!
@@ -9908,15 +10140,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ SettingsForm)
 /* harmony export */ });
-/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
-/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
-/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
-/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
-/* harmony import */ var _material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Input */ "./node_modules/@material-tailwind/react/Input.js");
-/* harmony import */ var _material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Textarea */ "./node_modules/@material-tailwind/react/Textarea.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
+/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
+/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
+/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
+/* harmony import */ var _material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Input */ "./node_modules/@material-tailwind/react/Input.js");
+/* harmony import */ var _material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Textarea */ "./node_modules/@material-tailwind/react/Textarea.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _MessageModal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MessageModal */ "./resources/js/Components/Components-dashboard/MessageModal.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -9941,7 +10174,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function SettingsForm() {
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.useForm)({
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.useForm)({
     transaction_date: "",
     exchange: "",
     token_symbol: "",
@@ -9956,46 +10189,49 @@ function SettingsForm() {
       setData = _useForm.setData,
       post = _useForm.post,
       processing = _useForm.processing,
-      errors = _useForm.errors;
+      errors = _useForm.errors,
+      reset = _useForm.reset;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_7__.useState)(0),
+  var flash = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props.flash;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      totalPrice = _useState2[0],
-      setTotalPrice = _useState2[1];
+      showModal = _useState2[0],
+      setShowModal = _useState2[1];
 
-  function updatePrices(e) {
-    if (e.target.id === "valuePrice") setData("value_price", e.target.value);
-    if (e.target.id === "feePaid") setData("fee_price", e.target.value);
-    setTotalPrice(+data.value_price + +data.fee_price);
-  }
-
-  function submit(e) {
+  var submit = function submit(e) {
     e.preventDefault();
-    post(route("transaction.store"));
-  }
+    post(route("transaction.store"), {
+      preserveScroll: true,
+      onSuccess: function onSuccess() {
+        setShowModal(true);
+        reset();
+      }
+    });
+  };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "w-full flex items-center justify-between",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Add Transaction"
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
         onSubmit: submit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
           className: "text-purple-500 text-sm mt-3 mb-6 font-light uppercase",
           children: "Transaction Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "date",
               color: "purple",
               placeholder: "Transaction Date",
@@ -10005,9 +10241,9 @@ function SettingsForm() {
               },
               error: errors.transaction_date
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Exchange name",
@@ -10018,14 +10254,14 @@ function SettingsForm() {
               error: errors.exchange
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Cryptocurrency details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Token symbol",
@@ -10035,9 +10271,9 @@ function SettingsForm() {
               },
               error: errors.token_symbol
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Amount",
@@ -10048,14 +10284,14 @@ function SettingsForm() {
               error: errors.token_amount
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Payment details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-4/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Currency symbol",
@@ -10063,44 +10299,44 @@ function SettingsForm() {
               onChange: function onChange(e) {
                 return setData("price_symbol", e.target.value);
               },
-              success: "Total price: ".concat(totalPrice),
+              success: (data.value_price || data.fee_price) && "Total price paid: ".concat(+data.value_price + +data.fee_price, " ").concat(data.price_symbol.toUpperCase()),
               error: errors.price_symbol
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-4/12  mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "valuePrice",
               type: "text",
               color: "purple",
-              placeholder: "Price paid",
+              placeholder: "Value",
               value: data.value_price,
               onChange: function onChange(e) {
-                return updatePrices(e);
+                return setData("value_price", e.target.value);
               },
               error: errors.value_price
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-4/12  pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "feePaid",
               type: "text",
               color: "purple",
               placeholder: "Fee paid",
               value: data.fee_price,
               onChange: function onChange(e) {
-                return updatePrices(e);
+                return setData("fee_price", e.target.value);
               },
               error: errors.fee_price
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Additional Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-12/12 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Storage Information",
@@ -10110,9 +10346,9 @@ function SettingsForm() {
               },
               error: errors.storage_info
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "w-full lg:w-12/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
               color: "purple",
               placeholder: "Notes",
               value: data.notes,
@@ -10122,11 +10358,11 @@ function SettingsForm() {
               error: errors.notes
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "flex justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: "font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
               color: "purple",
               buttonType: "filled",
               size: "lg",
@@ -10134,11 +10370,16 @@ function SettingsForm() {
               block: false,
               iconOnly: false,
               ripple: "light",
+              disabled: processing,
               children: "Submit transaction"
             })
           })
         })]
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_MessageModal__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      showModal: showModal,
+      setShowModal: setShowModal,
+      message: flash.message
     })]
   });
 }
@@ -10203,7 +10444,7 @@ function Sidebar() {
           className: "mt-2 text-center w-full inline-block",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Heading6__WEBPACK_IMPORTED_MODULE_4__["default"], {
             color: "gray",
-            children: "Material Tailwind"
+            children: "Portfolio Tracker"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "flex flex-col",
@@ -12117,7 +12358,7 @@ function Dashboard() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */   "default": () => (/* binding */ Summary)
 /* harmony export */ });
 /* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
 /* harmony import */ var _Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/TableCard */ "./resources/js/Components/Components-dashboard/TableCard.js");
@@ -12130,7 +12371,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Dashboard() {
+function Summary() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
       title: "Dashboard"
@@ -12203,7 +12444,7 @@ function Dashboard() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Settings)
+/* harmony export */   "default": () => (/* binding */ TransactionCreate)
 /* harmony export */ });
 /* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
 /* harmony import */ var _Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/SettingsForm */ "./resources/js/Components/Components-dashboard/SettingsForm.js");
@@ -12218,7 +12459,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Settings() {
+function TransactionCreate() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.Head, {
       title: "Dashboard"

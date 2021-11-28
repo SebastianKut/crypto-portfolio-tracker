@@ -3,7 +3,7 @@ import TableCard from "@/Components/Components-dashboard/TableCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Dashboard() {
+export default function Summary() {
     return (
         <Authenticated>
             <Head title="Dashboard" />

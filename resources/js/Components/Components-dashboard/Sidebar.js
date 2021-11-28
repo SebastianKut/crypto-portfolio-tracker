@@ -22,7 +22,7 @@ export default function Sidebar() {
                         rel="noreferrer"
                         className="mt-2 text-center w-full inline-block"
                     >
-                        <H6 color="gray">Material Tailwind</H6>
+                        <H6 color="gray">Portfolio Tracker</H6>
                     </a>
                     <div className="flex flex-col">
                         <hr className="my-4 min-w-full" />

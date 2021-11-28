@@ -4,7 +4,7 @@ import ProfileCard from "@/Components/Components-dashboard/ProfileCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Settings() {
+export default function TransactionCreate() {
     return (
         <Authenticated>
             <Head title="Dashboard" />
