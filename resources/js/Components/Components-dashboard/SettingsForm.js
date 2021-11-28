@@ -8,22 +8,22 @@ import Textarea from "@material-tailwind/react/Textarea";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import MessageModal from "./MessageModal";
 import Popdown from "./Popdown";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function SettingsForm() {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        transaction_date: "",
-        exchange: "",
-        token_symbol: "",
-        token_id: "",
-        token_amount: "",
-        value_price: "",
-        fee_price: "",
-        currency_symbol: "",
-        currency_id: "",
-        storage_info: "",
-        notes: "",
-    });
-    const { flash } = usePage().props;
+    const { data, setData, post, processing, errors, clearErrors, reset } =
+        useForm({
+            transaction_date: "",
+            exchange: "",
+            token_symbol: "",
+            token_amount: "",
+            value_price: "",
+            fee_price: "",
+            currency_symbol: "",
+            storage_info: "",
+            notes: "",
+        });
+    const { flash, currencies, tokens } = usePage().props;
 
     const [showModal, setShowModal] = useState(false);
     const [showTokenPopdown, setShowTokenPopDown] = useState(false);
@@ -58,9 +58,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Transaction Date"
                                 value={data.transaction_date}
-                                onChange={(e) =>
-                                    setData("transaction_date", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("transaction_date", e.target.value);
+                                    clearErrors("transaction_date");
+                                }}
                                 error={errors.transaction_date}
                             />
                         </div>
@@ -70,9 +71,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Exchange name"
                                 value={data.exchange}
-                                onChange={(e) =>
-                                    setData("exchange", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("exchange", e.target.value);
+                                    clearErrors("exchange");
+                                }}
                                 error={errors.exchange}
                             />
                         </div>
@@ -91,6 +93,18 @@ export default function SettingsForm() {
                                 onClick={() => setShowTokenPopDown(true)}
                                 onChange={(e) => {
                                     setData("token_symbol", e.target.value);
+                                    clearErrors("token_symbol");
+                                    Inertia.get(
+                                        "create",
+                                        {
+                                            searchToken: e.target.value,
+                                        },
+                                        {
+                                            preserveState: true,
+                                            preserveScroll: true,
+                                            replace: true,
+                                        }
+                                    );
                                     e.target.value === ""
                                         ? setShowTokenPopDown(false)
                                         : setShowTokenPopDown(true);
@@ -100,9 +114,11 @@ export default function SettingsForm() {
                             {showTokenPopdown && (
                                 <Popdown
                                     setData={setData}
-                                    setShow={setShowTokenPopDown}
-                                    title="Choose token from the list"
-                                    dataSet={["token_id", "token_symbol"]}
+                                    dataField={"token_symbol"}
+                                    dataSet={tokens}
+                                    setShowPopDown={setShowTokenPopDown}
+                                    clearErrors={clearErrors}
+                                    title="Click token symbol to choose"
                                 />
                             )}
                         </div>
@@ -112,9 +128,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Amount"
                                 value={data.token_amount}
-                                onChange={(e) =>
-                                    setData("token_amount", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("token_amount", e.target.value);
+                                    clearErrors("token_amount");
+                                }}
                                 error={errors.token_amount}
                             />
                         </div>
@@ -133,18 +150,32 @@ export default function SettingsForm() {
                                 onClick={() => setShowCurrencyPopDown(true)}
                                 onChange={(e) => {
                                     setData("currency_symbol", e.target.value);
+                                    clearErrors("currency_symbol");
+                                    Inertia.get(
+                                        "create",
+                                        {
+                                            searchCurrency: e.target.value,
+                                        },
+                                        {
+                                            preserveState: true,
+                                            preserveScroll: true,
+                                            replace: true,
+                                        }
+                                    );
                                     e.target.value === ""
                                         ? setShowCurrencyPopDown(false)
                                         : setShowCurrencyPopDown(true);
                                 }}
-                                error={errors.price_symbol}
+                                error={errors.currency_symbol}
                             />
                             {showCurrencyPopdown && (
                                 <Popdown
                                     setData={setData}
-                                    setShow={setShowCurrencyPopDown}
-                                    title="Choose currency from the list"
-                                    dataSet={["currency_id", "currency_symbol"]}
+                                    dataField="currency_symbol"
+                                    dataSet={currencies}
+                                    setShowPopDown={setShowCurrencyPopDown}
+                                    clearErrors={clearErrors}
+                                    title="Click currency symbol to choose"
                                 />
                             )}
                         </div>
@@ -155,9 +186,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Value"
                                 value={data.value_price}
-                                onChange={(e) =>
-                                    setData("value_price", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("value_price", e.target.value);
+                                    clearErrors("value_price");
+                                }}
                                 error={errors.value_price}
                             />
                         </div>
@@ -168,14 +200,15 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Fee paid"
                                 value={data.fee_price}
-                                onChange={(e) =>
-                                    setData("fee_price", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("fee_price", e.target.value);
+                                    clearErrors("fee_price");
+                                }}
                                 success={
                                     (data.value_price || data.fee_price) &&
                                     `Total price paid: ${
                                         +data.value_price + +data.fee_price
-                                    } ${data.price_symbol.toUpperCase()}`
+                                    } ${data.currency_symbol.toUpperCase()}`
                                 }
                                 error={errors.fee_price}
                             />
@@ -192,9 +225,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Storage Information"
                                 value={data.storage_info}
-                                onChange={(e) =>
-                                    setData("storage_info", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("storage_info", e.target.value);
+                                    clearErrors("storage_info");
+                                }}
                                 error={errors.storage_info}
                             />
                         </div>
@@ -203,9 +237,10 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Notes"
                                 value={data.notes}
-                                onChange={(e) =>
-                                    setData("notes", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    setData("notes", e.target.value);
+                                    clearErrors("notes");
+                                }}
                                 error={errors.notes}
                             />
                         </div>

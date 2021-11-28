@@ -3252,62 +3252,6 @@ NavbarInput.propTypes = {
 
 /***/ }),
 
-/***/ "./node_modules/@material-tailwind/react/Popover.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/Popover.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
-
-var _react2 = _interopRequireDefault(__webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js"));
-
-var _tippy = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var Popover = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
-      placement = _ref.placement;
-  return /*#__PURE__*/_react["default"].createElement(_react2["default"], {
-    content: children,
-    placement: placement,
-    reference: ref,
-    trigger: "click",
-    animation: "shift-away",
-    arrow: _tippy.roundArrow,
-    className: "arrow-light",
-    interactive: true
-  });
-});
-Popover.defaultProps = {
-  placement: 'top'
-};
-Popover.propTypes = {
-  children: _propTypes["default"].node.isRequired,
-  placement: _propTypes["default"].string.isRequired
-};
-var _default = Popover;
-exports["default"] = _default;
-
-/***/ }),
-
 /***/ "./node_modules/@material-tailwind/react/PopoverBody.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@material-tailwind/react/PopoverBody.js ***!
@@ -10170,16 +10114,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Popdown)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
-/* harmony import */ var _material_tailwind_react_Popover__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/Popover */ "./node_modules/@material-tailwind/react/Popover.js");
-/* harmony import */ var _material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/PopoverContainer */ "./node_modules/@material-tailwind/react/PopoverContainer.js");
-/* harmony import */ var _material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/PopoverHeader */ "./node_modules/@material-tailwind/react/PopoverHeader.js");
-/* harmony import */ var _material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/PopoverBody */ "./node_modules/@material-tailwind/react/PopoverBody.js");
-/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
-/* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
+/* harmony import */ var _material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/PopoverContainer */ "./node_modules/@material-tailwind/react/PopoverContainer.js");
+/* harmony import */ var _material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/PopoverHeader */ "./node_modules/@material-tailwind/react/PopoverHeader.js");
+/* harmony import */ var _material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/PopoverBody */ "./node_modules/@material-tailwind/react/PopoverBody.js");
+/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
+/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -10191,57 +10131,34 @@ __webpack_require__.r(__webpack_exports__);
 
 function Popdown(_ref) {
   var setData = _ref.setData,
-      setShow = _ref.setShow,
+      setShowPopDown = _ref.setShowPopDown,
       title = _ref.title,
-      dataSet = _ref.dataSet;
+      dataField = _ref.dataField,
+      dataSet = _ref.dataSet,
+      clearErrors = _ref.clearErrors;
 
   var handleClick = function handleClick(e) {
-    console.log(dataSet);
-    setData(dataSet[0], e.target.id);
-    setData(dataSet[1], e.target.innerHTML);
-    setShow(false);
+    setData(dataField, e.target.innerHTML);
+    setShowPopDown(false);
+    clearErrors(dataField);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
         children: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("ul", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
-            className: "flex w-5 py-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-              rounded: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-              className: "ml-3 cursor-pointer",
-              id: "1",
-              onClick: handleClick,
-              children: "USD"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
-            className: "flex w-5 py-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-              rounded: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-              className: "ml-3 cursor-pointer",
-              id: "2",
-              onClick: handleClick,
-              children: "GBP"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
-            className: "flex w-5 py-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
-              rounded: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-              className: "ml-3 cursor-pointer",
-              id: "3",
-              onClick: handleClick,
-              children: "PLN"
-            })]
-          })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
+          children: dataSet.map(function (item, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
+              className: "flex w-5 py-2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                className: "ml-3 cursor-pointer",
+                onClick: handleClick,
+                children: item.symbol.toUpperCase()
+              }, index)
+            });
+          })
         })
       })]
     })
@@ -10400,7 +10317,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _MessageModal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MessageModal */ "./resources/js/Components/Components-dashboard/MessageModal.js");
 /* harmony import */ var _Popdown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Popdown */ "./resources/js/Components/Components-dashboard/Popdown.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -10425,17 +10343,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function SettingsForm() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.useForm)({
     transaction_date: "",
     exchange: "",
     token_symbol: "",
-    token_id: "",
     token_amount: "",
     value_price: "",
     fee_price: "",
     currency_symbol: "",
-    currency_id: "",
     storage_info: "",
     notes: ""
   }),
@@ -10444,9 +10361,13 @@ function SettingsForm() {
       post = _useForm.post,
       processing = _useForm.processing,
       errors = _useForm.errors,
+      clearErrors = _useForm.clearErrors,
       reset = _useForm.reset;
 
-  var flash = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props.flash;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props,
+      flash = _usePage$props.flash,
+      currencies = _usePage$props.currencies,
+      tokens = _usePage$props.tokens;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -10474,58 +10395,60 @@ function SettingsForm() {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "w-full flex items-center justify-between",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h2", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Add Transaction"
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("form", {
         onSubmit: submit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h6", {
           className: "text-purple-500 text-sm mt-3 mb-6 font-light uppercase",
           children: "Transaction Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "date",
               color: "purple",
               placeholder: "Transaction Date",
               value: data.transaction_date,
               onChange: function onChange(e) {
-                return setData("transaction_date", e.target.value);
+                setData("transaction_date", e.target.value);
+                clearErrors("transaction_date");
               },
               error: errors.transaction_date
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Exchange name",
               value: data.exchange,
               onChange: function onChange(e) {
-                return setData("exchange", e.target.value);
+                setData("exchange", e.target.value);
+                clearErrors("exchange");
               },
               error: errors.exchange
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Cryptocurrency details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Token symbol",
@@ -10535,36 +10458,47 @@ function SettingsForm() {
               },
               onChange: function onChange(e) {
                 setData("token_symbol", e.target.value);
+                clearErrors("token_symbol");
+                _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__.Inertia.get("create", {
+                  searchToken: e.target.value
+                }, {
+                  preserveState: true,
+                  preserveScroll: true,
+                  replace: true
+                });
                 e.target.value === "" ? setShowTokenPopDown(false) : setShowTokenPopDown(true);
               },
               error: errors.token_symbol
-            }), showTokenPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            }), showTokenPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
               setData: setData,
-              setShow: setShowTokenPopDown,
-              title: "Choose token from the list",
-              dataSet: ["token_id", "token_symbol"]
+              dataField: "token_symbol",
+              dataSet: tokens,
+              setShowPopDown: setShowTokenPopDown,
+              clearErrors: clearErrors,
+              title: "Click token symbol to choose"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Amount",
               value: data.token_amount,
               onChange: function onChange(e) {
-                return setData("token_amount", e.target.value);
+                setData("token_amount", e.target.value);
+                clearErrors("token_amount");
               },
               error: errors.token_amount
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Payment details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
             className: "w-full lg:w-4/12 pr-4 mb-10 font-light",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Currency symbol",
@@ -10574,77 +10508,91 @@ function SettingsForm() {
               },
               onChange: function onChange(e) {
                 setData("currency_symbol", e.target.value);
+                clearErrors("currency_symbol");
+                _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__.Inertia.get("create", {
+                  searchCurrency: e.target.value
+                }, {
+                  preserveState: true,
+                  preserveScroll: true,
+                  replace: true
+                });
                 e.target.value === "" ? setShowCurrencyPopDown(false) : setShowCurrencyPopDown(true);
               },
-              error: errors.price_symbol
-            }), showCurrencyPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              error: errors.currency_symbol
+            }), showCurrencyPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
               setData: setData,
-              setShow: setShowCurrencyPopDown,
-              title: "Choose currency from the list",
-              dataSet: ["currency_id", "currency_symbol"]
+              dataField: "currency_symbol",
+              dataSet: currencies,
+              setShowPopDown: setShowCurrencyPopDown,
+              clearErrors: clearErrors,
+              title: "Click currency symbol to choose"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-4/12  mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "valuePrice",
               type: "text",
               color: "purple",
               placeholder: "Value",
               value: data.value_price,
               onChange: function onChange(e) {
-                return setData("value_price", e.target.value);
+                setData("value_price", e.target.value);
+                clearErrors("value_price");
               },
               error: errors.value_price
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-4/12  pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "feePaid",
               type: "text",
               color: "purple",
               placeholder: "Fee paid",
               value: data.fee_price,
               onChange: function onChange(e) {
-                return setData("fee_price", e.target.value);
+                setData("fee_price", e.target.value);
+                clearErrors("fee_price");
               },
-              success: (data.value_price || data.fee_price) && "Total price paid: ".concat(+data.value_price + +data.fee_price, " ").concat(data.price_symbol.toUpperCase()),
+              success: (data.value_price || data.fee_price) && "Total price paid: ".concat(+data.value_price + +data.fee_price, " ").concat(data.currency_symbol.toUpperCase()),
               error: errors.fee_price
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Additional Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-12/12 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Storage Information",
               value: data.storage_info,
               onChange: function onChange(e) {
-                return setData("storage_info", e.target.value);
+                setData("storage_info", e.target.value);
+                clearErrors("storage_info");
               },
               error: errors.storage_info
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-12/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
               color: "purple",
               placeholder: "Notes",
               value: data.notes,
               onChange: function onChange(e) {
-                return setData("notes", e.target.value);
+                setData("notes", e.target.value);
+                clearErrors("notes");
               },
               error: errors.notes
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "flex justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
               color: "purple",
               buttonType: "filled",
               size: "lg",
@@ -10658,7 +10606,7 @@ function SettingsForm() {
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_MessageModal__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_MessageModal__WEBPACK_IMPORTED_MODULE_8__["default"], {
       showModal: showModal,
       setShowModal: setShowModal,
       message: flash.message

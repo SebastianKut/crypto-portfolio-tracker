@@ -37,13 +37,24 @@ class Transaction extends Model
             'fee_price'             => ['required', 'numeric', 'between:0,999999999.99'],
             'storage_info'          => ['required', 'string'],
             'notes'                 => ['required', 'string'],
+            'token_symbol'          => ['required', 'string'],
+            'currency_symbol'       => ['required', 'string'],
         ]);
     }
 
     public static function storeData($validatedData)
     {
-        $validatedData['user_id'] = auth()->id();
-
-        return Transaction::create($validatedData);
+        return Transaction::create([
+            'transaction_date'      => $validatedData['transaction_date'],
+            'exchange'              => $validatedData['exchange'],
+            'token_amount'          => $validatedData['token_amount'],
+            'value_price'           => $validatedData['value_price'],
+            'fee_price'             => $validatedData['fee_price'],
+            'storage_info'          => $validatedData['storage_info'],
+            'notes'                 => $validatedData['notes'],
+            'token_id'              => Token::where('symbol', $validatedData['token_symbol'])->value('id'),
+            'currency_id'           => Currency::where('symbol', $validatedData['currency_symbol'])->value('id'),
+            'user_id'               => auth()->id(),
+        ]);
     }
 }
