@@ -7,22 +7,27 @@ import Input from "@material-tailwind/react/Input";
 import Textarea from "@material-tailwind/react/Textarea";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import MessageModal from "./MessageModal";
+import Popdown from "./Popdown";
 
 export default function SettingsForm() {
     const { data, setData, post, processing, errors, reset } = useForm({
         transaction_date: "",
         exchange: "",
         token_symbol: "",
+        token_id: "",
         token_amount: "",
         value_price: "",
         fee_price: "",
-        price_symbol: "",
+        currency_symbol: "",
+        currency_id: "",
         storage_info: "",
         notes: "",
     });
     const { flash } = usePage().props;
 
     const [showModal, setShowModal] = useState(false);
+    const [showTokenPopdown, setShowTokenPopDown] = useState(false);
+    const [showCurrencyPopdown, setShowCurrencyPopDown] = useState(false);
 
     const submit = (e) => {
         e.preventDefault();
@@ -83,11 +88,23 @@ export default function SettingsForm() {
                                 color="purple"
                                 placeholder="Token symbol"
                                 value={data.token_symbol}
-                                onChange={(e) =>
-                                    setData("token_symbol", e.target.value)
-                                }
+                                onClick={() => setShowTokenPopDown(true)}
+                                onChange={(e) => {
+                                    setData("token_symbol", e.target.value);
+                                    e.target.value === ""
+                                        ? setShowTokenPopDown(false)
+                                        : setShowTokenPopDown(true);
+                                }}
                                 error={errors.token_symbol}
                             />
+                            {showTokenPopdown && (
+                                <Popdown
+                                    setData={setData}
+                                    setShow={setShowTokenPopDown}
+                                    title="Choose token from the list"
+                                    dataSet={["token_id", "token_symbol"]}
+                                />
+                            )}
                         </div>
                         <div className="w-full lg:w-6/12 pl-4 mb-10 font-light">
                             <Input
@@ -112,18 +129,24 @@ export default function SettingsForm() {
                                 type="text"
                                 color="purple"
                                 placeholder="Currency symbol"
-                                value={data.price_symbol}
-                                onChange={(e) =>
-                                    setData("price_symbol", e.target.value)
-                                }
-                                success={
-                                    (data.value_price || data.fee_price) &&
-                                    `Total price paid: ${
-                                        +data.value_price + +data.fee_price
-                                    } ${data.price_symbol.toUpperCase()}`
-                                }
+                                value={data.currency_symbol}
+                                onClick={() => setShowCurrencyPopDown(true)}
+                                onChange={(e) => {
+                                    setData("currency_symbol", e.target.value);
+                                    e.target.value === ""
+                                        ? setShowCurrencyPopDown(false)
+                                        : setShowCurrencyPopDown(true);
+                                }}
                                 error={errors.price_symbol}
                             />
+                            {showCurrencyPopdown && (
+                                <Popdown
+                                    setData={setData}
+                                    setShow={setShowCurrencyPopDown}
+                                    title="Choose currency from the list"
+                                    dataSet={["currency_id", "currency_symbol"]}
+                                />
+                            )}
                         </div>
                         <div className="w-full lg:w-4/12  mb-10 font-light">
                             <Input
@@ -147,6 +170,12 @@ export default function SettingsForm() {
                                 value={data.fee_price}
                                 onChange={(e) =>
                                     setData("fee_price", e.target.value)
+                                }
+                                success={
+                                    (data.value_price || data.fee_price) &&
+                                    `Total price paid: ${
+                                        +data.value_price + +data.fee_price
+                                    } ${data.price_symbol.toUpperCase()}`
                                 }
                                 error={errors.fee_price}
                             />

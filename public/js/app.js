@@ -3252,6 +3252,164 @@ NavbarInput.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/@material-tailwind/react/Popover.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/Popover.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _react2 = _interopRequireDefault(__webpack_require__(/*! @tippyjs/react */ "./node_modules/@tippyjs/react/dist/tippy-react.esm.js"));
+
+var _tippy = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var Popover = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var children = _ref.children,
+      placement = _ref.placement;
+  return /*#__PURE__*/_react["default"].createElement(_react2["default"], {
+    content: children,
+    placement: placement,
+    reference: ref,
+    trigger: "click",
+    animation: "shift-away",
+    arrow: _tippy.roundArrow,
+    className: "arrow-light",
+    interactive: true
+  });
+});
+Popover.defaultProps = {
+  placement: 'top'
+};
+Popover.propTypes = {
+  children: _propTypes["default"].node.isRequired,
+  placement: _propTypes["default"].string.isRequired
+};
+var _default = Popover;
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/PopoverBody.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/PopoverBody.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = PopoverHeader;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function PopoverHeader(_ref) {
+  var children = _ref.children,
+      className = _ref.className;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "text-gray-700 font-normal px-4 pb-4 ".concat(className)
+  }, children);
+}
+
+PopoverHeader.propTypes = {
+  children: _propTypes["default"].node.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/PopoverContainer.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/PopoverContainer.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = PopoverContainer;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function PopoverContainer(_ref) {
+  var children = _ref.children,
+      className = _ref.className;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg shadow-xl ".concat(className)
+  }, children);
+}
+
+PopoverContainer.propTypes = {
+  children: _propTypes["default"].node.isRequired
+};
+
+/***/ }),
+
+/***/ "./node_modules/@material-tailwind/react/PopoverHeader.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-tailwind/react/PopoverHeader.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = PopoverHeader;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function PopoverHeader(_ref) {
+  var children = _ref.children,
+      className = _ref.className;
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "text-gray-900 p-4 pb-2 uppercase font-bold ".concat(className)
+  }, children);
+}
+
+PopoverHeader.propTypes = {
+  children: _propTypes["default"].node.isRequired
+};
+
+/***/ }),
+
 /***/ "./node_modules/@material-tailwind/react/Progress.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@material-tailwind/react/Progress.js ***!
@@ -10000,6 +10158,98 @@ function PageVisitsCard() {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Components-dashboard/Popdown.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Components/Components-dashboard/Popdown.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Popdown)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
+/* harmony import */ var _material_tailwind_react_Popover__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/Popover */ "./node_modules/@material-tailwind/react/Popover.js");
+/* harmony import */ var _material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/PopoverContainer */ "./node_modules/@material-tailwind/react/PopoverContainer.js");
+/* harmony import */ var _material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/PopoverHeader */ "./node_modules/@material-tailwind/react/PopoverHeader.js");
+/* harmony import */ var _material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/PopoverBody */ "./node_modules/@material-tailwind/react/PopoverBody.js");
+/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
+/* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+
+function Popdown(_ref) {
+  var setData = _ref.setData,
+      setShow = _ref.setShow,
+      title = _ref.title,
+      dataSet = _ref.dataSet;
+
+  var handleClick = function handleClick(e) {
+    console.log(dataSet);
+    setData(dataSet[0], e.target.id);
+    setData(dataSet[1], e.target.innerHTML);
+    setShow(false);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_PopoverContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_PopoverHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: title
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_PopoverBody__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
+            className: "flex w-5 py-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
+              rounded: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+              className: "ml-3 cursor-pointer",
+              id: "1",
+              onClick: handleClick,
+              children: "USD"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
+            className: "flex w-5 py-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
+              rounded: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+              className: "ml-3 cursor-pointer",
+              id: "2",
+              onClick: handleClick,
+              children: "GBP"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("li", {
+            className: "flex w-5 py-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__["default"],
+              rounded: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+              className: "ml-3 cursor-pointer",
+              id: "3",
+              onClick: handleClick,
+              children: "PLN"
+            })]
+          })]
+        })
+      })]
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Components-dashboard/ProfileCard.js":
 /*!*********************************************************************!*\
   !*** ./resources/js/Components/Components-dashboard/ProfileCard.js ***!
@@ -10149,7 +10399,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Textarea */ "./node_modules/@material-tailwind/react/Textarea.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _MessageModal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MessageModal */ "./resources/js/Components/Components-dashboard/MessageModal.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Popdown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Popdown */ "./resources/js/Components/Components-dashboard/Popdown.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -10173,15 +10424,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function SettingsForm() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.useForm)({
     transaction_date: "",
     exchange: "",
     token_symbol: "",
+    token_id: "",
     token_amount: "",
     value_price: "",
     fee_price: "",
-    price_symbol: "",
+    currency_symbol: "",
+    currency_id: "",
     storage_info: "",
     notes: ""
   }),
@@ -10199,6 +10453,16 @@ function SettingsForm() {
       showModal = _useState2[0],
       setShowModal = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      showTokenPopdown = _useState4[0],
+      setShowTokenPopDown = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      showCurrencyPopdown = _useState6[0],
+      setShowCurrencyPopDown = _useState6[1];
+
   var submit = function submit(e) {
     e.preventDefault();
     post(route("transaction.store"), {
@@ -10210,28 +10474,28 @@ function SettingsForm() {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
         className: "w-full flex items-center justify-between",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Add Transaction"
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("form", {
         onSubmit: submit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
           className: "text-purple-500 text-sm mt-3 mb-6 font-light uppercase",
           children: "Transaction Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "date",
               color: "purple",
               placeholder: "Transaction Date",
@@ -10241,9 +10505,9 @@ function SettingsForm() {
               },
               error: errors.transaction_date
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Exchange name",
@@ -10254,26 +10518,35 @@ function SettingsForm() {
               error: errors.exchange
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Cryptocurrency details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
             className: "w-full lg:w-6/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Token symbol",
               value: data.token_symbol,
+              onClick: function onClick() {
+                return setShowTokenPopDown(true);
+              },
               onChange: function onChange(e) {
-                return setData("token_symbol", e.target.value);
+                setData("token_symbol", e.target.value);
+                e.target.value === "" ? setShowTokenPopDown(false) : setShowTokenPopDown(true);
               },
               error: errors.token_symbol
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            }), showTokenPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              setData: setData,
+              setShow: setShowTokenPopDown,
+              title: "Choose token from the list",
+              dataSet: ["token_id", "token_symbol"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Amount",
@@ -10284,27 +10557,35 @@ function SettingsForm() {
               error: errors.token_amount
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Payment details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
             className: "w-full lg:w-4/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Currency symbol",
-              value: data.price_symbol,
-              onChange: function onChange(e) {
-                return setData("price_symbol", e.target.value);
+              value: data.currency_symbol,
+              onClick: function onClick() {
+                return setShowCurrencyPopDown(true);
               },
-              success: (data.value_price || data.fee_price) && "Total price paid: ".concat(+data.value_price + +data.fee_price, " ").concat(data.price_symbol.toUpperCase()),
+              onChange: function onChange(e) {
+                setData("currency_symbol", e.target.value);
+                e.target.value === "" ? setShowCurrencyPopDown(false) : setShowCurrencyPopDown(true);
+              },
               error: errors.price_symbol
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            }), showCurrencyPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              setData: setData,
+              setShow: setShowCurrencyPopDown,
+              title: "Choose currency from the list",
+              dataSet: ["currency_id", "currency_symbol"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-4/12  mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "valuePrice",
               type: "text",
               color: "purple",
@@ -10315,9 +10596,9 @@ function SettingsForm() {
               },
               error: errors.value_price
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-4/12  pl-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               id: "feePaid",
               type: "text",
               color: "purple",
@@ -10326,17 +10607,18 @@ function SettingsForm() {
               onChange: function onChange(e) {
                 return setData("fee_price", e.target.value);
               },
+              success: (data.value_price || data.fee_price) && "Total price paid: ".concat(+data.value_price + +data.fee_price, " ").concat(data.price_symbol.toUpperCase()),
               error: errors.fee_price
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h6", {
           className: "text-purple-500 text-sm my-6 font-light uppercase",
           children: "Additional Information"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
           className: "flex flex-wrap mt-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-12/12 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               color: "purple",
               placeholder: "Storage Information",
@@ -10346,9 +10628,9 @@ function SettingsForm() {
               },
               error: errors.storage_info
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "w-full lg:w-12/12 pr-4 mb-10 font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Textarea__WEBPACK_IMPORTED_MODULE_6__["default"], {
               color: "purple",
               placeholder: "Notes",
               value: data.notes,
@@ -10358,11 +10640,11 @@ function SettingsForm() {
               error: errors.notes
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
           className: "flex justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
             className: "font-light",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
               color: "purple",
               buttonType: "filled",
               size: "lg",
@@ -10376,7 +10658,7 @@ function SettingsForm() {
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_MessageModal__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_MessageModal__WEBPACK_IMPORTED_MODULE_8__["default"], {
       showModal: showModal,
       setShowModal: setShowModal,
       message: flash.message
