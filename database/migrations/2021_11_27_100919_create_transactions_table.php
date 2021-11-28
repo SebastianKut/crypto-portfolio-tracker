@@ -18,15 +18,17 @@ class CreateTransactionsTable extends Migration
             $table->foreignId('user_id');
             $table->date('transaction_date');
             $table->string('exchange');
-            $table->string('token_symbol', 10);
+            $table->foreignId('token_id');
             $table->float('token_amount', 16, 8);
             $table->float('value_price', 11, 2);
             $table->float('fee_price', 11, 2);
-            $table->string('price_symbol', 10);
+            $table->foreignId('currency_id');
             $table->string('storage_info');
             $table->text('notes');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('token_id')->references('id')->on('tokens')->onDelete('cascade');
+            $table->foreign('currency_id')->references('id')->on('currencies')->onDelete('cascade');
         });
     }
 

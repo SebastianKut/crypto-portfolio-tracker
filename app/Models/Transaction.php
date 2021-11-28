@@ -16,17 +16,25 @@ class Transaction extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function token()
+    {
+        return $this->belongsTo(Token::class);
+    }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
+
     public static function validateData($request)
     {
 
         return $request->validate([
             'transaction_date'      => ['required', 'date'],
             'exchange'              => ['required', 'string'],
-            'token_symbol'          => ['required', 'string', 'max:10'],
             'token_amount'          => ['required', 'numeric', 'between:0,99999999.99999999'],
             'value_price'           => ['required', 'numeric', 'between:0,999999999.99'],
             'fee_price'             => ['required', 'numeric', 'between:0,999999999.99'],
-            'price_symbol'          => ['required', 'string', 'max:10'],
             'storage_info'          => ['required', 'string'],
             'notes'                 => ['required', 'string'],
         ]);
