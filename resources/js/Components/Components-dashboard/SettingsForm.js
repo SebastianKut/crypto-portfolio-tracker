@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
@@ -39,6 +39,34 @@ export default function SettingsForm() {
             },
         });
     };
+
+    const tokenPopdown = useRef();
+    const currencyPopdown = useRef();
+
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            if (
+                showTokenPopdown &&
+                tokenPopdown.current &&
+                !tokenPopdown.current.contains(e.target)
+            )
+                setShowTokenPopDown(false);
+
+            if (
+                showCurrencyPopdown &&
+                currencyPopdown.current &&
+                !currencyPopdown.current.contains(e.target)
+            )
+                setShowCurrencyPopDown(false);
+        };
+
+        document.addEventListener("mousedown", checkIfClickedOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickedOutside);
+        };
+    }, [showTokenPopdown, showCurrencyPopdown]);
+
     return (
         <Card>
             <CardHeader color="purple" contentPosition="none">
@@ -112,14 +140,17 @@ export default function SettingsForm() {
                                 error={errors.token_symbol}
                             />
                             {showTokenPopdown && (
-                                <Popdown
-                                    setData={setData}
-                                    dataField={"token_symbol"}
-                                    dataSet={tokens}
-                                    setShowPopDown={setShowTokenPopDown}
-                                    clearErrors={clearErrors}
-                                    title="Click token symbol to choose"
-                                />
+                                //functional component cannot be given refs, thats why wrapped in div
+                                <div ref={tokenPopdown}>
+                                    <Popdown
+                                        setData={setData}
+                                        dataField={"token_symbol"}
+                                        dataSet={tokens}
+                                        setShowPopDown={setShowTokenPopDown}
+                                        clearErrors={clearErrors}
+                                        title="Click token symbol to choose"
+                                    />
+                                </div>
                             )}
                         </div>
                         <div className="w-full lg:w-6/12 pl-4 mb-10 font-light">
@@ -169,14 +200,16 @@ export default function SettingsForm() {
                                 error={errors.currency_symbol}
                             />
                             {showCurrencyPopdown && (
-                                <Popdown
-                                    setData={setData}
-                                    dataField="currency_symbol"
-                                    dataSet={currencies}
-                                    setShowPopDown={setShowCurrencyPopDown}
-                                    clearErrors={clearErrors}
-                                    title="Click currency symbol to choose"
-                                />
+                                <div ref={currencyPopdown}>
+                                    <Popdown
+                                        setData={setData}
+                                        dataField="currency_symbol"
+                                        dataSet={currencies}
+                                        setShowPopDown={setShowCurrencyPopDown}
+                                        clearErrors={clearErrors}
+                                        title="Click currency symbol to choose"
+                                    />
+                                </div>
                             )}
                         </div>
                         <div className="w-full lg:w-4/12  mb-10 font-light">

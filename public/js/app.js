@@ -10395,6 +10395,19 @@ function SettingsForm() {
     });
   };
 
+  var tokenPopdown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var currencyPopdown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var checkIfClickedOutside = function checkIfClickedOutside(e) {
+      if (showTokenPopdown && tokenPopdown.current && !tokenPopdown.current.contains(e.target)) setShowTokenPopDown(false);
+      if (showCurrencyPopdown && currencyPopdown.current && !currencyPopdown.current.contains(e.target)) setShowCurrencyPopDown(false);
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+    return function () {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [showTokenPopdown, showCurrencyPopdown]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
       color: "purple",
@@ -10469,13 +10482,19 @@ function SettingsForm() {
                 e.target.value === "" ? setShowTokenPopDown(false) : setShowTokenPopDown(true);
               },
               error: errors.token_symbol
-            }), showTokenPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              setData: setData,
-              dataField: "token_symbol",
-              dataSet: tokens,
-              setShowPopDown: setShowTokenPopDown,
-              clearErrors: clearErrors,
-              title: "Click token symbol to choose"
+            }), showTokenPopdown &&
+            /*#__PURE__*/
+            //functional component cannot be given refs, thats why wrapped in div
+            (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+              ref: tokenPopdown,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                setData: setData,
+                dataField: "token_symbol",
+                dataSet: tokens,
+                setShowPopDown: setShowTokenPopDown,
+                clearErrors: clearErrors,
+                title: "Click token symbol to choose"
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-6/12 pl-4 mb-10 font-light",
@@ -10519,13 +10538,16 @@ function SettingsForm() {
                 e.target.value === "" ? setShowCurrencyPopDown(false) : setShowCurrencyPopDown(true);
               },
               error: errors.currency_symbol
-            }), showCurrencyPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              setData: setData,
-              dataField: "currency_symbol",
-              dataSet: currencies,
-              setShowPopDown: setShowCurrencyPopDown,
-              clearErrors: clearErrors,
-              title: "Click currency symbol to choose"
+            }), showCurrencyPopdown && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+              ref: currencyPopdown,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Popdown__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                setData: setData,
+                dataField: "currency_symbol",
+                dataSet: currencies,
+                setShowPopDown: setShowCurrencyPopDown,
+                clearErrors: clearErrors,
+                title: "Click currency symbol to choose"
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "w-full lg:w-4/12  mb-10 font-light",
