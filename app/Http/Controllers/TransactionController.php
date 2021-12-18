@@ -15,7 +15,8 @@ class TransactionController extends Controller
         return Inertia::render('Pages-dashboard/TransactionCreate', [
             'tokens' => Token::query()
                 ->when(request('searchToken'), function ($query, $search) {
-                    $query->where('symbol', 'like', '%' . $search . '%');
+                    $query
+                        ->where('symbol', '=', $search);
                 })
                 ->limit(25)
                 ->get('symbol'),
