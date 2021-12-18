@@ -8,7 +8,7 @@ import Team2 from "../../../../public/img/team-2-800x800.jpg";
 import Team3 from "../../../../public/img/team-3-800x800.jpg";
 import Team4 from "../../../../public/img/team-4-470x470.png";
 
-export default function CardTable() {
+export default function CardTable({ transactions }) {
     return (
         <Card>
             <CardHeader color="purple" contentPosition="left">
@@ -40,166 +40,52 @@ export default function CardTable() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex items-stretch">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="self-center">
-                                            Bitcoin BTC
-                                        </div>
-                                    </div>
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    16.34
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    $350.45
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $20.12
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.3M
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.21M
-                                </th>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex items-stretch">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="self-center">
-                                            Bitcoin BTC
-                                        </div>
-                                    </div>
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    16.34
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    $350.45
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $20.12
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.3M
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.21M
-                                </th>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex items-stretch">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="self-center">
-                                            Bitcoin BTC
-                                        </div>
-                                    </div>
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    16.34
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    $350.45
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $20.12
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.3M
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.21M
-                                </th>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex items-stretch">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="self-center">
-                                            Bitcoin BTC
-                                        </div>
-                                    </div>
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    16.34
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    $350.45
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $20.12
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.3M
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.21M
-                                </th>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <div className="flex items-stretch">
-                                        <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
-                                            <Image
-                                                src={Team1}
-                                                rounded
-                                                alt="..."
-                                            />
-                                        </div>
-                                        <div className="self-center">
-                                            Bitcoin BTC
-                                        </div>
-                                    </div>
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    16.34
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>{" "}
-                                    $350.45
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $20.12
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.3M
-                                </th>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $2.21M
-                                </th>
-                            </tr>
+                            {transactions.map((transaction, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            <div className="flex items-stretch">
+                                                <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
+                                                    <Image
+                                                        src={Team1}
+                                                        rounded
+                                                        alt="..."
+                                                    />
+                                                </div>
+                                                <div className="self-center">
+                                                    {`${
+                                                        transaction.token_name
+                                                    } ${transaction.token_symbol.toUpperCase()}`}
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {transaction.token_amount}
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency:
+                                                    transaction.currency_symbol,
+                                            }).format(transaction.total_cost)}
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency:
+                                                    transaction.currency_symbol,
+                                            }).format(transaction.unit_cost)}
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            $2.3M
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            $2.21M
+                                        </th>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>

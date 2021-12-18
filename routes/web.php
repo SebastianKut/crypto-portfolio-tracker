@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/overview', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/transaction/create', [\App\Http\Controllers\TransactionController::class, 'create'])->name('add transaction');
     Route::post('/transaction/store', [\App\Http\Controllers\TransactionController::class, 'store'])->name('transaction.store');
-    Route::inertia('/summary', 'Pages-dashboard/Summary')->name('summary');
+    Route::get('/transaction/summary', [\App\Http\Controllers\TransactionController::class, 'index'])->name('summary');
 });
 
 require __DIR__ . '/auth.php';

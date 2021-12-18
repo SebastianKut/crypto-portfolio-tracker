@@ -10399,8 +10399,15 @@ function SettingsForm() {
   var currencyPopdown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var checkIfClickedOutside = function checkIfClickedOutside(e) {
-      if (showTokenPopdown && tokenPopdown.current && !tokenPopdown.current.contains(e.target)) setShowTokenPopDown(false);
-      if (showCurrencyPopdown && currencyPopdown.current && !currencyPopdown.current.contains(e.target)) setShowCurrencyPopDown(false);
+      if (showTokenPopdown && tokenPopdown.current && !tokenPopdown.current.contains(e.target)) {
+        setShowTokenPopDown(false);
+        setData("token_symbol", "");
+      }
+
+      if (showCurrencyPopdown && currencyPopdown.current && !currencyPopdown.current.contains(e.target)) {
+        setShowCurrencyPopDown(false);
+        setData("currency_symbol", "");
+      }
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside);
@@ -10868,7 +10875,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function CardTable() {
+function CardTable(_ref) {
+  var transactions = _ref.transactions;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
       color: "purple",
@@ -10904,183 +10912,51 @@ function CardTable() {
                 children: "Gain/Loss"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tbody", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex items-stretch",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "self-center",
-                    children: "Bitcoin BTC"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "16.34"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "$350.45"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$20.12"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.3M"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.21M"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex items-stretch",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "self-center",
-                    children: "Bitcoin BTC"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "16.34"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "$350.45"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$20.12"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.3M"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.21M"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex items-stretch",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "self-center",
-                    children: "Bitcoin BTC"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "16.34"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "$350.45"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$20.12"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.3M"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.21M"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex items-stretch",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "self-center",
-                    children: "Bitcoin BTC"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "16.34"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "$350.45"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$20.12"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.3M"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.21M"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex items-stretch",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                      src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                      rounded: true,
-                      alt: "..."
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    className: "self-center",
-                    children: "Bitcoin BTC"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "16.34"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
-                  className: "fas fa-circle fa-sm text-orange-500 mr-2"
-                }), " ", "$350.45"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$20.12"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.3M"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$2.21M"
-              })]
-            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
+            children: transactions.map(function (transaction, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    className: "flex items-stretch",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                      className: "w-10 h-10 rounded-full border-2 border-white mr-2",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                        src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
+                        rounded: true,
+                        alt: "..."
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                      className: "self-center",
+                      children: "".concat(transaction.token_name, " ").concat(transaction.token_symbol.toUpperCase())
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: transaction.token_amount
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                    className: "fas fa-circle fa-sm text-orange-500 mr-2"
+                  }), new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: transaction.currency_symbol
+                  }).format(transaction.total_cost)]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: transaction.currency_symbol
+                  }).format(transaction.unit_cost)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: "$2.3M"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: "$2.21M"
+                })]
+              }, index);
+            })
           })]
         })
       })
@@ -12623,7 +12499,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Summary() {
+function Summary(_ref) {
+  var transactions = _ref.transactions;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
       title: "Dashboard"
@@ -12678,7 +12555,9 @@ function Summary() {
         className: "container mx-auto max-w-full",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "grid grid-cols-1 px-4 mb-16",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            transactions: transactions
+          })
         })
       })
     })]

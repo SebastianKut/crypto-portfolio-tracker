@@ -49,15 +49,19 @@ export default function SettingsForm() {
                 showTokenPopdown &&
                 tokenPopdown.current &&
                 !tokenPopdown.current.contains(e.target)
-            )
+            ) {
                 setShowTokenPopDown(false);
+                setData("token_symbol", "");
+            }
 
             if (
                 showCurrencyPopdown &&
                 currencyPopdown.current &&
                 !currencyPopdown.current.contains(e.target)
-            )
+            ) {
                 setShowCurrencyPopDown(false);
+                setData("currency_symbol", "");
+            }
         };
 
         document.addEventListener("mousedown", checkIfClickedOutside);

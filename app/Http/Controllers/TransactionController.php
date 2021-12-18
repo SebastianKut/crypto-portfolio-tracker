@@ -29,6 +29,15 @@ class TransactionController extends Controller
         ]);
     }
 
+    public function index()
+    {
+        $transactions = Transaction::latest()->get();
+
+        return Inertia::render('Pages-dashboard/Summary', [
+            'transactions' => $transactions,
+        ]);
+    }
+
     public function store(Request $request)
     {
         Transaction::storeData(Transaction::validateData($request));

@@ -3,7 +3,7 @@ import TableCard from "@/Components/Components-dashboard/TableCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Summary() {
+export default function Summary({ transactions }) {
     return (
         <Authenticated>
             <Head title="Dashboard" />
@@ -57,7 +57,7 @@ export default function Summary() {
             <div className="px-3 md:px-8 h-auto -mt-24">
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 px-4 mb-16">
-                        <TableCard />
+                        <TableCard transactions={transactions} />
                     </div>
                 </div>
             </div>
