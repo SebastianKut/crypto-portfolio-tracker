@@ -30,17 +30,16 @@ class TransactionController extends Controller
         ]);
     }
 
-    public function index()
+    public function index(Request $request, $currency)
     {
-        //get currency from route request to index() method
+        $transactions = json_decode(Transaction::latest()->where('user_id', auth()->user()->id)->get()->toJson());
 
-        //create array of tokens from transactions collection
+        $tokens = [];
+        foreach ($transactions as $transaction) {
+            array_push($tokens, $transaction->token_identifier);
+        };
 
-        //pass it all to fetchMarketData
-
-        $transactions = Transaction::latest()->get();
-
-        $marketData = CoinGecko::fetchMarketData('usd', ['bitcoin', 'ethereum']);
+        $marketData = CoinGecko::fetchMarketData($currency, $tokens);
 
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,

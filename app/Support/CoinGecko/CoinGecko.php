@@ -14,4 +14,13 @@ class CoinGecko
 
         return json_decode($response->body());
     }
+
+    public static function fetchPrices(array $currencies, $tokens)
+    {
+        $requestURL = 'https://api.coingecko.com/api/v3/simple/price?ids=' . implode('%2C', $tokens) . '&vs_currencies=' . implode('%2C', $currencies);
+
+        $response = Http::get($requestURL);
+
+        return json_decode($response->body());
+    }
 }

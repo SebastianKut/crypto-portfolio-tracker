@@ -3,12 +3,12 @@ import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 import Image from "@material-tailwind/react/Image";
 import Progress from "@material-tailwind/react/Progress";
-import Team1 from "../../../../public/img/team-1-800x800.jpg";
-import Team2 from "../../../../public/img/team-2-800x800.jpg";
-import Team3 from "../../../../public/img/team-3-800x800.jpg";
-import Team4 from "../../../../public/img/team-4-470x470.png";
 
-export default function CardTable({ transactions }) {
+export default function CardTable({ transactions, marketData }) {
+    function findMarketDataByTokenId(tokenId) {
+        return marketData.find((element) => element.id === tokenId);
+    }
+
     return (
         <Card>
             <CardHeader color="purple" contentPosition="left">
@@ -21,6 +21,9 @@ export default function CardTable({ transactions }) {
                             <tr>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Cryptocurrency
+                                </th>
+                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                    Current Price
                                 </th>
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Token Amount
@@ -41,13 +44,19 @@ export default function CardTable({ transactions }) {
                         </thead>
                         <tbody>
                             {transactions.map((transaction, index) => {
+                                const transactionCurrentMarketData =
+                                    findMarketDataByTokenId(
+                                        transaction.token_identifier
+                                    );
                                 return (
                                     <tr key={index}>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             <div className="flex items-stretch">
                                                 <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
                                                     <Image
-                                                        src={Team1}
+                                                        src={
+                                                            transactionCurrentMarketData.image
+                                                        }
                                                         rounded
                                                         alt="..."
                                                     />
@@ -58,6 +67,14 @@ export default function CardTable({ transactions }) {
                                                     } ${transaction.token_symbol.toUpperCase()}`}
                                                 </div>
                                             </div>
+                                        </th>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency: "usd",
+                                            }).format(
+                                                transactionCurrentMarketData.current_price
+                                            )}
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {transaction.token_amount}
@@ -78,10 +95,23 @@ export default function CardTable({ transactions }) {
                                             }).format(transaction.unit_cost)}
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                            $2.3M
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency: "usd",
+                                            }).format(
+                                                transaction.token_amount *
+                                                    transactionCurrentMarketData.current_price
+                                            )}
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                            $2.21M
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency: "usd",
+                                            }).format(
+                                                transaction.token_amount *
+                                                    transactionCurrentMarketData.current_price -
+                                                    transaction.total_cost
+                                            )}
                                         </th>
                                     </tr>
                                 );

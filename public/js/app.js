@@ -10697,7 +10697,7 @@ function Sidebar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "rounded-lg mb-2 ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("summary"),
+                href: route("summary", "usd"),
                 className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("summary") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
                   name: "toc",
@@ -10821,15 +10821,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
 /* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
 /* harmony import */ var _material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Progress */ "./node_modules/@material-tailwind/react/Progress.js");
-/* harmony import */ var _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../public/img/team-1-800x800.jpg */ "./public/img/team-1-800x800.jpg");
-/* harmony import */ var _public_img_team_2_800x800_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../public/img/team-2-800x800.jpg */ "./public/img/team-2-800x800.jpg");
-/* harmony import */ var _public_img_team_3_800x800_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../public/img/team-3-800x800.jpg */ "./public/img/team-3-800x800.jpg");
-/* harmony import */ var _public_img_team_4_470x470_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../public/img/team-4-470x470.png */ "./public/img/team-4-470x470.png");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -10838,84 +10830,108 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function CardTable(_ref) {
-  var transactions = _ref.transactions;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var transactions = _ref.transactions,
+      marketData = _ref.marketData;
+
+  function findMarketDataByTokenId(tokenId) {
+    return marketData.find(function (element) {
+      return element.id === tokenId;
+    });
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
       color: "purple",
       contentPosition: "left",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
         className: "text-white text-2xl",
         children: "Portfolio Details"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Cryptocurrency"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
+                children: "Current Price"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Token Amount"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Unit Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Value"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Gain/Loss"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("tbody", {
             children: transactions.map(function (transaction, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              var transactionCurrentMarketData = findMarketDataByTokenId(transaction.token_identifier);
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                     className: "flex items-stretch",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                        src: _public_img_team_1_800x800_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                        src: transactionCurrentMarketData.image,
                         rounded: true,
                         alt: "..."
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "self-center",
                       children: "".concat(transaction.token_name, " ").concat(transaction.token_symbol.toUpperCase())
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: "usd"
+                  }).format(transactionCurrentMarketData.current_price)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: transaction.token_amount
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
                     className: "fas fa-circle fa-sm text-orange-500 mr-2"
                   }), new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: transaction.currency_symbol
                   }).format(transaction.total_cost)]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: transaction.currency_symbol
                   }).format(transaction.unit_cost)
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: "$2.3M"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: "usd"
+                  }).format(transaction.token_amount * transactionCurrentMarketData.current_price)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: "$2.21M"
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: "usd"
+                  }).format(transaction.token_amount * transactionCurrentMarketData.current_price - transaction.total_cost)
                 })]
               }, index);
             })
@@ -12462,7 +12478,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Summary(_ref) {
-  var transactions = _ref.transactions;
+  var transactions = _ref.transactions,
+      marketData = _ref.marketData;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
       title: "Dashboard"
@@ -12518,7 +12535,8 @@ function Summary(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "grid grid-cols-1 px-4 mb-16",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Components_dashboard_TableCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            transactions: transactions
+            transactions: transactions,
+            marketData: marketData
           })
         })
       })
@@ -29393,51 +29411,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/team-1-800x800.jpg?fa5a7ac2c81a43925586ea85f2fea332");
-
-/***/ }),
-
-/***/ "./public/img/team-2-800x800.jpg":
-/*!***************************************!*\
-  !*** ./public/img/team-2-800x800.jpg ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/team-2-800x800.jpg?3e08ef145920c93bbe320add0d2ef58d");
-
-/***/ }),
-
-/***/ "./public/img/team-3-800x800.jpg":
-/*!***************************************!*\
-  !*** ./public/img/team-3-800x800.jpg ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/team-3-800x800.jpg?19201574ed51f77138a739c0452ca104");
-
-/***/ }),
-
-/***/ "./public/img/team-4-470x470.png":
-/*!***************************************!*\
-  !*** ./public/img/team-4-470x470.png ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/team-4-470x470.png?4ef82ef45a9598d24c4c951ead4d626a");
 
 /***/ }),
 
