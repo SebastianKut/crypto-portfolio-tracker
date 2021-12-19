@@ -9840,56 +9840,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("footer", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("footer", {
     className: "py-6 px-16 border-t border-gray-200 font-light flex flex-col lg:flex-row justify-between items-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
       className: "text-gray-700 mb-6 lg:mb-0",
-      children: ["Copyright \xA9 ", new Date().getFullYear(), ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-        href: "https://www.creative-tim.com?ref=mtdk",
+      children: ["Copyright \xA9 ", new Date().getFullYear(), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        href: "https://sebastiankut.com",
         target: "_blank",
         rel: "noreferrer",
         className: "text-light-blue-500 hover:text-light-blue-700",
-        children: "Creative Tim"
+        children: "Sebastian Kut"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-      className: "list-unstyled flex",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-        className: "mr-6",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          className: "text-gray-700 hover:text-gray-900 font-medium block text-sm",
-          target: "_blank",
-          rel: "noreferrer",
-          href: "https://www.creative-tim.com/presentation?ref=mtdk",
-          children: "About Us"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-        className: "mr-6",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          className: "text-gray-700 hover:text-gray-900 font-medium block text-sm",
-          target: "_blank",
-          rel: "noreferrer",
-          href: "https://www.creative-tim.com/blog/?ref=mtdk",
-          children: "Blog"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-        className: "mr-6",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          className: "text-gray-700 hover:text-gray-900 font-medium block text-sm",
-          target: "_blank",
-          rel: "noreferrer",
-          href: "https://github.com/creativetimofficial/material-tailwind-dashboard-react/blob/main/LICENSE?ref=mtdk",
-          children: "MIT License"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          className: "text-gray-700 hover:text-gray-900 font-medium block text-sm",
-          target: "_blank",
-          rel: "noreferrer",
-          href: "https://creative-tim.com/contact-us?ref=mtdk",
-          children: "Contact Us"
-        })
-      })]
-    })]
+    })
   });
 }
 
@@ -10630,7 +10592,7 @@ function SettingsForm() {
               iconOnly: false,
               ripple: "light",
               disabled: processing,
-              children: "Submit transaction"
+              children: "Add to portfolio"
             })
           })
         })]
@@ -12643,15 +12605,12 @@ function TransactionCreate() {
       className: "px-3 md:px-8 h-auto -mt-24",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "container mx-auto max-w-full",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "grid grid-cols-1 xl:grid-cols-6",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "xl:col-start-1 xl:col-end-5 px-4 mb-16",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "xl:col-start-5 xl:col-end-7 px-4 mb-16 mt-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_ProfileCard__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-          })]
+          })
         })
       })
     })]

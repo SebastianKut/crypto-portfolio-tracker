@@ -294,7 +294,7 @@ export default function SettingsForm() {
                                 ripple="light"
                                 disabled={processing}
                             >
-                                Submit transaction
+                                Add to portfolio
                             </Button>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Currency;
 use App\Models\Token;
 use App\Models\Transaction;
+use App\Support\CoinGecko\CoinGecko;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -31,10 +32,19 @@ class TransactionController extends Controller
 
     public function index()
     {
+        //get currency from route request to index() method
+
+        //create array of tokens from transactions collection
+
+        //pass it all to fetchMarketData
+
         $transactions = Transaction::latest()->get();
 
+        $marketData = CoinGecko::fetchMarketData('usd', ['bitcoin', 'ethereum']);
+
         return Inertia::render('Pages-dashboard/Summary', [
-            'transactions' => $transactions,
+            'transactions'  => $transactions,
+            'marketData'    => $marketData,
         ]);
     }
 
