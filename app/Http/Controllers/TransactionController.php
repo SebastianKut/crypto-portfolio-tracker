@@ -6,6 +6,7 @@ use App\Models\Currency;
 use App\Models\Token;
 use App\Models\Transaction;
 use App\Support\CoinGecko\CoinGecko;
+use App\Support\ExchangeRate\ExchangeRate;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -41,9 +42,12 @@ class TransactionController extends Controller
 
         $marketData = CoinGecko::fetchMarketData($currency, $tokens);
 
+        $exchangeRates = ExchangeRate::fetchExchangeRates($currency);
+
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,
             'marketData'    => $marketData,
+            'exchangeRates' => $exchangeRates,
         ]);
     }
 

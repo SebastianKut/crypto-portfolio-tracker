@@ -3,7 +3,7 @@ import TableCard from "@/Components/Components-dashboard/TableCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Summary({ transactions, marketData }) {
+export default function Summary({ transactions, marketData, exchangeRates }) {
     return (
         <Authenticated>
             <Head title="Dashboard" />
@@ -60,6 +60,7 @@ export default function Summary({ transactions, marketData }) {
                         <TableCard
                             transactions={transactions}
                             marketData={marketData}
+                            exchangeRates={exchangeRates}
                         />
                     </div>
                 </div>

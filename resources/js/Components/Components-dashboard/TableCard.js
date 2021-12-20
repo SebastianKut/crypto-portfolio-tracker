@@ -1,18 +1,77 @@
+import { useState } from "react";
+import { Inertia } from "@inertiajs/inertia";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 import Image from "@material-tailwind/react/Image";
 import Progress from "@material-tailwind/react/Progress";
+import Dropdown from "@material-tailwind/react/Dropdown";
+import DropdownItem from "@material-tailwind/react/DropdownItem";
 
-export default function CardTable({ transactions, marketData }) {
+export default function CardTable({ transactions, marketData, exchangeRates }) {
+    const [displayCurrency, setDisplayCurrency] = useState(
+        marketData.base_currency
+    );
+
     function findMarketDataByTokenId(tokenId) {
-        return marketData.find((element) => element.id === tokenId);
+        return marketData.data.find((element) => element.id === tokenId);
     }
+
+    function convertCurrency(fromCurrency, amount) {
+        return amount / exchangeRates.rates[fromCurrency.toUpperCase()];
+    }
+
+    const handleCurrencyChange = (e) => {
+        let currency = e.target.innerText;
+        Inertia.get(route("summary", currency));
+    };
 
     return (
         <Card>
-            <CardHeader color="purple" contentPosition="left">
-                <h2 className="text-white text-2xl">Portfolio Details</h2>
+            <CardHeader color="purple" contentPosition="none">
+                <div className="w-full flex items-center justify-between">
+                    <h2 className="text-white text-2xl">Portfolio Details</h2>
+                    <Dropdown
+                        color="transparent"
+                        buttonType="link"
+                        size="lg"
+                        placement="bottom-start"
+                        buttonText={displayCurrency.toUpperCase()}
+                        size="lg"
+                        rounded={false}
+                        block={false}
+                        ripple="light"
+                    >
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            GBP
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            USD
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            AUD
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            PLN
+                        </DropdownItem>
+                    </Dropdown>
+                </div>
             </CardHeader>
             <CardBody>
                 <div className="overflow-x-auto">
@@ -48,6 +107,7 @@ export default function CardTable({ transactions, marketData }) {
                                     findMarketDataByTokenId(
                                         transaction.token_identifier
                                     );
+
                                 return (
                                     <tr key={index}>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
@@ -71,7 +131,7 @@ export default function CardTable({ transactions, marketData }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: "usd",
+                                                currency: displayCurrency,
                                             }).format(
                                                 transactionCurrentMarketData.current_price
                                             )}
@@ -83,21 +143,29 @@ export default function CardTable({ transactions, marketData }) {
                                             <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency:
+                                                currency: displayCurrency,
+                                            }).format(
+                                                convertCurrency(
                                                     transaction.currency_symbol,
-                                            }).format(transaction.total_cost)}
+                                                    transaction.total_cost
+                                                )
+                                            )}
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency:
+                                                currency: displayCurrency,
+                                            }).format(
+                                                convertCurrency(
                                                     transaction.currency_symbol,
-                                            }).format(transaction.unit_cost)}
+                                                    transaction.unit_cost
+                                                )
+                                            )}
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: "usd",
+                                                currency: displayCurrency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price
@@ -106,11 +174,14 @@ export default function CardTable({ transactions, marketData }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: "usd",
+                                                currency: displayCurrency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price -
-                                                    transaction.total_cost
+                                                    convertCurrency(
+                                                        transaction.currency_symbol,
+                                                        transaction.total_cost
+                                                    )
                                             )}
                                         </th>
                                     </tr>

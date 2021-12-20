@@ -12,7 +12,12 @@ class CoinGecko
 
         $response = Http::get($requestURL);
 
-        return json_decode($response->body());
+        $result = [
+            'base_currency'     => $currency,
+            'data'              => json_decode($response->body()),
+        ];
+
+        return $result;
     }
 
     public static function fetchPrices(array $currencies, $tokens)
