@@ -6,6 +6,7 @@ import H6 from "@material-tailwind/react/Heading6";
 
 export default function Sidebar() {
     const [showSidebar, setShowSidebar] = useState("-left-64");
+
     return (
         <>
             <AdminNavbar
