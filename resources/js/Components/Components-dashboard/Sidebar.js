@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import AdminNavbar from "./AdminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
 
 export default function Sidebar() {
     const [showSidebar, setShowSidebar] = useState("-left-64");
+
+    const { auth } = usePage().props;
 
     return (
         <>
@@ -56,7 +58,11 @@ export default function Sidebar() {
                             </li>
                             <li className="rounded-lg mb-2 ">
                                 <Link
-                                    href={route("summary", "usd")}
+                                    preserveScroll
+                                    href={route(
+                                        "summary",
+                                        auth.preferred_currency
+                                    )}
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
                                         route().current("summary") &&
                                         "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"

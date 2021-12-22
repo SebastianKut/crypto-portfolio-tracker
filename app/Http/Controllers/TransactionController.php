@@ -8,6 +8,7 @@ use App\Models\Transaction;
 use App\Support\CoinGecko\CoinGecko;
 use App\Support\ExchangeRate\ExchangeRate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class TransactionController extends Controller

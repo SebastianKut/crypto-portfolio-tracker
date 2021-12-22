@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
+import { usePage } from "@inertiajs/inertia-react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
@@ -9,9 +10,11 @@ import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 
 export default function CardTable({ transactions, marketData, exchangeRates }) {
-    const [globalCurrency, setglobalCurrency] = useState(
+    const [globalCurrency, setGlobalCurrency] = useState(
         marketData.base_currency
     );
+
+    const { auth } = usePage().props;
 
     function findMarketDataByTokenId(tokenId) {
         return marketData.data.find((element) => element.id === tokenId);
@@ -23,9 +26,22 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
 
     const handleCurrencyChange = (e) => {
         let currency = e.target.innerText;
-        Inertia.get(route("summary", currency), {
-            preserveScroll: true,
-        });
+        Inertia.get(
+            route("summary", currency),
+            {},
+            {
+                preserveScroll: true,
+                onSuccess: (page) => {
+                    Inertia.patch(
+                        route("settings.update", auth.user.id),
+                        { preferred_currency: currency },
+                        {
+                            preserveScroll: true,
+                        }
+                    );
+                },
+            }
+        );
     };
 
     return (

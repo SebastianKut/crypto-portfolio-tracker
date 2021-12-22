@@ -31,6 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/transaction/create', [\App\Http\Controllers\TransactionController::class, 'create'])->name('add transaction');
     Route::post('/transaction/store', [\App\Http\Controllers\TransactionController::class, 'store'])->name('transaction.store');
     Route::get('/transaction/summary/{currency}', [\App\Http\Controllers\TransactionController::class, 'index'])->name('summary');
+    Route::patch('settings/{user}', [\App\Http\Controllers\SettingController::class, 'update'])->name('settings.update');
 });
 
 require __DIR__ . '/auth.php';
