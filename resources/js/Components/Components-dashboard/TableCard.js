@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
-import { useRemember } from "@inertiajs/inertia-react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
@@ -10,7 +9,7 @@ import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 
 export default function CardTable({ transactions, marketData, exchangeRates }) {
-    const [displayCurrency, setDisplayCurrency] = useState(
+    const [globalCurrency, setglobalCurrency] = useState(
         marketData.base_currency
     );
 
@@ -24,7 +23,9 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
 
     const handleCurrencyChange = (e) => {
         let currency = e.target.innerText;
-        Inertia.get(route("summary", currency));
+        Inertia.get(route("summary", currency), {
+            preserveScroll: true,
+        });
     };
 
     return (
@@ -37,7 +38,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                         buttonType="link"
                         size="lg"
                         placement="bottom-start"
-                        buttonText={displayCurrency.toUpperCase()}
+                        buttonText={globalCurrency.toUpperCase()}
                         size="lg"
                         rounded={false}
                         block={false}
@@ -132,7 +133,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: displayCurrency,
+                                                currency: globalCurrency,
                                             }).format(
                                                 transactionCurrentMarketData.current_price
                                             )}
@@ -144,7 +145,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: displayCurrency,
+                                                currency: globalCurrency,
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -155,7 +156,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: displayCurrency,
+                                                currency: globalCurrency,
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -166,7 +167,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: displayCurrency,
+                                                currency: globalCurrency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price
@@ -175,7 +176,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: displayCurrency,
+                                                currency: globalCurrency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price -
