@@ -9940,8 +9940,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
 /* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
 /* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var millify__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! millify */ "./node_modules/millify/dist/millify.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -9962,6 +9967,18 @@ function PageVisitsCard(_ref) {
   var base_currency = marketData.base_currency,
       data = marketData.data;
 
+  var formatBigNumbers = function formatBigNumbers(number, currency) {
+    var formatedBigNumber = (0,millify__WEBPACK_IMPORTED_MODULE_9__["default"])(number);
+    var parts = new Intl.NumberFormat("gb-GB", {
+      style: "currency",
+      currency: currency
+    }).formatToParts(number);
+    var currencySymbol = parts.find(function (part) {
+      return part.type === "currency";
+    }).value;
+    return currencySymbol + formatedBigNumber;
+  };
+
   var handleCurrencyChange = function handleCurrencyChange(e) {
     var currency = e.target.innerText;
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get(route("dashboard", currency), {}, {
@@ -9976,101 +9993,98 @@ function PageVisitsCard(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
       color: "blue",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Market Data"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"], (_jsxs2 = {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"], (_jsxs2 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
           buttonText: base_currency.toUpperCase()
-        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "GBP"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "USD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "AUD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "PLN"
         })]), _jsxs2))]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "#"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Cryptocurrency"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Price"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Market Cap"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("tbody", {
             children: data.map(function (token, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: index + 1
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("td", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
                     className: "flex items-stretch",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
                       className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
                         src: token.image,
                         rounded: true,
                         alt: "..."
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
                       className: "self-center",
-                      children: [token.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                      children: [token.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
                         className: "ml-2 text-gray-600",
                         children: token.symbol.toUpperCase()
                       })]
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("td", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: base_currency
                   }).format(token.current_price)
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("td", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: new Intl.NumberFormat("gb-GB", {
-                    style: "currency",
-                    currency: base_currency
-                  }).format(token.market_cap)
+                  children: formatBigNumbers(token.market_cap, base_currency)
                 })]
               });
             })
@@ -49179,6 +49193,174 @@ module.exports = class Ripple {
     setTimeout(() => circle.remove(), 500);
   }
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/millify/dist/millify.js":
+/*!**********************************************!*\
+  !*** ./node_modules/millify/dist/millify.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.millify = void 0;
+const options_1 = __webpack_require__(/*! ./options */ "./node_modules/millify/dist/options.js");
+const utils_1 = __webpack_require__(/*! ./utils */ "./node_modules/millify/dist/utils.js");
+// Most commonly used digit grouping base.
+const DIGIT_GROUPING_BASE = 1000;
+/**
+ * Generator that divides a number until a decimal value is found.
+ *
+ * The denominator is defined by the numerical digit grouping base,
+ * or interval. The most commonly-used digit group interval is 1000.
+ *
+ * e.g. 1,000,000 is grouped in multiples of 1000.
+ */
+function* divider(value) {
+    // Create a mutable copy of the base.
+    let denominator = DIGIT_GROUPING_BASE;
+    while (true) {
+        const result = value / denominator;
+        if (result < 1) {
+            // End of operation. We can't divide the value any further.
+            return;
+        }
+        yield result;
+        // The denominator is increased every iteration by multiplying
+        // the base by itself, until a decimal value remains.
+        denominator *= DIGIT_GROUPING_BASE;
+    }
+}
+/**
+ * millify converts long numbers to human-readable strings.
+ */
+function millify(value, options) {
+    var _a;
+    // Override default options with options supplied by user.
+    const opts = options
+        ? Object.assign(Object.assign({}, options_1.defaultOptions), options) : options_1.defaultOptions;
+    if (!Array.isArray(opts.units) || !opts.units.length) {
+        throw new Error("Option `units` must be a non-empty array");
+    }
+    // Validate value for type and length.
+    let val = utils_1.parseValue(value);
+    // Add a minus sign (-) prefix if it's a negative number.
+    const prefix = val < 0 ? "-" : "";
+    // Work only with positive values for simplicity's sake.
+    val = Math.abs(val);
+    // Keep dividing the input value by the digit grouping base
+    // until the decimal and the unit index is deciphered.
+    let unitIndex = 0;
+    for (const result of divider(val)) {
+        val = result;
+        unitIndex += 1;
+    }
+    // Return the original number if the number is too large to have
+    // a corresponding unit. Returning anything else is ambiguous.
+    const unitIndexOutOfRange = unitIndex >= opts.units.length;
+    if (unitIndexOutOfRange) {
+        return value.toString();
+    }
+    // Round decimal up to desired precision.
+    let rounded = utils_1.roundTo(val, opts.precision);
+    // Fixes an edge case bug that outputs certain numbers as 1000K instead of 1M.
+    // The rounded value needs another iteration in the divider cycle.
+    for (const result of divider(rounded)) {
+        rounded = result;
+        unitIndex += 1;
+    }
+    // Calculate the unit suffix and make it lowercase (if needed).
+    const unit = (_a = opts.units[unitIndex]) !== null && _a !== void 0 ? _a : "";
+    const suffix = opts.lowercase ? unit.toLowerCase() : unit;
+    // Add a space between number and abbreviation.
+    const space = opts.space ? " " : "";
+    // Replace decimal mark if desired.
+    const formatted = rounded
+        .toString()
+        .replace(options_1.defaultOptions.decimalSeparator, opts.decimalSeparator);
+    return `${prefix}${formatted}${space}${suffix}`;
+}
+exports.millify = millify;
+exports["default"] = millify;
+
+
+/***/ }),
+
+/***/ "./node_modules/millify/dist/options.js":
+/*!**********************************************!*\
+  !*** ./node_modules/millify/dist/options.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.defaultOptions = void 0;
+/**
+ * Default options for Millify.
+ */
+exports.defaultOptions = {
+    decimalSeparator: ".",
+    lowercase: false,
+    precision: 1,
+    space: false,
+    units: [
+        "",
+        "K",
+        "M",
+        "B",
+        "T",
+        "P",
+        "E", // Quintillion
+    ],
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/millify/dist/utils.js":
+/*!********************************************!*\
+  !*** ./node_modules/millify/dist/utils.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.roundTo = exports.parseValue = void 0;
+/**
+ * parseValue ensures the value is a number and within accepted range.
+ */
+function parseValue(value) {
+    const val = parseFloat(value.toString());
+    if (isNaN(val)) {
+        throw new Error(`Input value is not a number`);
+    }
+    if (val > Number.MAX_SAFE_INTEGER || val < Number.MIN_SAFE_INTEGER) {
+        throw new RangeError("Input value is outside of safe integer range");
+    }
+    return val;
+}
+exports.parseValue = parseValue;
+/**
+ * Rounds a number [value] up to a specified [precision].
+ */
+function roundTo(value, precision) {
+    if (!Number.isFinite(value)) {
+        throw new Error("Input value is not a finite number");
+    }
+    if (!Number.isInteger(precision) || precision < 0) {
+        throw new Error("Precision is not a positive integer");
+    }
+    if (Number.isInteger(value)) {
+        return value;
+    }
+    return parseFloat(value.toFixed(precision));
+}
+exports.roundTo = roundTo;
 
 
 /***/ }),

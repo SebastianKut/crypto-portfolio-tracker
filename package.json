@@ -29,5 +29,8 @@
         "tailwindcss": "^2.1.2",
         "@material-tailwind/react": "^0.3.4",
         "chart.js": "2.9.4"
+    },
+    "dependencies": {
+        "millify": "^4.0.0"
     }
 }
