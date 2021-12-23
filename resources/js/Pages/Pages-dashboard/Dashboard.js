@@ -6,7 +6,7 @@ import TrafficCard from "@/Components/Components-dashboard/TrafficCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Dashboard() {
+export default function Dashboard({ marketData, exchangeRates }) {
     return (
         <Authenticated>
             <Head title="Dashboard" />
@@ -77,7 +77,10 @@ export default function Dashboard() {
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 xl:grid-cols-5">
                         <div className="xl:col-start-1 xl:col-end-8 px-4 mb-14">
-                            <PageVisitsCard />
+                            <PageVisitsCard
+                                marketData={marketData}
+                                exchangeRates={exchangeRates}
+                            />
                         </div>
                         {/* <div className="xl:col-start-4 xl:col-end-6 px-4 mb-14">
                             <TrafficCard />

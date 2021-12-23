@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import Card from "@material-tailwind/react/Card";
@@ -10,11 +9,9 @@ import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 
 export default function CardTable({ transactions, marketData, exchangeRates }) {
-    const [globalCurrency, setGlobalCurrency] = useState(
-        marketData.base_currency
-    );
+    const { user } = usePage().props.auth;
 
-    const { auth } = usePage().props;
+    const { base_currency } = marketData;
 
     function findMarketDataByTokenId(tokenId) {
         return marketData.data.find((element) => element.id === tokenId);
@@ -33,7 +30,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                 preserveScroll: true,
                 onSuccess: (page) => {
                     Inertia.patch(
-                        route("settings.update", auth.user.id),
+                        route("settings.update", user.id),
                         { preferred_currency: currency },
                         {
                             preserveScroll: true,
@@ -54,7 +51,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                         buttonType="link"
                         size="lg"
                         placement="bottom-start"
-                        buttonText={globalCurrency.toUpperCase()}
+                        buttonText={base_currency.toUpperCase()}
                         size="lg"
                         rounded={false}
                         block={false}
@@ -140,16 +137,17 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                                     />
                                                 </div>
                                                 <div className="self-center">
-                                                    {`${
-                                                        transaction.token_name
-                                                    } ${transaction.token_symbol.toUpperCase()}`}
+                                                    {transaction.token_name}
+                                                    <span className="ml-2 text-gray-600">
+                                                        {transaction.token_symbol.toUpperCase()}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </th>
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: globalCurrency,
+                                                currency: base_currency,
                                             }).format(
                                                 transactionCurrentMarketData.current_price
                                             )}
@@ -161,7 +159,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             <i className="fas fa-circle fa-sm text-orange-500 mr-2"></i>
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: globalCurrency,
+                                                currency: base_currency,
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -172,7 +170,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: globalCurrency,
+                                                currency: base_currency,
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -183,7 +181,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: globalCurrency,
+                                                currency: base_currency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price
@@ -192,7 +190,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
-                                                currency: globalCurrency,
+                                                currency: base_currency,
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price -

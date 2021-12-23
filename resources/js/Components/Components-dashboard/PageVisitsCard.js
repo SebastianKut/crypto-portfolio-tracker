@@ -1,11 +1,38 @@
+import { Inertia } from "@inertiajs/inertia";
+import { usePage } from "@inertiajs/inertia-react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
+import Image from "@material-tailwind/react/Image";
 import Button from "@material-tailwind/react/Button";
 import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 
-export default function PageVisitsCard() {
+export default function PageVisitsCard({ marketData }) {
+    const { user } = usePage().props.auth;
+
+    const { base_currency, data } = marketData;
+
+    const handleCurrencyChange = (e) => {
+        let currency = e.target.innerText;
+        Inertia.get(
+            route("dashboard", currency),
+            {},
+            {
+                preserveScroll: true,
+                onSuccess: (page) => {
+                    Inertia.patch(
+                        route("settings.update", user.id),
+                        { preferred_currency: currency },
+                        {
+                            preserveScroll: true,
+                        }
+                    );
+                },
+            }
+        );
+    };
+
     return (
         <Card>
             <CardHeader color="blue" contentPosition="none">
@@ -16,16 +43,38 @@ export default function PageVisitsCard() {
                         buttonType="link"
                         size="lg"
                         placement="bottom-start"
-                        buttonText="USD"
+                        buttonText={base_currency.toUpperCase()}
                         size="lg"
                         rounded={false}
                         block={false}
                         ripple="light"
                     >
-                        <DropdownItem color="lightBlue" ripple="light">
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
                             GBP
                         </DropdownItem>
-                        <DropdownItem color="lightBlue" ripple="light">
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            USD
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
+                            AUD
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={handleCurrencyChange}
+                        >
                             PLN
                         </DropdownItem>
                     </Dropdown>
@@ -51,62 +100,44 @@ export default function PageVisitsCard() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    1
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Bitcoin BTC
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $55,237.67
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $1.0T
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    2
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Etherium ETC
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $4,091.67
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $486.2B
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    3
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Solana SOL
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $191.67
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $58.2B
-                                </td>
-                            </tr>
-                            <tr>
-                                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    4
-                                </th>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    Cardano ADA
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $1.55
-                                </td>
-                                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                    $50.7B
-                                </td>
-                            </tr>
+                            {data.map((token, index) => {
+                                return (
+                                    <tr>
+                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {index + 1}
+                                        </th>
+                                        <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            <div className="flex items-stretch">
+                                                <div className="w-10 h-10 rounded-full border-2 border-white mr-2">
+                                                    <Image
+                                                        src={token.image}
+                                                        rounded
+                                                        alt="..."
+                                                    />
+                                                </div>
+                                                <div className="self-center">
+                                                    {token.name}
+                                                    <span className="ml-2 text-gray-600">
+                                                        {token.symbol.toUpperCase()}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency: base_currency,
+                                            }).format(token.current_price)}
+                                        </td>
+                                        <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                            {new Intl.NumberFormat("gb-GB", {
+                                                style: "currency",
+                                                currency: base_currency,
+                                            }).format(token.market_cap)}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>

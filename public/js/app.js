@@ -9931,13 +9931,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ PageVisitsCard)
 /* harmony export */ });
-/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
-/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
-/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
-/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
-/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
-/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
+/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
+/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
+/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
+/* harmony import */ var _material_tailwind_react_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Button */ "./node_modules/@material-tailwind/react/Button.js");
+/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
+/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -9948,113 +9951,129 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-function PageVisitsCard() {
+
+
+
+function PageVisitsCard(_ref) {
   var _jsxs2;
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var marketData = _ref.marketData;
+  var user = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth.user;
+  var base_currency = marketData.base_currency,
+      data = marketData.data;
+
+  var handleCurrencyChange = function handleCurrencyChange(e) {
+    var currency = e.target.innerText;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get(route("dashboard", currency), {}, {
+      preserveScroll: true,
+      onSuccess: function onSuccess(page) {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.patch(route("settings.update", user.id), {
+          preferred_currency: currency
+        }, {
+          preserveScroll: true
+        });
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
       color: "blue",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Market Data"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_4__["default"], (_jsxs2 = {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"], (_jsxs2 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
-          buttonText: "USD"
-        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          color: "lightBlue",
+          buttonText: base_currency.toUpperCase()
+        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          color: "purple",
           ripple: "light",
+          onClick: handleCurrencyChange,
           children: "GBP"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          color: "lightBlue",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          color: "purple",
           ripple: "light",
+          onClick: handleCurrencyChange,
+          children: "USD"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          color: "purple",
+          ripple: "light",
+          onClick: handleCurrencyChange,
+          children: "AUD"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          color: "purple",
+          ripple: "light",
+          onClick: handleCurrencyChange,
           children: "PLN"
         })]), _jsxs2))]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "#"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Cryptocurrency"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Price"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Market Cap"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tbody", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "1"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Bitcoin BTC"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$55,237.67"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$1.0T"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "2"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Etherium ETC"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$4,091.67"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$486.2B"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Solana SOL"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$191.67"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$58.2B"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "4"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "Cardano ADA"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$1.55"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                children: "$50.7B"
-              })]
-            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
+            children: data.map(function (token, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: index + 1
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    className: "flex items-stretch",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                      className: "w-10 h-10 rounded-full border-2 border-white mr-2",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                        src: token.image,
+                        rounded: true,
+                        alt: "..."
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                      className: "self-center",
+                      children: [token.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                        className: "ml-2 text-gray-600",
+                        children: token.symbol.toUpperCase()
+                      })]
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: base_currency
+                  }).format(token.current_price)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
+                  children: new Intl.NumberFormat("gb-GB", {
+                    style: "currency",
+                    currency: base_currency
+                  }).format(token.market_cap)
+                })]
+              });
+            })
           })]
         })
       })
@@ -10677,7 +10696,7 @@ function Sidebar() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "rounded-lg mb-4",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("dashboard"),
+                href: route("dashboard", auth.preferred_currency),
                 exact: true,
                 className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("dashboard") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -10698,7 +10717,6 @@ function Sidebar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "rounded-lg mb-2 ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                preserveScroll: true,
                 href: route("summary", auth.preferred_currency),
                 className: "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ".concat(route().current("summary") && "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -10818,31 +10836,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ CardTable)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
-/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
-/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
-/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
-/* harmony import */ var _material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/Progress */ "./node_modules/@material-tailwind/react/Progress.js");
-/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
-/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
+/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
+/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
+/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
+/* harmony import */ var _material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Progress */ "./node_modules/@material-tailwind/react/Progress.js");
+/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
+/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -10861,13 +10865,8 @@ function CardTable(_ref) {
   var transactions = _ref.transactions,
       marketData = _ref.marketData,
       exchangeRates = _ref.exchangeRates;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(marketData.base_currency),
-      _useState2 = _slicedToArray(_useState, 2),
-      globalCurrency = _useState2[0],
-      setGlobalCurrency = _useState2[1];
-
-  var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.auth;
+  var user = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth.user;
+  var base_currency = marketData.base_currency;
 
   function findMarketDataByTokenId(tokenId) {
     return marketData.data.find(function (element) {
@@ -10881,10 +10880,10 @@ function CardTable(_ref) {
 
   var handleCurrencyChange = function handleCurrencyChange(e) {
     var currency = e.target.innerText;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get(route("summary", currency), {}, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get(route("summary", currency), {}, {
       preserveScroll: true,
       onSuccess: function onSuccess(page) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.patch(route("settings.update", auth.user.id), {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.patch(route("settings.update", user.id), {
           preferred_currency: currency
         }, {
           preserveScroll: true
@@ -10893,127 +10892,130 @@ function CardTable(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Portfolio Details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"], (_jsxs2 = {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"], (_jsxs2 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
-          buttonText: globalCurrency.toUpperCase()
-        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          buttonText: base_currency.toUpperCase()
+        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "GBP"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "USD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "AUD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "PLN"
         })]), _jsxs2))]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Cryptocurrency"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Current Price"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Token Amount"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Unit Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Value"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Gain/Loss"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("tbody", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
             children: transactions.map(function (transaction, index) {
               var transactionCurrentMarketData = findMarketDataByTokenId(transaction.token_identifier);
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     className: "flex items-stretch",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                       className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
                         src: transactionCurrentMarketData.image,
                         rounded: true,
                         alt: "..."
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                       className: "self-center",
-                      children: "".concat(transaction.token_name, " ").concat(transaction.token_symbol.toUpperCase())
+                      children: [transaction.token_name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+                        className: "ml-2 text-gray-600",
+                        children: transaction.token_symbol.toUpperCase()
+                      })]
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: globalCurrency
+                    currency: base_currency
                   }).format(transactionCurrentMarketData.current_price)
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: transaction.token_amount
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("i", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                     className: "fas fa-circle fa-sm text-orange-500 mr-2"
                   }), new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: globalCurrency
+                    currency: base_currency
                   }).format(convertCurrency(transaction.currency_symbol, transaction.total_cost))]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: globalCurrency
+                    currency: base_currency
                   }).format(convertCurrency(transaction.currency_symbol, transaction.unit_cost))
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: globalCurrency
+                    currency: base_currency
                   }).format(transaction.token_amount * transactionCurrentMarketData.current_price)
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: globalCurrency
+                    currency: base_currency
                   }).format(transaction.token_amount * transactionCurrentMarketData.current_price - convertCurrency(transaction.currency_symbol, transaction.total_cost))
                 })]
               }, index);
@@ -12454,7 +12456,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Dashboard() {
+function Dashboard(_ref) {
+  var marketData = _ref.marketData,
+      exchangeRates = _ref.exchangeRates;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_5__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Head, {
       title: "Dashboard"
@@ -12528,7 +12532,10 @@ function Dashboard() {
           className: "grid grid-cols-1 xl:grid-cols-5",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "xl:col-start-1 xl:col-end-8 px-4 mb-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              marketData: marketData,
+              exchangeRates: exchangeRates
+            })
           })
         })
       })
