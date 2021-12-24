@@ -7,7 +7,7 @@ import H6 from "@material-tailwind/react/Heading6";
 export default function Sidebar() {
     const [showSidebar, setShowSidebar] = useState("-left-64");
 
-    const { auth } = usePage().props;
+    const { preferred_currency } = usePage().props.auth;
 
     return (
         <>
@@ -35,7 +35,7 @@ export default function Sidebar() {
                                 <Link
                                     href={route(
                                         "dashboard",
-                                        auth.preferred_currency
+                                        preferred_currency
                                     )}
                                     exact
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
@@ -61,10 +61,12 @@ export default function Sidebar() {
                             </li>
                             <li className="rounded-lg mb-2 ">
                                 <Link
-                                    href={route(
-                                        "summary",
-                                        auth.preferred_currency
-                                    )}
+                                    href={route("summary", {
+                                        currency: preferred_currency,
+                                        _query: {
+                                            show: "grouped",
+                                        },
+                                    })}
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${
                                         route().current("summary") &&
                                         "bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"

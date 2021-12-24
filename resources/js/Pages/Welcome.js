@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, Head } from "@inertiajs/inertia-react";
+import { Link, Head, usePage } from "@inertiajs/inertia-react";
 
 export default function Welcome(props) {
+    const { preferred_currency } = usePage().props.auth;
     return (
         <>
             <Head title="Welcome" />
@@ -9,7 +10,7 @@ export default function Welcome(props) {
                 <div className="fixed top-0 right-0 px-6 py-4 sm:block">
                     {props.auth.user ? (
                         <Link
-                            href={route("dashboard")}
+                            href={route("dashboard", preferred_currency)}
                             className="text-sm text-gray-700 underline"
                         >
                             Dashboard

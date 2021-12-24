@@ -45,6 +45,19 @@ class TransactionController extends Controller
 
         $exchangeRates = ExchangeRate::fetchExchangeRates($currency);
 
+        if ($request->query('show') === 'individual') return Inertia::render('Pages-dashboard/Summary', [
+            'transactions'  => $transactions,
+            'marketData'    => $marketData,
+            'exchangeRates' => $exchangeRates,
+        ]);
+
+        if ($request->query('show') === 'grouped')
+            return Inertia::render('Pages-dashboard/Summary', [
+                'transactions'  => $transactions,
+                'marketData'    => $marketData,
+                'exchangeRates' => $exchangeRates,
+            ]);
+
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,
             'marketData'    => $marketData,

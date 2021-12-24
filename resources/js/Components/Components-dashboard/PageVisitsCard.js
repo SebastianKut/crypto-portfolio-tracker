@@ -4,11 +4,9 @@ import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 import Image from "@material-tailwind/react/Image";
-import Button from "@material-tailwind/react/Button";
 import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 import millify from "millify";
-import { forEach } from "lodash";
 
 export default function PageVisitsCard({ marketData }) {
     const { user } = usePage().props.auth;
@@ -67,28 +65,28 @@ export default function PageVisitsCard({ marketData }) {
                         ripple="light"
                     >
                         <DropdownItem
-                            color="purple"
+                            color="blue"
                             ripple="light"
                             onClick={handleCurrencyChange}
                         >
                             GBP
                         </DropdownItem>
                         <DropdownItem
-                            color="purple"
+                            color="blue"
                             ripple="light"
                             onClick={handleCurrencyChange}
                         >
                             USD
                         </DropdownItem>
                         <DropdownItem
-                            color="purple"
+                            color="blue"
                             ripple="light"
                             onClick={handleCurrencyChange}
                         >
                             AUD
                         </DropdownItem>
                         <DropdownItem
-                            color="purple"
+                            color="blue"
                             ripple="light"
                             onClick={handleCurrencyChange}
                         >
@@ -147,11 +145,6 @@ export default function PageVisitsCard({ marketData }) {
                                             }).format(token.current_price)}
                                         </td>
                                         <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                            {/* {new Intl.NumberFormat("gb-GB", {
-                                                style: "currency",
-                                                currency: base_currency,
-                                            }).format(token.market_cap)} */}
-                                            {/* {millify(token.market_cap)} */}
                                             {formatBigNumbers(
                                                 token.market_cap,
                                                 base_currency
