@@ -9,4 +9,4 @@ coins/markets - for market data by coin and vs_currency includes images
 //list of tokens from transactions
 SELECT name FROM tokens INNER JOIN transactions ON transactions.token_id = tokens.id WHERE user_id = 1
 
-//handle transactions filtering on a backend based on parameters (move js function to php backend) so remove state and use effect etc and in handleShowAll etc just make get request to summary route passing correct parameters and on succes update currency. For grouped transactions this will require passing reduced array of transactions like in handleGroupByToken but done in PHP
+//total cost in reduced array isnt right - investigate why

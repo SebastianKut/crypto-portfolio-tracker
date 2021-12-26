@@ -51,12 +51,41 @@ class TransactionController extends Controller
             'exchangeRates' => $exchangeRates,
         ]);
 
-        if ($request->query('show') === 'grouped')
+        if ($request->query('show') === 'grouped') {
+
+            $newTransactions = [];
+
+            foreach ($transactions as $transaction) {
+                array_push($newTransactions, (array)$transaction);
+            };
+
+            $newTransactionsResult = array_reduce($newTransactions, function ($carry, $item) {
+                if (isset($carry[$item['currency_pair']])) {
+                    $carry[$item['currency_pair']]['fee_price'] += $item['fee_price'];
+                    $carry[$item['currency_pair']]['token_amount'] += $item['token_amount'];
+                    $carry[$item['currency_pair']]['total_cost'] += $item['total_cost'];
+                    $carry[$item['currency_pair']]['value_price'] += $item['value_price'];
+                    $carry[$item['currency_pair']]['unit_cost'] = ($carry[$item['currency_pair']]['total_cost'] / $carry[$item['currency_pair']]['token_amount']);
+                } else {
+                    $carry[$item['currency_pair']] = $item;
+                }
+                return $carry;
+            });
+
+            $result = [];
+            foreach ($newTransactionsResult as $item) {
+                array_push($result, (object)$item);
+            }
+
+            // dd($result);
+
             return Inertia::render('Pages-dashboard/Summary', [
-                'transactions'  => $transactions,
+                'transactions'  => $result,
                 'marketData'    => $marketData,
                 'exchangeRates' => $exchangeRates,
             ]);
+        }
+
 
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,
