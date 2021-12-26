@@ -7,7 +7,7 @@ import H6 from "@material-tailwind/react/Heading6";
 export default function Sidebar() {
     const [showSidebar, setShowSidebar] = useState("-left-64");
 
-    const { preferred_currency } = usePage().props.auth;
+    const { preferred_currency, show_transactions } = usePage().props.auth;
 
     return (
         <>
@@ -64,7 +64,7 @@ export default function Sidebar() {
                                     href={route("summary", {
                                         currency: preferred_currency,
                                         _query: {
-                                            show: "grouped",
+                                            show: show_transactions,
                                         },
                                     })}
                                     className={`flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg ${

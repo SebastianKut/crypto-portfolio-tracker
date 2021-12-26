@@ -12,7 +12,7 @@ class Transaction extends Model
     protected $guarded = [];
 
     // // Appends accessors to json result so it can be used in react component same way as in blade view
-    protected $appends = ['token_name', 'token_symbol', 'token_identifier', 'currency_symbol', 'total_cost', 'unit_cost'];
+    protected $appends = ['token_name', 'token_symbol', 'token_identifier', 'currency_symbol', 'currency_pair', 'total_cost', 'unit_cost'];
 
     public function user()
     {
@@ -59,6 +59,10 @@ class Transaction extends Model
         return ($this->attributes['value_price'] + $this->attributes['fee_price']) / $this->attributes['token_amount'];
     }
 
+    public function getCurrencyPairAttribute()
+    {
+        return $this->token_symbol . $this->currency_symbol;
+    }
 
     public static function validateData($request)
     {

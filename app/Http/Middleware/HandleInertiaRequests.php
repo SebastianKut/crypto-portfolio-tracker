@@ -36,7 +36,8 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user() ? $request->user()->only('id', 'name', 'email') : null,
-                'preferred_currency' => $request->user() ? $request->user()->setting->preferred_currency : null
+                'preferred_currency' => $request->user() ? $request->user()->setting->preferred_currency : null,
+                'show_transactions' => $request->user() ? $request->user()->setting->show_transactions : null,
             ],
             'flash' => [
                 'message' => fn () => $request->session()->get('message')

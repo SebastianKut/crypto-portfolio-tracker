@@ -20,6 +20,7 @@ class Setting extends Model
     {
         return $request->validate([
             'preferred_currency'              => ['required', 'string'],
+            'show_transactions'              => ['required', 'string'],
         ]);
     }
 }

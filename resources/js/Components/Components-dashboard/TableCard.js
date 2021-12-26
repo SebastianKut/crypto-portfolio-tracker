@@ -1,4 +1,5 @@
 import { Inertia } from "@inertiajs/inertia";
+import { useState, useEffect } from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
@@ -7,9 +8,11 @@ import Image from "@material-tailwind/react/Image";
 import Progress from "@material-tailwind/react/Progress";
 import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
+import { forEach } from "lodash";
 
 export default function CardTable({ transactions, marketData, exchangeRates }) {
-    const { user } = usePage().props.auth;
+    const { user, show_transactions, preferred_currency } =
+        usePage().props.auth;
 
     const { base_currency } = marketData;
 
@@ -24,14 +27,22 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
     const handleCurrencyChange = (e) => {
         let currency = e.target.innerText;
         Inertia.get(
-            route("summary", currency),
+            route("summary", {
+                currency: currency,
+                _query: {
+                    show: show_transactions,
+                },
+            }),
             {},
             {
                 preserveScroll: true,
                 onSuccess: (page) => {
                     Inertia.patch(
                         route("settings.update", user.id),
-                        { preferred_currency: currency },
+                        {
+                            preferred_currency: currency,
+                            show_transactions: show_transactions,
+                        },
                         {
                             preserveScroll: true,
                         }
@@ -41,11 +52,103 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
         );
     };
 
+    const handleShow = (showPreferrence) => {
+        Inertia.get(
+            route("summary", {
+                currency: preferred_currency,
+                _query: {
+                    show: showPreferrence,
+                },
+            }),
+            {},
+            {
+                preserveScroll: true,
+                onSuccess: (page) => {
+                    Inertia.patch(
+                        route("settings.update", user.id),
+                        {
+                            preferred_currency: preferred_currency,
+                            show_transactions: showPreferrence,
+                        },
+                        {
+                            preserveScroll: true,
+                        }
+                    );
+                },
+            }
+        );
+    };
+    // ---------------------------------------------------------------
+    // //get array of pairs
+    // let pairsArr = [];
+    // transactions.forEach((transaction) => {
+    //     pairsArr.push(transaction.currency_pair);
+    // });
+    // //reduce array of par to get rid of duplicates
+    // let uniquePairsArr = [...new Set(pairsArr)];
+    // //loop through array of pairs and for each pair loop through all transactions to find transactions for this pair and sum up values
+    // //first transaction found for the pair push into new array of transactions, then next found add the relevant values to the first transaction found
+    // let filteredTransactions = [];
+    // uniquePairsArr.forEach((pair) => {
+    //     let newTransaction = {};
+    //     transactions.forEach((transaction) => {
+    //         if ((transaction.currency_pair = pair)) {
+    //             newTransaction = {
+    //                 created_at: transaction.created_at,
+    //                 currency_id: transaction.currency_id,
+    //                 currency_pair: pair,
+    //                 currency_symbol: transaction.currency_symbol,
+    //                 fee_price: transaction.fee_price++,
+    //                 token_amount: transaction.token_amount++,
+    //                 token_id: transaction.token_id,
+    //                 token_identifier: transaction.token_identifier,
+    //                 token_name: transaction.token_name,
+    //                 token_symbol: transaction.token_symbol,
+    //                 total_cost: transaction.total_cost++,
+    //                 user_id: transaction.user_id,
+    //                 value_price: transaction.value_price++,
+    //                 unit_cost:
+    //                     newTransaction.total_cost /
+    //                     newTransaction.token_amount,
+    //             };
+    //         }
+    //     });
+    //     filteredTransactions.push(newTransaction);
+    // });
+    // console.log(filteredTransactions);
+    // setTransactionsState([]);
+    // -----------------------------------------------------------------------
     return (
         <Card>
             <CardHeader color="purple" contentPosition="none">
                 <div className="w-full flex items-center justify-between">
                     <h2 className="text-white text-2xl">Portfolio Details</h2>
+                    <Dropdown
+                        color="transparent"
+                        buttonType="link"
+                        size="lg"
+                        placement="bottom-start"
+                        buttonText="Transactions"
+                        size="lg"
+                        rounded={false}
+                        block={false}
+                        ripple="light"
+                    >
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={() => handleShow("all")}
+                        >
+                            Show all
+                        </DropdownItem>
+                        <DropdownItem
+                            color="purple"
+                            ripple="light"
+                            onClick={() => handleShow("grouped")}
+                        >
+                            Group by token
+                        </DropdownItem>
+                    </Dropdown>
                     <Dropdown
                         color="transparent"
                         buttonType="link"
@@ -139,7 +242,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                                 <div className="self-center">
                                                     {transaction.token_name}
                                                     <span className="ml-2 text-gray-600">
-                                                        {transaction.token_symbol.toUpperCase()}
+                                                        {transaction.currency_pair.toUpperCase()}
                                                     </span>
                                                 </div>
                                             </div>
