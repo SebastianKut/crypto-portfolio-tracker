@@ -9,7 +9,7 @@ import DropdownItem from "@material-tailwind/react/DropdownItem";
 import millify from "millify";
 
 export default function PageVisitsCard({ marketData }) {
-    const { user } = usePage().props.auth;
+    const { user, show_transactions } = usePage().props.auth;
 
     const { base_currency, data } = marketData;
 
@@ -38,7 +38,10 @@ export default function PageVisitsCard({ marketData }) {
                 onSuccess: (page) => {
                     Inertia.patch(
                         route("settings.update", user.id),
-                        { preferred_currency: currency },
+                        {
+                            preferred_currency: currency,
+                            show_transactions: show_transactions,
+                        },
                         {
                             preserveScroll: true,
                         }

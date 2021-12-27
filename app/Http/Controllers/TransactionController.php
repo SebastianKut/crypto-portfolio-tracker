@@ -36,61 +36,19 @@ class TransactionController extends Controller
     {
         $transactions = json_decode(Transaction::latest()->where('user_id', auth()->user()->id)->get()->toJson());
 
-        $tokens = [];
-        foreach ($transactions as $transaction) {
-            array_push($tokens, $transaction->token_identifier);
-        };
-
-        $marketData = CoinGecko::fetchMarketData($currency, $tokens);
-
-        $exchangeRates = ExchangeRate::fetchExchangeRates($currency);
-
-        if ($request->query('show') === 'all') return Inertia::render('Pages-dashboard/Summary', [
-            'transactions'  => $transactions,
-            'marketData'    => $marketData,
-            'exchangeRates' => $exchangeRates,
-        ]);
+        $tokens = array_map(function ($transaction) {
+            return $transaction->token_identifier;
+        }, $transactions);
 
         if ($request->query('show') === 'grouped') {
 
-            $newTransactions = [];
-
-            foreach ($transactions as $transaction) {
-                array_push($newTransactions, (array)$transaction);
-            };
-
-            $newTransactionsResult = array_reduce($newTransactions, function ($carry, $item) {
-                if (isset($carry[$item['currency_pair']])) {
-                    $carry[$item['currency_pair']]['fee_price'] += $item['fee_price'];
-                    $carry[$item['currency_pair']]['token_amount'] += $item['token_amount'];
-                    $carry[$item['currency_pair']]['total_cost'] += $item['total_cost'];
-                    $carry[$item['currency_pair']]['value_price'] += $item['value_price'];
-                    $carry[$item['currency_pair']]['unit_cost'] = ($carry[$item['currency_pair']]['total_cost'] / $carry[$item['currency_pair']]['token_amount']);
-                } else {
-                    $carry[$item['currency_pair']] = $item;
-                }
-                return $carry;
-            });
-
-            $result = [];
-            foreach ($newTransactionsResult as $item) {
-                array_push($result, (object)$item);
-            }
-
-            // dd($result);
-
-            return Inertia::render('Pages-dashboard/Summary', [
-                'transactions'  => $result,
-                'marketData'    => $marketData,
-                'exchangeRates' => $exchangeRates,
-            ]);
+            $transactions = Transaction::groupByCurrencyPair($transactions);
         }
-
 
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,
-            'marketData'    => $marketData,
-            'exchangeRates' => $exchangeRates,
+            'marketData'    => CoinGecko::fetchMarketData($currency, $tokens),
+            'exchangeRates' => ExchangeRate::fetchExchangeRates($currency),
         ]);
     }
 

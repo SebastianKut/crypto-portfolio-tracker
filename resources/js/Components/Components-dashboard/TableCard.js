@@ -78,46 +78,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
             }
         );
     };
-    // ---------------------------------------------------------------
-    // //get array of pairs
-    // let pairsArr = [];
-    // transactions.forEach((transaction) => {
-    //     pairsArr.push(transaction.currency_pair);
-    // });
-    // //reduce array of par to get rid of duplicates
-    // let uniquePairsArr = [...new Set(pairsArr)];
-    // //loop through array of pairs and for each pair loop through all transactions to find transactions for this pair and sum up values
-    // //first transaction found for the pair push into new array of transactions, then next found add the relevant values to the first transaction found
-    // let filteredTransactions = [];
-    // uniquePairsArr.forEach((pair) => {
-    //     let newTransaction = {};
-    //     transactions.forEach((transaction) => {
-    //         if ((transaction.currency_pair = pair)) {
-    //             newTransaction = {
-    //                 created_at: transaction.created_at,
-    //                 currency_id: transaction.currency_id,
-    //                 currency_pair: pair,
-    //                 currency_symbol: transaction.currency_symbol,
-    //                 fee_price: transaction.fee_price++,
-    //                 token_amount: transaction.token_amount++,
-    //                 token_id: transaction.token_id,
-    //                 token_identifier: transaction.token_identifier,
-    //                 token_name: transaction.token_name,
-    //                 token_symbol: transaction.token_symbol,
-    //                 total_cost: transaction.total_cost++,
-    //                 user_id: transaction.user_id,
-    //                 value_price: transaction.value_price++,
-    //                 unit_cost:
-    //                     newTransaction.total_cost /
-    //                     newTransaction.token_amount,
-    //             };
-    //         }
-    //     });
-    //     filteredTransactions.push(newTransaction);
-    // });
-    // console.log(filteredTransactions);
-    // setTransactionsState([]);
-    // -----------------------------------------------------------------------
+
     return (
         <Card>
             <CardHeader color="purple" contentPosition="none">
@@ -128,7 +89,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                         buttonType="link"
                         size="lg"
                         placement="bottom-start"
-                        buttonText="Transactions"
+                        buttonText="TRANSACTIONS"
                         size="lg"
                         rounded={false}
                         block={false}
@@ -199,9 +160,9 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Cryptocurrency
                                 </th>
-                                <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                                {/* <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Current Price
-                                </th>
+                                </th> */}
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Token Amount
                                 </th>
@@ -247,14 +208,14 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                                 </div>
                                             </div>
                                         </th>
-                                        <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                                        {/* <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
                                             }).format(
                                                 transactionCurrentMarketData.current_price
                                             )}
-                                        </th>
+                                        </th> */}
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {transaction.token_amount}
                                         </th>

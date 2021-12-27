@@ -9958,7 +9958,9 @@ function PageVisitsCard(_ref) {
   var _jsxs2;
 
   var marketData = _ref.marketData;
-  var user = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth.user;
+  var _usePage$props$auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth,
+      user = _usePage$props$auth.user,
+      show_transactions = _usePage$props$auth.show_transactions;
   var base_currency = marketData.base_currency,
       data = marketData.data;
 
@@ -9980,7 +9982,8 @@ function PageVisitsCard(_ref) {
       preserveScroll: true,
       onSuccess: function onSuccess(page) {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.patch(route("settings.update", user.id), {
-          preferred_currency: currency
+          preferred_currency: currency,
+          show_transactions: show_transactions
         }, {
           preserveScroll: true
         });
@@ -10939,47 +10942,7 @@ function CardTable(_ref) {
         });
       }
     });
-  }; // ---------------------------------------------------------------
-  // //get array of pairs
-  // let pairsArr = [];
-  // transactions.forEach((transaction) => {
-  //     pairsArr.push(transaction.currency_pair);
-  // });
-  // //reduce array of par to get rid of duplicates
-  // let uniquePairsArr = [...new Set(pairsArr)];
-  // //loop through array of pairs and for each pair loop through all transactions to find transactions for this pair and sum up values
-  // //first transaction found for the pair push into new array of transactions, then next found add the relevant values to the first transaction found
-  // let filteredTransactions = [];
-  // uniquePairsArr.forEach((pair) => {
-  //     let newTransaction = {};
-  //     transactions.forEach((transaction) => {
-  //         if ((transaction.currency_pair = pair)) {
-  //             newTransaction = {
-  //                 created_at: transaction.created_at,
-  //                 currency_id: transaction.currency_id,
-  //                 currency_pair: pair,
-  //                 currency_symbol: transaction.currency_symbol,
-  //                 fee_price: transaction.fee_price++,
-  //                 token_amount: transaction.token_amount++,
-  //                 token_id: transaction.token_id,
-  //                 token_identifier: transaction.token_identifier,
-  //                 token_name: transaction.token_name,
-  //                 token_symbol: transaction.token_symbol,
-  //                 total_cost: transaction.total_cost++,
-  //                 user_id: transaction.user_id,
-  //                 value_price: transaction.value_price++,
-  //                 unit_cost:
-  //                     newTransaction.total_cost /
-  //                     newTransaction.token_amount,
-  //             };
-  //         }
-  //     });
-  //     filteredTransactions.push(newTransaction);
-  // });
-  // console.log(filteredTransactions);
-  // setTransactionsState([]);
-  // -----------------------------------------------------------------------
-
+  };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -10995,7 +10958,7 @@ function CardTable(_ref) {
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
-          buttonText: "Transactions"
+          buttonText: "TRANSACTIONS"
         }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
           color: "purple",
           ripple: "light",
@@ -11050,9 +11013,6 @@ function CardTable(_ref) {
                 children: "Cryptocurrency"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
-                children: "Current Price"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
-                className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Token Amount"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
@@ -11091,12 +11051,6 @@ function CardTable(_ref) {
                       })]
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
-                  className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: new Intl.NumberFormat("gb-GB", {
-                    style: "currency",
-                    currency: base_currency
-                  }).format(transactionCurrentMarketData.current_price)
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: transaction.token_amount

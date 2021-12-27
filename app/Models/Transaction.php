@@ -95,4 +95,34 @@ class Transaction extends Model
             'user_id'               => auth()->id(),
         ]);
     }
+
+    public static function groupByCurrencyPair($transactions)
+    {
+        //Change array of objects into array of assoc arrays to be able to use array_reduce and group transactions by currency_pair
+        $groupedTransactions = array_map(function ($transaction) {
+            return (array) $transaction;
+        }, $transactions);
+
+        $newTransactionsResult = array_reduce($groupedTransactions, function ($carry, $item) {
+            if (isset($carry[$item['currency_pair']])) {
+                $carry[$item['currency_pair']]['fee_price'] += $item['fee_price'];
+                $carry[$item['currency_pair']]['token_amount'] += $item['token_amount'];
+                $carry[$item['currency_pair']]['total_cost'] += $item['total_cost'];
+                $carry[$item['currency_pair']]['value_price'] += $item['value_price'];
+                $carry[$item['currency_pair']]['unit_cost'] = ($carry[$item['currency_pair']]['total_cost'] / $carry[$item['currency_pair']]['token_amount']);
+            } else {
+                $carry[$item['currency_pair']] = $item;
+            }
+            return $carry;
+        });
+
+        //Turn back into array of objects for React client
+        $result = [];
+
+        foreach ($newTransactionsResult as $item) {
+            array_push($result, (object)$item);
+        }
+
+        return $result;
+    }
 }
