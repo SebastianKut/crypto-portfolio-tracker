@@ -36,19 +36,30 @@ class TransactionController extends Controller
     {
         $transactions = json_decode(Transaction::latest()->where('user_id', auth()->user()->id)->get()->toJson());
 
+        $groupedTransactions = Transaction::groupByCurrencyPair($transactions);
+
         $tokens = array_map(function ($transaction) {
             return $transaction->token_identifier;
         }, $transactions);
 
+        $marketData = CoinGecko::fetchMarketData($currency, $tokens);
+
+        $exchangeRates = ExchangeRate::fetchExchangeRates($currency);
+
+
+
+        $indicators = Transaction::getPerformanceIndicators($groupedTransactions, $exchangeRates, $marketData);
+
         if ($request->query('show') === 'grouped') {
 
-            $transactions = Transaction::groupByCurrencyPair($transactions);
+            $transactions = $groupedTransactions;
         }
 
         return Inertia::render('Pages-dashboard/Summary', [
             'transactions'  => $transactions,
-            'marketData'    => CoinGecko::fetchMarketData($currency, $tokens),
-            'exchangeRates' => ExchangeRate::fetchExchangeRates($currency),
+            'marketData'    => $marketData,
+            'exchangeRates' => $exchangeRates,
+            'indicators'    => $indicators,
         ]);
     }
 

@@ -224,6 +224,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
+                                                currencyDisplay: "code",
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -235,6 +236,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
+                                                currencyDisplay: "code",
                                             }).format(
                                                 convertCurrency(
                                                     transaction.currency_symbol,
@@ -246,6 +248,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
+                                                currencyDisplay: "code",
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price
@@ -255,6 +258,7 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
+                                                currencyDisplay: "code",
                                             }).format(
                                                 transaction.token_amount *
                                                     transactionCurrentMarketData.current_price -

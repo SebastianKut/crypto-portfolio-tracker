@@ -125,4 +125,60 @@ class Transaction extends Model
 
         return $result;
     }
+
+
+    public static function getPerformanceIndicators($groupedTransactions, $exchangeRates, $marketData)
+    {
+        $convertedTransactions = [];
+
+        $exchangeRates = (array) $exchangeRates->rates;
+
+        foreach ($groupedTransactions as $transaction) {
+
+            $currency = strtoupper($transaction->currency_symbol);
+
+            array_push($convertedTransactions, $transaction->total_cost / $exchangeRates[$currency]);
+        }
+
+        $totalCost = array_reduce($convertedTransactions, function ($carry, $item) {
+            $carry += $item;
+            return $carry;
+        });
+
+        // ------------------------------------
+
+        $valueByToken = [];
+        $marketDataBySymbol = [];
+
+        foreach ($marketData['data'] as $item) {
+            $marketDataBySymbol[strval($item->symbol)] = $item;
+        }
+
+        foreach ($groupedTransactions as $transaction) {
+
+            $tokenSymbol = $transaction->token_symbol;
+            $tokenAmount = $transaction->token_amount;
+            $price = $marketDataBySymbol[$tokenSymbol]->current_price;
+            array_push($valueByToken, $tokenAmount * $price);
+        };
+
+        $totalValue = array_reduce($valueByToken, function ($carry, $item) {
+            $carry += $item;
+            return $carry;
+        });
+        // -----------------------------
+
+        $totalGain = $totalValue - $totalCost;
+
+        $roi = ($totalGain / $totalCost) * 100;
+
+        $indicators = (object) [
+            'total_cost'    => $totalCost,
+            'total_gain'    => $totalGain,
+            'total_value'   => $totalValue,
+            'roi'           => $roi,
+        ];
+
+        return $indicators;
+    }
 }

@@ -9968,12 +9968,13 @@ function PageVisitsCard(_ref) {
     var formatedBigNumber = (0,millify__WEBPACK_IMPORTED_MODULE_8__["default"])(number);
     var parts = new Intl.NumberFormat("gb-GB", {
       style: "currency",
-      currency: currency
+      currency: currency,
+      currencyDisplay: "code"
     }).formatToParts(number);
     var currencySymbol = parts.find(function (part) {
       return part.type === "currency";
     }).value;
-    return currencySymbol + formatedBigNumber;
+    return "".concat(currencySymbol, " ").concat(formatedBigNumber);
   };
 
   var handleCurrencyChange = function handleCurrencyChange(e) {
@@ -10078,7 +10079,8 @@ function PageVisitsCard(_ref) {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: base_currency
+                    currency: base_currency,
+                    currencyDisplay: "code"
                   }).format(token.current_price)
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
@@ -11060,25 +11062,29 @@ function CardTable(_ref) {
                     className: "fas fa-circle fa-sm text-orange-500 mr-2"
                   }), new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: base_currency
+                    currency: base_currency,
+                    currencyDisplay: "code"
                   }).format(convertCurrency(transaction.currency_symbol, transaction.total_cost))]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: base_currency
+                    currency: base_currency,
+                    currencyDisplay: "code"
                   }).format(convertCurrency(transaction.currency_symbol, transaction.unit_cost))
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: base_currency
+                    currency: base_currency,
+                    currencyDisplay: "code"
                   }).format(transaction.token_amount * transactionCurrentMarketData.current_price)
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
-                    currency: base_currency
+                    currency: base_currency,
+                    currencyDisplay: "code"
                   }).format(transaction.token_amount * transactionCurrentMarketData.current_price - convertCurrency(transaction.currency_symbol, transaction.total_cost))
                 })]
               }, index);
@@ -12633,7 +12639,13 @@ __webpack_require__.r(__webpack_exports__);
 function Summary(_ref) {
   var transactions = _ref.transactions,
       marketData = _ref.marketData,
-      exchangeRates = _ref.exchangeRates;
+      exchangeRates = _ref.exchangeRates,
+      indicators = _ref.indicators;
+  var roi = indicators.roi,
+      total_cost = indicators.total_cost,
+      total_value = indicators.total_value,
+      total_gain = indicators.total_gain;
+  var base_currency = marketData.base_currency;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
       title: "Dashboard"
@@ -12647,7 +12659,11 @@ function Summary(_ref) {
             color: "orange",
             icon: "trending_up",
             title: "Total Value",
-            amount: "350,897",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_value),
             percentage: "3.48%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
@@ -12656,7 +12672,11 @@ function Summary(_ref) {
             color: "pink",
             icon: "payment",
             title: "Cost",
-            amount: "2,356",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_cost),
             percentage: "3.48%",
             percentageIcon: "arrow_downward",
             percentageColor: "red",
@@ -12665,7 +12685,11 @@ function Summary(_ref) {
             color: "purple",
             icon: "paid",
             title: "Gain/Loss",
-            amount: "924",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_gain),
             percentage: "1.10%",
             percentageIcon: "arrow_downward",
             percentageColor: "orange",
@@ -12674,7 +12698,9 @@ function Summary(_ref) {
             color: "blue",
             icon: "poll",
             title: "ROI",
-            amount: "49,65%",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "percent"
+            }).format(roi),
             percentage: "12%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",

@@ -19,13 +19,14 @@ export default function PageVisitsCard({ marketData }) {
         let parts = new Intl.NumberFormat("gb-GB", {
             style: "currency",
             currency: currency,
+            currencyDisplay: "code",
         }).formatToParts(number);
 
         let currencySymbol = parts.find(
             (part) => part.type === "currency"
         ).value;
 
-        return currencySymbol + formatedBigNumber;
+        return `${currencySymbol} ${formatedBigNumber}`;
     };
 
     const handleCurrencyChange = (e) => {
@@ -145,6 +146,7 @@ export default function PageVisitsCard({ marketData }) {
                                             {new Intl.NumberFormat("gb-GB", {
                                                 style: "currency",
                                                 currency: base_currency,
+                                                currencyDisplay: "code",
                                             }).format(token.current_price)}
                                         </td>
                                         <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
