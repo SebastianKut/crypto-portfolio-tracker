@@ -96,6 +96,20 @@ class Transaction extends Model
         ]);
     }
 
+    public static function getAllTransactions($user)
+    {
+        return json_decode(Transaction::latest()->where('user_id', $user->id)->get()->toJson());
+    }
+
+    public static function getAllTokens($transactions)
+    {
+        $tokens = array_map(function ($transaction) {
+            return $transaction->token_identifier;
+        }, $transactions);
+
+        return $tokens;
+    }
+
     public static function groupByCurrencyPair($transactions)
     {
         //Change array of objects into array of assoc arrays to be able to use array_reduce and group transactions by currency_pair
@@ -126,7 +140,6 @@ class Transaction extends Model
         return $result;
     }
 
-
     public static function getPerformanceIndicators($groupedTransactions, $exchangeRates, $marketData)
     {
         $convertedTransactions = [];
@@ -144,8 +157,6 @@ class Transaction extends Model
             $carry += $item;
             return $carry;
         });
-
-        // ------------------------------------
 
         $valueByToken = [];
         $marketDataBySymbol = [];
@@ -166,7 +177,6 @@ class Transaction extends Model
             $carry += $item;
             return $carry;
         });
-        // -----------------------------
 
         $totalGain = $totalValue - $totalCost;
 

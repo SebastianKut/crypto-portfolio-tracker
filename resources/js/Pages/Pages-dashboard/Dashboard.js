@@ -1,3 +1,4 @@
+import { usePage } from "@inertiajs/inertia-react";
 import StatusCard from "@/Components/Components-dashboard/StatusCard";
 import ChartLine from "@/Components/Components-dashboard/ChartLine";
 import ChartBar from "@/Components/Components-dashboard/ChartBar";
@@ -6,7 +7,10 @@ import TrafficCard from "@/Components/Components-dashboard/TrafficCard";
 import Authenticated from "@/Layouts/Layouts-dashboard/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
-export default function Dashboard({ marketData, exchangeRates }) {
+export default function Dashboard({ marketData, exchangeRates, indicators }) {
+    const { roi, total_cost, total_value, total_gain } = indicators;
+    const { base_currency } = marketData;
+
     return (
         <Authenticated>
             <Head title="Dashboard" />
@@ -33,7 +37,11 @@ export default function Dashboard({ marketData, exchangeRates }) {
                             color="orange"
                             icon="trending_up"
                             title="Total Value"
-                            amount="350,897"
+                            amount={new Intl.NumberFormat("gb-GB", {
+                                style: "currency",
+                                currency: base_currency,
+                                currencyDisplay: "code",
+                            }).format(total_value)}
                             percentage="3.48%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"
@@ -43,7 +51,11 @@ export default function Dashboard({ marketData, exchangeRates }) {
                             color="pink"
                             icon="payment"
                             title="Cost"
-                            amount="2,356"
+                            amount={new Intl.NumberFormat("gb-GB", {
+                                style: "currency",
+                                currency: base_currency,
+                                currencyDisplay: "code",
+                            }).format(total_cost)}
                             percentage="3.48%"
                             percentageIcon="arrow_downward"
                             percentageColor="red"
@@ -53,7 +65,11 @@ export default function Dashboard({ marketData, exchangeRates }) {
                             color="purple"
                             icon="paid"
                             title="Gain/Loss"
-                            amount="924"
+                            amount={new Intl.NumberFormat("gb-GB", {
+                                style: "currency",
+                                currency: base_currency,
+                                currencyDisplay: "code",
+                            }).format(total_gain)}
                             percentage="1.10%"
                             percentageIcon="arrow_downward"
                             percentageColor="orange"
@@ -63,7 +79,9 @@ export default function Dashboard({ marketData, exchangeRates }) {
                             color="blue"
                             icon="poll"
                             title="ROI"
-                            amount="49,65%"
+                            amount={new Intl.NumberFormat("gb-GB", {
+                                style: "percent",
+                            }).format(roi)}
                             percentage="12%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"

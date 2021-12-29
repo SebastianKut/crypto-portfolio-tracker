@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Support\CoinGecko\CoinGecko;
 use App\Support\ExchangeRate\ExchangeRate;
 use Illuminate\Http\Request;
@@ -11,15 +12,12 @@ class HomeController extends Controller
 {
     public function dashboard($currency)
     {
-        $tokens = auth()->user()->transactions->pluck('token_identifier')->toArray();
-
-        $marketData = CoinGecko::fetchMarketData($currency, $tokens);
-
-        $exchangeRates = ExchangeRate::fetchExchangeRates($currency);
+        $data = $this->getData($currency);
 
         return Inertia::render('Pages-dashboard/Dashboard', [
-            'marketData'    => $marketData,
-            'exchangeRates' => $exchangeRates,
+            'marketData'    => $data['marketData'],
+            'exchangeRates' => $data['exchangeRates'],
+            'indicators'    => $data['indicators'],
         ]);
     }
 }

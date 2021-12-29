@@ -1882,7 +1882,7 @@ function CardStatus(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("h5", {
     className: "text-gray-500 font-light tracking-wide text-base mb-1"
   }, title), /*#__PURE__*/_react["default"].createElement("span", {
-    className: "text-3xl text-gray-900"
+    className: "text-base text-gray-900"
   }, amount));
 }
 
@@ -1890,6 +1890,7 @@ CardStatus.propTypes = {
   title: _propTypes["default"].string.isRequired,
   amount: _propTypes["default"].string.isRequired
 };
+
 
 /***/ }),
 
@@ -10821,6 +10822,7 @@ function StatusCard(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
           color: color,
           iconOnly: true,
+          size: "sm",
           className: "mb-0",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_tailwind_react_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
             name: icon,
@@ -12508,14 +12510,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Dashboard)
 /* harmony export */ });
-/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
-/* harmony import */ var _Components_Components_dashboard_ChartLine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/ChartLine */ "./resources/js/Components/Components-dashboard/ChartLine.js");
-/* harmony import */ var _Components_Components_dashboard_ChartBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Components-dashboard/ChartBar */ "./resources/js/Components/Components-dashboard/ChartBar.js");
-/* harmony import */ var _Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Components-dashboard/PageVisitsCard */ "./resources/js/Components/Components-dashboard/PageVisitsCard.js");
-/* harmony import */ var _Components_Components_dashboard_TrafficCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Components-dashboard/TrafficCard */ "./resources/js/Components/Components-dashboard/TrafficCard.js");
-/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
+/* harmony import */ var _Components_Components_dashboard_ChartLine__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Components-dashboard/ChartLine */ "./resources/js/Components/Components-dashboard/ChartLine.js");
+/* harmony import */ var _Components_Components_dashboard_ChartBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Components-dashboard/ChartBar */ "./resources/js/Components/Components-dashboard/ChartBar.js");
+/* harmony import */ var _Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Components-dashboard/PageVisitsCard */ "./resources/js/Components/Components-dashboard/PageVisitsCard.js");
+/* harmony import */ var _Components_Components_dashboard_TrafficCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Components-dashboard/TrafficCard */ "./resources/js/Components/Components-dashboard/TrafficCard.js");
+/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -12527,9 +12530,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function Dashboard(_ref) {
   var marketData = _ref.marketData,
-      exchangeRates = _ref.exchangeRates;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Head, {
+      exchangeRates = _ref.exchangeRates,
+      indicators = _ref.indicators;
+  var roi = indicators.roi,
+      total_cost = indicators.total_cost,
+      total_value = indicators.total_value,
+      total_gain = indicators.total_gain;
+  var base_currency = marketData.base_currency;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Head, {
       title: "Dashboard"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "bg-light-blue-500 px-3 md:px-8 h-40"
@@ -12541,10 +12550,10 @@ function Dashboard(_ref) {
           className: "grid grid-cols-1 xl:grid-cols-5",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "xl:col-start-1 xl:col-end-4 px-4 mb-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_ChartLine__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_ChartLine__WEBPACK_IMPORTED_MODULE_2__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "xl:col-start-4 xl:col-end-6 px-4 mb-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_ChartBar__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_ChartBar__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           })]
         })
       })
@@ -12554,38 +12563,52 @@ function Dashboard(_ref) {
         className: "container mx-auto max-w-full",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 mb-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "orange",
             icon: "trending_up",
             title: "Total Value",
-            amount: "350,897",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_value),
             percentage: "3.48%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "pink",
             icon: "payment",
             title: "Cost",
-            amount: "2,356",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_cost),
             percentage: "3.48%",
             percentageIcon: "arrow_downward",
             percentageColor: "red",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "purple",
             icon: "paid",
             title: "Gain/Loss",
-            amount: "924",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: base_currency,
+              currencyDisplay: "code"
+            }).format(total_gain),
             percentage: "1.10%",
             percentageIcon: "arrow_downward",
             percentageColor: "orange",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "blue",
             icon: "poll",
             title: "ROI",
-            amount: "49,65%",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "percent"
+            }).format(roi),
             percentage: "12%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
@@ -12601,7 +12624,7 @@ function Dashboard(_ref) {
           className: "grid grid-cols-1 xl:grid-cols-5",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "xl:col-start-1 xl:col-end-8 px-4 mb-14",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Components_dashboard_PageVisitsCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
               marketData: marketData,
               exchangeRates: exchangeRates
             })
@@ -12738,11 +12761,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ TransactionCreate)
 /* harmony export */ });
-/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
-/* harmony import */ var _Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/SettingsForm */ "./resources/js/Components/Components-dashboard/SettingsForm.js");
-/* harmony import */ var _Components_Components_dashboard_ProfileCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Components-dashboard/ProfileCard */ "./resources/js/Components/Components-dashboard/ProfileCard.js");
-/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Components-dashboard/StatusCard */ "./resources/js/Components/Components-dashboard/StatusCard.js");
+/* harmony import */ var _Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Components-dashboard/SettingsForm */ "./resources/js/Components/Components-dashboard/SettingsForm.js");
+/* harmony import */ var _Components_Components_dashboard_ProfileCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Components-dashboard/ProfileCard */ "./resources/js/Components/Components-dashboard/ProfileCard.js");
+/* harmony import */ var _Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Layouts/Layouts-dashboard/Authenticated */ "./resources/js/Layouts/Layouts-dashboard/Authenticated.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -12751,9 +12774,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function TransactionCreate() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.Head, {
+
+function TransactionCreate(_ref) {
+  var indicators = _ref.indicators;
+  var roi = indicators.roi,
+      total_cost = indicators.total_cost,
+      total_value = indicators.total_value,
+      total_gain = indicators.total_gain;
+  var preferred_currency = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.auth.preferred_currency;
+  console.log(preferred_currency);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Head, {
       title: "Dashboard"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto",
@@ -12761,38 +12792,52 @@ function TransactionCreate() {
         className: "container mx-auto max-w-full",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "orange",
             icon: "trending_up",
             title: "Total Value",
-            amount: "350,897",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: preferred_currency,
+              currencyDisplay: "code"
+            }).format(total_value),
             percentage: "3.48%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "pink",
             icon: "payment",
             title: "Cost",
-            amount: "2,356",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: preferred_currency,
+              currencyDisplay: "code"
+            }).format(total_cost),
             percentage: "3.48%",
             percentageIcon: "arrow_downward",
             percentageColor: "red",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "purple",
             icon: "paid",
             title: "Gain/Loss",
-            amount: "924",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "currency",
+              currency: preferred_currency,
+              currencyDisplay: "code"
+            }).format(total_gain),
             percentage: "1.10%",
             percentageIcon: "arrow_downward",
             percentageColor: "orange",
             date: "Since last week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_StatusCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
             color: "blue",
             icon: "poll",
             title: "ROI",
-            amount: "49,65%",
+            amount: new Intl.NumberFormat("gb-GB", {
+              style: "percent"
+            }).format(roi),
             percentage: "12%",
             percentageIcon: "arrow_upward",
             percentageColor: "green",
@@ -12808,7 +12853,7 @@ function TransactionCreate() {
           className: "grid grid-cols-1 xl:grid-cols-6",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "xl:col-start-2 xl:col-end-6 px-4 mb-16",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Components_dashboard_SettingsForm__WEBPACK_IMPORTED_MODULE_2__["default"], {})
           })
         })
       })
