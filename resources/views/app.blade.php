@@ -13,11 +13,23 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <!-- Styles -->
+    @env('local')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @endenv
+    @env('production')
+    <link rel="stylesheet" href="{{ mix('public/css/app.css') }}">
+    @endenv
 
     <!-- Scripts -->
     @routes
+
+    @env('local')
     <script src="{{ mix('js/app.js') }}" defer></script>
+    @endenv
+    @env('production')
+    <script src="{{ mix('public/js/app.js') }}" defer></script>
+    @endenv
+
 </head>
 
 <body class="font-sans antialiased">
