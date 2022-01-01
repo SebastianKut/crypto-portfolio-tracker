@@ -10,7 +10,6 @@ export default function TransactionCreate({ indicators }) {
 
     const { preferred_currency } = usePage().props.auth;
 
-    console.log(preferred_currency);
     return (
         <Authenticated>
             <Head title="Add transaction" />
@@ -25,7 +24,7 @@ export default function TransactionCreate({ indicators }) {
                                 total_value &&
                                 new Intl.NumberFormat("gb-GB", {
                                     style: "currency",
-                                    currency: base_currency,
+                                    currency: preferred_currency,
                                     currencyDisplay: "code",
                                 }).format(total_value)
                             }
@@ -42,7 +41,7 @@ export default function TransactionCreate({ indicators }) {
                                 total_cost &&
                                 new Intl.NumberFormat("gb-GB", {
                                     style: "currency",
-                                    currency: base_currency,
+                                    currency: preferred_currency,
                                     currencyDisplay: "code",
                                 }).format(total_cost)
                             }
@@ -59,7 +58,7 @@ export default function TransactionCreate({ indicators }) {
                                 total_gain &&
                                 new Intl.NumberFormat("gb-GB", {
                                     style: "currency",
-                                    currency: base_currency,
+                                    currency: preferred_currency,
                                     currencyDisplay: "code",
                                 }).format(total_gain)
                             }

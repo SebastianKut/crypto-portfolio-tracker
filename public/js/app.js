@@ -2191,95 +2191,6 @@ PopoverHeader.propTypes = {
 
 /***/ }),
 
-/***/ "./node_modules/@material-tailwind/react/Progress.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@material-tailwind/react/Progress.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = Progress;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var wrapperBgColors = {
-  blueGray: 'bg-blue-gray-200',
-  gray: 'bg-gray-200',
-  brown: 'bg-brown-200',
-  deepOrange: 'bg-deep-orange-200',
-  orange: 'bg-orange-200',
-  amber: 'bg-amber-200',
-  yellow: 'bg-yellow-200',
-  lime: 'bg-lime-200',
-  lightGreen: 'bg-light-green-200',
-  green: 'bg-green-200',
-  teal: 'bg-teal-200',
-  cyan: 'bg-cyan-200',
-  lightBlue: 'bg-light-blue-200',
-  blue: 'bg-blue-200',
-  indigo: 'bg-indigo-200',
-  deepPurple: 'bg-deep-purple-200',
-  purple: 'bg-purple-200',
-  pink: 'bg-pink-200',
-  red: 'bg-red-200'
-};
-var bgColors = {
-  blueGray: 'bg-blue-gray-500',
-  gray: 'bg-gray-500',
-  brown: 'bg-brown-500',
-  deepOrange: 'bg-deep-orange-500',
-  orange: 'bg-orange-500',
-  amber: 'bg-amber-500',
-  yellow: 'bg-yellow-600',
-  lime: 'bg-lime-500',
-  lightGreen: 'bg-light-green-500',
-  green: 'bg-green-500',
-  teal: 'bg-teal-500',
-  cyan: 'bg-cyan-500',
-  lightBlue: 'bg-light-blue-500',
-  blue: 'bg-blue-500',
-  indigo: 'bg-indigo-500',
-  deepPurple: 'bg-deep-purple-500',
-  purple: 'bg-purple-500',
-  pink: 'bg-pink-500',
-  red: 'bg-red-500'
-};
-
-function Progress(_ref) {
-  var color = _ref.color,
-      value = _ref.value,
-      percentage = _ref.percentage;
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "overflow-hidden ".concat(percentage ? 'h-6' : 'h-2', " flex rounded ").concat(wrapperBgColors[color])
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      width: "".concat(value, "%")
-    },
-    className: "flex justify-center items-center rounded text-xs font-medium ".concat(bgColors[color], " text-white")
-  }, percentage ? "".concat(value, "% Completed") : '')));
-}
-
-Progress.defaultProps = {
-  color: 'lightBlue',
-  percentage: false
-};
-Progress.propTypes = {
-  color: _propTypes["default"].string.isRequired,
-  value: _propTypes["default"].string.isRequired,
-  percentage: _propTypes["default"].bool.isRequired
-};
-
-/***/ }),
-
 /***/ "./node_modules/@material-tailwind/react/Textarea.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@material-tailwind/react/Textarea.js ***!
@@ -9666,22 +9577,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ CardTable)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
-/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
-/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
-/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
-/* harmony import */ var _material_tailwind_react_Progress__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/Progress */ "./node_modules/@material-tailwind/react/Progress.js");
-/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
-/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-tailwind/react/Card */ "./node_modules/@material-tailwind/react/Card.js");
+/* harmony import */ var _material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-tailwind/react/CardHeader */ "./node_modules/@material-tailwind/react/CardHeader.js");
+/* harmony import */ var _material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-tailwind/react/CardBody */ "./node_modules/@material-tailwind/react/CardBody.js");
+/* harmony import */ var _material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-tailwind/react/Image */ "./node_modules/@material-tailwind/react/Image.js");
+/* harmony import */ var _material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-tailwind/react/Dropdown */ "./node_modules/@material-tailwind/react/Dropdown.js");
+/* harmony import */ var _material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-tailwind/react/DropdownItem */ "./node_modules/@material-tailwind/react/DropdownItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
 
 
 
@@ -9699,7 +9603,7 @@ function CardTable(_ref) {
   var transactions = _ref.transactions,
       marketData = _ref.marketData,
       exchangeRates = _ref.exchangeRates;
-  var _usePage$props$auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.auth,
+  var _usePage$props$auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth,
       user = _usePage$props$auth.user,
       show_transactions = _usePage$props$auth.show_transactions,
       preferred_currency = _usePage$props$auth.preferred_currency;
@@ -9754,140 +9658,140 @@ function CardTable(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], {
       color: "purple",
       contentPosition: "none",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "w-full flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
           className: "text-white text-2xl",
           children: "Portfolio Details"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"], (_jsxs2 = {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_6__["default"], (_jsxs2 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
           buttonText: "TRANSACTIONS"
-        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }, _defineProperty(_jsxs2, "size", "lg"), _defineProperty(_jsxs2, "rounded", false), _defineProperty(_jsxs2, "block", false), _defineProperty(_jsxs2, "ripple", "light"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: function onClick() {
             return handleShow("all");
           },
           children: "Show all"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: function onClick() {
             return handleShow("grouped");
           },
           children: "Group by token"
-        })]), _jsxs2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"], (_jsxs3 = {
+        })]), _jsxs2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_tailwind_react_Dropdown__WEBPACK_IMPORTED_MODULE_6__["default"], (_jsxs3 = {
           color: "transparent",
           buttonType: "link",
           size: "lg",
           placement: "bottom-start",
           buttonText: base_currency.toUpperCase()
-        }, _defineProperty(_jsxs3, "size", "lg"), _defineProperty(_jsxs3, "rounded", false), _defineProperty(_jsxs3, "block", false), _defineProperty(_jsxs3, "ripple", "light"), _defineProperty(_jsxs3, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }, _defineProperty(_jsxs3, "size", "lg"), _defineProperty(_jsxs3, "rounded", false), _defineProperty(_jsxs3, "block", false), _defineProperty(_jsxs3, "ripple", "light"), _defineProperty(_jsxs3, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "GBP"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "USD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "AUD"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_DropdownItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           color: "purple",
           ripple: "light",
           onClick: handleCurrencyChange,
           children: "PLN"
         })]), _jsxs3))]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_CardBody__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "overflow-x-auto",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("table", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("table", {
           className: "items-center w-full bg-transparent border-collapse",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Cryptocurrency"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Token Amount"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Unit Cost"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Total Value"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                 className: "px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left",
                 children: "Gain/Loss"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("tbody", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
             children: transactions.map(function (transaction, index) {
               var transactionCurrentMarketData = findMarketDataByTokenId(transaction.token_identifier);
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     className: "flex items-stretch",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       className: "w-10 h-10 rounded-full border-2 border-white mr-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_tailwind_react_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
                         src: transactionCurrentMarketData.image,
                         rounded: true,
                         alt: "..."
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       className: "self-center",
-                      children: [transaction.token_name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
+                      children: [transaction.token_name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                         className: "ml-2 text-gray-600",
                         children: transaction.currency_pair.toUpperCase()
                       })]
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: transaction.token_amount
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("i", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
                     className: "fas fa-circle fa-sm text-orange-500 mr-2"
                   }), new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: base_currency,
                     currencyDisplay: "code"
                   }).format(convertCurrency(transaction.currency_symbol, transaction.total_cost))]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: base_currency,
                     currencyDisplay: "code"
                   }).format(convertCurrency(transaction.currency_symbol, transaction.unit_cost))
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
                     currency: base_currency,
                     currencyDisplay: "code"
                   }).format(transaction.token_amount * transactionCurrentMarketData.current_price)
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
                   className: "border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left",
                   children: new Intl.NumberFormat("gb-GB", {
                     style: "currency",
@@ -10985,7 +10889,6 @@ function TransactionCreate(_ref) {
       total_value = indicators.total_value,
       total_gain = indicators.total_gain;
   var preferred_currency = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.auth.preferred_currency;
-  console.log(preferred_currency);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Layouts_dashboard_Authenticated__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Head, {
       title: "Add transaction"
@@ -11001,7 +10904,7 @@ function TransactionCreate(_ref) {
             title: "Total Value",
             amount: total_value && new Intl.NumberFormat("gb-GB", {
               style: "currency",
-              currency: base_currency,
+              currency: preferred_currency,
               currencyDisplay: "code"
             }).format(total_value),
             percentage: "3.48%",
@@ -11014,7 +10917,7 @@ function TransactionCreate(_ref) {
             title: "Cost",
             amount: total_cost && new Intl.NumberFormat("gb-GB", {
               style: "currency",
-              currency: base_currency,
+              currency: preferred_currency,
               currencyDisplay: "code"
             }).format(total_cost),
             percentage: "3.48%",
@@ -11027,7 +10930,7 @@ function TransactionCreate(_ref) {
             title: "Gain/Loss",
             amount: total_gain && new Intl.NumberFormat("gb-GB", {
               style: "currency",
-              currency: base_currency,
+              currency: preferred_currency,
               currencyDisplay: "code"
             }).format(total_gain),
             percentage: "1.10%",
