@@ -9,8 +9,8 @@ import { Head, Link, useForm } from "@inertiajs/inertia-react";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "user@test.com",
-        password: "Test1234",
+        email: "",
+        password: "",
         remember: "",
     });
 
@@ -57,6 +57,7 @@ export default function Login({ status, canResetPassword }) {
                         value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"
+                        placeholder="user@test.com"
                         isFocused={true}
                         handleChange={onHandleChange}
                     />
@@ -70,6 +71,7 @@ export default function Login({ status, canResetPassword }) {
                         name="password"
                         value={data.password}
                         className="mt-1 block w-full"
+                        placeholder="Test1234"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />
