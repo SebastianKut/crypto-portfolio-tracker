@@ -16,6 +16,7 @@
     @env('local')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @endenv
+    {{-- Different relative path for production as its deployed on subdomain --}}
     @env('production')
     <link rel="stylesheet" href="{{ mix('public/css/app.css') }}">
     @endenv

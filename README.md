@@ -13,3 +13,5 @@ App uses 2 APIs:
 To view the app and the functionality you can use following demo credentials:
 Login: user@test.com
 Password: Test1234,
+
+URL TO LIVE PAGE: http://cryptoportfolio.sebastiankut.com/public/
