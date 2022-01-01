@@ -20,7 +20,7 @@ export default function Sidebar() {
             >
                 <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
                     <a
-                        href="https://material-tailwind.com?ref=mtd"
+                        href="https://sebastiankut.com"
                         target="_blank"
                         rel="noreferrer"
                         className="mt-2 text-center w-full inline-block"
@@ -75,30 +75,6 @@ export default function Sidebar() {
                                     <Icon name="toc" size="2xl" />
                                     Summary
                                 </Link>
-                            </li>
-                        </ul>
-
-                        <ul className="flex-col min-w-full flex list-none absolute bottom-0">
-                            <li className="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 px-4 rounded-lg text-white mb-2">
-                                <a
-                                    href="https://material-tailwind.com/documentation/quick-start"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="flex items-center gap-4 text-sm font-light py-3"
-                                >
-                                    <Icon name="description" size="2xl" />
-                                    Documentation
-                                </a>
-                            </li>
-                            <li className="bg-gradient-to-tr from-purple-500 to-purple-700 px-4 rounded-lg text-white">
-                                <a
-                                    href="https://www.creative-tim.com/product/material-tailwind-dashboard-react"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="flex items-center justify-center gap-4 text-sm font-light py-3"
-                                >
-                                    Free Download
-                                </a>
                             </li>
                         </ul>
                     </div>

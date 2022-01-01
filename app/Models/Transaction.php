@@ -14,6 +14,21 @@ class Transaction extends Model
     // // Appends accessors to json result so it can be used in react component same way as in blade view
     protected $appends = ['token_name', 'token_symbol', 'token_identifier', 'currency_symbol', 'currency_pair', 'total_cost', 'unit_cost'];
 
+    public const MONTHS = [
+        'January' => '1',
+        'February' => '2',
+        'March' => '3',
+        'April' => '4',
+        'May' => '5',
+        'June' => '6',
+        'July' => '7',
+        'August' => '8',
+        'September' => '9',
+        'October' => '10',
+        'November' => '11',
+        'December' => '12'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -101,6 +116,19 @@ class Transaction extends Model
         return json_decode(Transaction::latest()->where('user_id', $user->id)->get()->toJson());
     }
 
+    public static function getAllTransactionsByMonth()
+    {
+        return array_map(function ($month) {
+            return json_decode(
+                Transaction::latest()
+                    ->where('user_id', auth()->user()->id)
+                    ->whereMonth('transaction_date', $month)
+                    ->get()
+                    ->toJson()
+            );
+        }, self::MONTHS);
+    }
+
     public static function getAllTokens($transactions)
     {
         $tokens = array_map(function ($transaction) {
@@ -112,6 +140,7 @@ class Transaction extends Model
 
     public static function groupByCurrencyPair($transactions)
     {
+        if (!$transactions) return [];
         //Change array of objects into array of assoc arrays to be able to use array_reduce and group transactions by currency_pair
         $groupedTransactions = array_map(function ($transaction) {
             return (array) $transaction;
@@ -142,6 +171,7 @@ class Transaction extends Model
 
     public static function getPerformanceIndicators($groupedTransactions, $exchangeRates, $marketData)
     {
+        if (!$groupedTransactions) return;
         $convertedTransactions = [];
 
         $exchangeRates = (array) $exchangeRates->rates;

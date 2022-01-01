@@ -4,27 +4,19 @@ import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 
-export default function ChartBar() {
+export default function ChartBar({ months, costs, values }) {
     useEffect(() => {
         let config = {
             type: "bar",
             data: {
-                labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                ],
+                labels: months,
                 datasets: [
                     {
                         // label: new Date().getFullYear(),
                         label: "Total Value",
                         backgroundColor: "#03a9f4",
                         borderColor: "#03a9f4",
-                        data: [30, 78, 56, 34, 100, 45, 13],
+                        data: values,
                         fill: false,
                         barThickness: 8,
                     },
@@ -34,7 +26,7 @@ export default function ChartBar() {
                         fill: false,
                         backgroundColor: "#f44336",
                         borderColor: "#f44336",
-                        data: [27, 68, 86, 74, 10, 4, 87],
+                        data: costs,
                         barThickness: 8,
                     },
                 ],

@@ -160,9 +160,6 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Cryptocurrency
                                 </th>
-                                {/* <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                                    Current Price
-                                </th> */}
                                 <th className="px-2 text-purple-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                                     Token Amount
                                 </th>
@@ -208,14 +205,6 @@ export default function CardTable({ transactions, marketData, exchangeRates }) {
                                                 </div>
                                             </div>
                                         </th>
-                                        {/* <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                            {new Intl.NumberFormat("gb-GB", {
-                                                style: "currency",
-                                                currency: base_currency,
-                                            }).format(
-                                                transactionCurrentMarketData.current_price
-                                            )}
-                                        </th> */}
                                         <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                             {transaction.token_amount}
                                         </th>

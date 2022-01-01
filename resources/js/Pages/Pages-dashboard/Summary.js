@@ -15,7 +15,7 @@ export default function Summary({
 
     return (
         <Authenticated>
-            <Head title="Dashboard" />
+            <Head title="Summary" />
             <div className="bg-light-blue-500 pt-14 pb-28 px-3 md:px-8 h-auto">
                 <div className="container mx-auto max-w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
@@ -23,11 +23,14 @@ export default function Summary({
                             color="orange"
                             icon="trending_up"
                             title="Total Value"
-                            amount={new Intl.NumberFormat("gb-GB", {
-                                style: "currency",
-                                currency: base_currency,
-                                currencyDisplay: "code",
-                            }).format(total_value)}
+                            amount={
+                                total_value &&
+                                new Intl.NumberFormat("gb-GB", {
+                                    style: "currency",
+                                    currency: base_currency,
+                                    currencyDisplay: "code",
+                                }).format(total_value)
+                            }
                             percentage="3.48%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"
@@ -37,11 +40,14 @@ export default function Summary({
                             color="pink"
                             icon="payment"
                             title="Cost"
-                            amount={new Intl.NumberFormat("gb-GB", {
-                                style: "currency",
-                                currency: base_currency,
-                                currencyDisplay: "code",
-                            }).format(total_cost)}
+                            amount={
+                                total_cost &&
+                                new Intl.NumberFormat("gb-GB", {
+                                    style: "currency",
+                                    currency: base_currency,
+                                    currencyDisplay: "code",
+                                }).format(total_cost)
+                            }
                             percentage="3.48%"
                             percentageIcon="arrow_downward"
                             percentageColor="red"
@@ -51,11 +57,14 @@ export default function Summary({
                             color="purple"
                             icon="paid"
                             title="Gain/Loss"
-                            amount={new Intl.NumberFormat("gb-GB", {
-                                style: "currency",
-                                currency: base_currency,
-                                currencyDisplay: "code",
-                            }).format(total_gain)}
+                            amount={
+                                total_gain &&
+                                new Intl.NumberFormat("gb-GB", {
+                                    style: "currency",
+                                    currency: base_currency,
+                                    currencyDisplay: "code",
+                                }).format(total_gain)
+                            }
                             percentage="1.10%"
                             percentageIcon="arrow_downward"
                             percentageColor="orange"
@@ -65,9 +74,12 @@ export default function Summary({
                             color="blue"
                             icon="poll"
                             title="ROI"
-                            amount={new Intl.NumberFormat("gb-GB", {
-                                style: "percent",
-                            }).format(roi)}
+                            amount={
+                                roi &&
+                                new Intl.NumberFormat("gb-GB", {
+                                    style: "percent",
+                                }).format(roi)
+                            }
                             percentage="12%"
                             percentageIcon="arrow_upward"
                             percentageColor="green"

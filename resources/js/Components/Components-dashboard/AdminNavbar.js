@@ -5,7 +5,7 @@ import Image from "@material-tailwind/react/Image";
 import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 import { Link } from "@inertiajs/inertia-react";
-import ProfilePicture from "../../../../public/img/team-1-800x800.jpg";
+import ProfilePicture from "../../../../public/img/profile_pic.png";
 
 export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     const location = route().current();

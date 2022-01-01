@@ -4,27 +4,19 @@ import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
 import CardBody from "@material-tailwind/react/CardBody";
 
-export default function ChartLine() {
+export default function ChartLine({ months, costs, values }) {
     useEffect(() => {
         var config = {
             type: "line",
             data: {
-                labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                ],
+                labels: months,
                 datasets: [
                     {
                         // label: new Date().getFullYear(),
                         label: "Total Value",
                         backgroundColor: "#03a9f4",
                         borderColor: "#03a9f4",
-                        data: [65, 78, 66, 44, 56, 67, 75],
+                        data: values,
                         fill: false,
                     },
                     {
@@ -33,7 +25,7 @@ export default function ChartLine() {
                         fill: false,
                         backgroundColor: "#ff9800",
                         borderColor: "#ff9800",
-                        data: [40, 68, 86, 74, 56, 60, 87],
+                        data: costs,
                     },
                 ],
             },

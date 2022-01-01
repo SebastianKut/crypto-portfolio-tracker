@@ -28,10 +28,6 @@ export default function Popdown({
                         {dataSet.map((item, index) => {
                             return (
                                 <li className="flex w-5 py-2">
-                                    {/* <Image
-                                        src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
-                                        rounded
-                                    /> */}
                                     <p
                                         className="ml-3 cursor-pointer"
                                         key={index}

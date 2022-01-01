@@ -32,7 +32,7 @@ class TransactionController extends Controller
         return Inertia::render('Pages-dashboard/TransactionCreate', [
             'tokens' => $tokens,
             'currencies' => $currencies,
-            'indicators' => $data['indicators'],
+            'indicators' => $data['indicators'] ? $data['indicators'] : (object)[],
         ]);
     }
 
@@ -44,7 +44,7 @@ class TransactionController extends Controller
             'transactions'  => $request->query('show') === 'grouped' ? $data['groupedTransactions'] : $data['transactions'],
             'marketData'    => $data['marketData'],
             'exchangeRates' => $data['exchangeRates'],
-            'indicators'    => $data['indicators'],
+            'indicators'    => $data['indicators'] ? $data['indicators'] : (object)[],
         ]);
     }
 
