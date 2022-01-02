@@ -14,4 +14,4 @@ To view the app and the functionality you can use following demo credentials:
 Login: demo@demo.com
 Password: Demo2021,
 
-URL TO LIVE PAGE: http://cryptoportfolio.sebastiankut.com/public/
+URL TO LIVE PAGE: http://cryptoportfolio.sebastiankut.com/public/login
